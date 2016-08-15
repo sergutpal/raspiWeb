@@ -1,0 +1,22 @@
+{% extends "templates/base.html" %}
+
+{% block title %}CubieSrv - Reboot{% endblock %}
+
+{% block content %}
+	{% if confirm %}
+		Reiniciando
+		{% if allPi %}
+			TODAS las pi y CubieSrv
+		{% else %}
+			pi {{ piNumber }}
+		{% endif %}
+	{% else %}
+        	.Confirma que realmente quieres reiniciar:
+                <form action="/reboot/" method="post">{% csrf_token %}
+                        <input type="hidden" name="confirm" value="confirm" />
+                        <label for="piNumber">Número Pi (0 es todo!): </label>
+                        <input type="text" name="piNumber" value="0" />
+                        <input type="submit" value="Reboot">
+                </form>
+        {% endif %}
+{% endblock %}

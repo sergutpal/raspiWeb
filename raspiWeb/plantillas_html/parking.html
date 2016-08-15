@@ -1,0 +1,15 @@
+{% extends "templates/base.html" %}
+
+{% block title %}CubieSrv - Parking{% endblock %}
+
+{% block content %}
+	<h5 class="text-primary"><strong>Solicitud apertura de parking. Confirma que realmente quieres abrir el parking:</strong></h5>
+		<form action="/parking/" method="post">{% csrf_token %}
+			<input type="hidden" name="confirmOpen" value="confirmOpen" />
+			<!--<label for="waitSeconds" class="label label-primary" >Esperar (segundos): </label> -->
+			<input type="text" name="waitSeconds" placeholder="Segundos a esperar" class="form-control" />
+			<p></p>
+			<input type="submit" class="btn btn-primary" value="Abrir Parking">
+		</form>
+{% endblock %}
+

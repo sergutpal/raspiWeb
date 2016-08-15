@@ -1,0 +1,1 @@
+/home/nfs/telegram/gpio/pir/pir.py

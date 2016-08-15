@@ -1,0 +1,120 @@
+<script type="text/javascript" src="/static/js/jquery.smartmenus.js">
+</script>
+<!-- SmartMenus jQuery init -->
+<script type="text/javascript">
+$(function() {
+    $('#main-menu').smartmenus({
+        subMenusSubOffsetX: 1,
+        subMenusSubOffsetY: -8
+    });
+});
+</script>
+<!-- SmartMenus core CSS (required) -->
+<link href="/static/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+<div id="menu">
+    <nav id="main-nav" role="navigation">
+        <!-- Sample menu definition -->
+        <ul id="main-menu" class="sm sm-blue">
+            <li><a href="/">Inicio</a>
+                <!-- Por defecto vemos la versión reducida -->
+                <ul>
+                    <li><a href="/inicio/">Completo</a></li>
+                    <!-- Mostrar la versión completa -->
+                </ul>
+            </li>
+            <li><a href="/auto/on/">Alarma (Auto ON)</a>
+                <ul>
+                    <li><a href="/alarma/on/">Alarma ON</a></li>
+                    <li><a href="/alarma/off/">Alarma OFF</a></li>
+                    <li><a href="/auto/on/">Modo Auto ON</a></li>
+                    <li><a href="/auto/off/">Modo Auto OFF</a></li>
+                </ul>
+            </li>
+            <li><a href="/parking/">Parking</a>
+                <ul>
+                    <li><a href="/parking/0/">Forzar en 0s</a></li>
+                    <li><a href="/parking/30/">Forzar en 30s</a></li>
+                    <li><a href="/parking/60/">Forzar en 60s</a></li>
+                    <li><a href="/parking/90/">Forzar en 90s</a></li>
+                    <li><a href="/parking/120/">Forzar en 120s</a></li>
+                </ul>
+            </li>
+            <li><a href="/musica/on/">Música (ON)</a>
+                <ul>
+                    <li><a href="/musica/off/">OFF</a></li>
+                    <li><a href="/m/1/">Salón</a></li>
+                    <li><a href="/m/4/">Pasillo</a></li>
+                </ul>
+            </li>
+            <li><a href="/kodi/3/">Kodi (Dormitorio)</a>
+                <ul>
+                    <li><a href="/kodi/1/">Salón</a></li>
+                </ul>
+            </li>
+            <li><a href="/temperatura/">Temperatura (All)</a>
+                <ul>
+                    <li><a href="/temperatura/2/">Calle</a></li>
+                    <li><a href="/temperatura/1/">Salón</a></li>
+                    <li><a href="/temperatura/3/">Dormitorio</a></li>
+                </ul>
+            </li>
+            <li><a href="/foto/">Cámara</a>
+                <ul>
+                    <li><a href="/foto/">Foto (All)</a>
+                        <ul>
+                            <li><a href="/foto/1/">Salón</a></li>
+                            <li><a href="/foto/3/">Dormitorio</a></li>
+                            <li><a href="/foto/2/">Parking</a></li>
+                            <li><a href="/foto/4/">Pasillo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">RpiCam</a>
+                        <ul>
+                            <li><a href="http://192.168.1.31" target="_blank">Salón</a></li>
+                            <li><a href="http://192.168.1.33" target="_blank">Dormitorio</a></li>
+                            <li><a href="http://192.168.1.32" target="_blank">Parking</a></li>
+                            <li><a href="http://192.168.1.34" target="_blank">Pasillo</a></li>
+                        </ul>
+                    </li>
+<!--                     <li><a href="#">RpiCam Pub</a>
+                        <ul>
+                            <li><a href="https://sergutpal.ddns.net:8201" target="_blank">Salón</a></li>
+                            <li><a href="https://sergutpal.ddns.net:8203" target="_blank">Dormitorio</a></li>
+                            <li><a href="https://sergutpal.ddns.net:8202" target="_blank">Parking</a></li>
+                            <li><a href="https://sergutpal.ddns.net:8204" target="_blank">Pasillo</a></li>
+                        </ul>
+                    </li>
+ -->                </ul>
+            </li>
+            <li><a href="#">Otros</a>
+                <ul>
+                    <li><a href="/reboot/">Reboot (All)</a>
+                        <ul>
+                            <li><a href="/reboot/0/">CubieSrv</a></li>
+                            <li><a href="/reboot/1/">Raspi1</a></li>
+                            <li><a href="/reboot/2/">Raspi2</a></li>
+                            <li><a href="/reboot/3/">Raspi3</a></li>
+                            <li><a href="/reboot/4/">Raspi4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/watchdog/">Watchdog (All)</a>
+                        <ul>
+                            <li><a href="/watchdog/0/">CubieSrv</a></li>
+                            <li><a href="/watchdog/1/">Raspi1</a></li>
+                            <li><a href="/watchdog/2/">Raspi2</a></li>
+                            <li><a href="/watchdog/3/">Raspi3</a></li>
+                            <li><a href="/watchdog/4/">Raspi4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/wakeonlan/">WakeOnLan PC</a></li>
+                    <li><a href="/transmissionON/">Transmission ON</a></li>
+                    <li><a href="/transmissionOFF/">Transmission OFF</a></li>
+                    <li><a href="/firewallON/">Firewall ON</a></li>
+                    <li><a href="/firewallOFF/">Firewall OFF</a></li>
+                </ul>
+            </li>
+            <li><a href="/accounts/logout/">Salir</a></li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "­//W3C//DTD HTML 4.01//EN">
+<html lang="es">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE">
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/bootstrap-toggle.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-toggle.css" rel="stylesheet">
+    <link href="/static/css/cubieSrv.css" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'templates/menu.html' %}
+    <p>
+        {% block content %}{% endblock %} {% block footer %}
+   <hr>
+				{% endblock %}
+</body>
+
+</html>

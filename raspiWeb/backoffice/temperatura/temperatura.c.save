@@ -1,0 +1,139 @@
+#include "../comun/c/util.h"
+
+#include <wiringPi.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+
+#define TMP_FILE_TEMPERATURE "/hdd/tmp/telegram/temperatura.txt"
+#define FILE_TEMPERATURE "/hdd/nfs/telegram/logs/temperatura.txt"
+
+#define CHECK_PERIOD_IN_SECONDS 900
+
+#define MAX_TIME 85
+#define DHT11PIN 6  // GPIO25
+#define DHT22PIN 7 // GPIO7
+#define ATTEMPTS 5
+
+
+int dht_val[5]={0,0,0,0,0};
+
+int dht_read_val(int sensorDHT)
+{
+  char buffer[100];
+  time_t ltime;
+  struct tm *curtime;
+
+  uint8_t lststate=HIGH;
+  uint8_t counter=0;
+  uint8_t j=0,i;
+  for(i=0;i<5;i++)
+     dht_val[i]=0;
+  pinMode(sensorDHT,OUTPUT);
+  digitalWrite(sensorDHT,LOW);
+  delay(18);
+  digitalWrite(sensorDHT,HIGH);
+  delayMicroseconds(40);
+  pinMode(sensorDHT,INPUT);
+  for(i=0;i<MAX_TIME;i++)
+  {
+    counter=0;
+    while(digitalRead(sensorDHT)==lststate){
+      counter++;
+      delayMicroseconds(1);
+      if(counter==255)
+        break;
+    }
+    lststate=digitalRead(sensorDHT);
+    if(counter==255)
+       break;
+    // top 3 transistions are ignored
+    if((i>=4)&&(i%2==0)){
+      dht_val[j/8]<<=1;
+      if(counter>16)
+        dht_val[j/8]|=1;
+      j++;
+    }
+  }
+	if (sensorDHT ==DHT11PIN) {
+		// verify checksum and print the verified data
+		if((j>=40)&&(dht_val[4]==((dht_val[0]+dht_val[1]+dht_val[2]+dht_val[3])& 0xFF)))
+		{
+			printf("Lectura DHT11: ");
+			printf("%d.%d,%d.%d\n",dht_val[0],dht_val[1],dht_val[2],dht_val[3]);
+			return 1;
+		}
+		else
+			return 0;
+	}
+	else { // DHT22
+		if ((j >= 40) &&
+			(dht_val[4] == ((dht_val[0] + dht_val[1] + dht_val[2] + dht_val[3]) & 0xFF)) ) {
+			float t, h;
+			h = (float)dht_val[0] * 256 + (float)dht_val[1];
+			h /= 10;
+			t = (float)(dht_val[2] & 0x7F)* 256 + (float)dht_val[3];
+			t /= 10.0;
+			if ((dht_val[2] & 0x80) != 0)  t *= -1;
+
+			printf("Humedad = %.2f %% Temperatura = %.2f *C \n", h, t );
+			time( &ltime );
+
+			curtime = localtime( &ltime );
+			strftime(buffer,100,"%d/%m/%Y %X", curtime);
+			sprintf(buffer, "%s Temperatura: %.2f. Humedad: %2.f%%\n", buffer, t, h);
+			//printf("Buf: %s. %s",buffer, TMP_FILE_TEMPERATURE);
+			toFile(TMP_FILE_TEMPERATURE, buffer, FILE_MODE_WRITE);
+			toFile(FILE_TEMPERATURE, buffer, FILE_MODE_APPEND);
+			return 1;
+		}
+		else {
+			printf("lectura no valida!");
+			return 0;
+		}
+	}
+}
+
+int main(void)
+{
+  int attempts =ATTEMPTS;
+  int i;
+
+  if(wiringPiSetup()==-1)
+    exit(1);
+  // Lectura del DHT11
+  /*
+  while(attempts)
+  {
+    int success = dht_read_val(DHT11PIN);
+    if (success) {
+      break;
+    }
+    attempts--;
+    delay(500);
+  }
+  */
+
+  //printf("Main1 ok");
+  while (1) {
+    for (i =0; i <5; i++)
+ 	dht_val[i] =0;
+    attempts =ATTEMPTS;
+    // Lectura del DHT22
+    while(attempts) {
+      printf("Intentando leer temperatura");
+      int success = dht_read_val(DHT22PIN);
+      if (success) {
+        break;
+      }
+      attempts--;
+      delay(1000);  // En caso de error reintentamos pasado 1 segundo
+    }
+    //delay(1000 * CHECK_PERIOD_IN_SECONDS);
+    return 0;
+  }
+
+  return 0;
+}

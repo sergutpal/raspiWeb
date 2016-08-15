@@ -1,0 +1,42 @@
+{% extends "templates/base.html" %}
+
+{% block title %}CubieSrv - Inicio{% endblock %}
+
+{% block content %}
+	<script src="/static/js/inicio.js"></script>
+	<script src="/static/js/fusioncharts.js"></script>
+	<!--<script src="/static/js/fusioncharts.theme.fint.js?cacheBust=56"></script>-->
+	<script src="/static/js/fusioncharts.theme.fint.js"></script>
+	<script src="/static/js/fusionchartsThermometer.js"></script>
+
+	<p>
+	<input type="hidden" id="notifMsg" value="{{ notifMsg }}">
+	{% if seeAll %}
+		<input type="hidden" id="energiaValue" value="{{ energiaValue }}">
+		<input type="hidden" id="energiaTime" value="{{ energiaTime }}">
+		<input type="hidden" id="temperatura_calleValue" value="{{ temperatura_calleValue }}">
+		<input type="hidden" id="temperatura_calleTime" value="{{ temperatura_calleTime }}">
+		<input type="hidden" id="temperatura_salonValue" value="{{ temperatura_salonValue }}">
+		<input type="hidden" id="temperatura_salonTime" value="{{ temperatura_salonTime }}">
+		<input type="hidden" id="temperatura_dormitorioValue" value="{{ temperatura_dormitorioValue }}">
+		<input type="hidden" id="temperatura_dormitorioTime" value="{{ temperatura_dormitorioTime }}">
+	{% endif %}
+	<h4 id="alarmaLbl" class="text-primary"><strong>Alarma:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+		<input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF" id="alarmaChk" data-size="normal" {% if alarma %} checked {% endif %}>
+	</h4>
+	<h4 id="autoLbl" class="text-primary"><strong>Modo Auto:</strong>
+		<input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF" id="autoChk" data-size="normal" {% if auto %} checked {% endif %}>
+	</h4>
+	<h4 id="parkingLbl" class="text-primary"><strong>Parking:&nbsp;</strong>
+		<input type="checkbox" disabled data-toggle="toggle" data-on="Abierto" data-off="Cerrado" id="parkingChk" data-size="normal" {% if parking %} checked {% endif %}>
+	</h4>
+	{% if seeAll %}
+ 		<div id="chart-energia"></div>
+ 		<div id="chart-tempCalle"></div>
+ 		<div id="chart-tempSalon"></div>
+ 		<div id="chart-tempDormitorio"></div>
+ 		{% include 'includes/showPhotos.html' %}
+ 	{% endif %}
+
+{% endblock %}
+

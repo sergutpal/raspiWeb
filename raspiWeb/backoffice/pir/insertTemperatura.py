@@ -1,0 +1,1 @@
+/home/nfs/raspiWeb/raspiWeb/backoffice/bmp180/insertTemperatura.py
