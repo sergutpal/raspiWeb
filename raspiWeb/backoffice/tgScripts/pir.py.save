@@ -64,9 +64,17 @@ def buzzer(freq):
 
 
 def playAlarmaKodi(pathAlarmaMP3):
+  if globalVars.getConfigField('alarmBuzzerActive') =='0':
+
+
+
+
+
+
     try:
+        # En la BD se ha indicado que no debe sonar el buzzer
         mp3Cmd = '/usr/bin/kodi ' + pathAlarmaMP3
-        # volUPCmd = 'echo "volup" | cec-client -s'
+        return None        # volUPCmd = 'echo "volup" | cec-client -s'
         subprocess.Popen(mp3Cmd, shell=True)
         # for x in range(0, 20):
         #  try:
@@ -151,10 +159,6 @@ def checkWatchdogRequest():
 
 
 def checkAlarmSetRequest():
-    if globalVars.getConfigField('alarmMotionActive') =='0':
-        # En la BD se ha indicado que no debemos activar el control por Motion
-        return None
-
     if globalVars.redisRequestGet(globalVars.redisAlarmSetRequest.replace('X',
                                   globalVars.raspiId)):
         alarmOn = globalVars.isAlarmActive()
@@ -166,10 +170,6 @@ def checkAlarmSetRequest():
 
 
 def checkMotionAlarmRequest():
-    if globalVars.getConfigField('alarmMotionActive') =='0':
-        # En la BD se ha indicado que no debemos activar el control por Motion
-        return False
-
     if globalVars.redisGet(globalVars.redisAlarmMotionRequest.replace('X',
                                   globalVars.raspiId)):
         # Tenemos una alerta de Motion! Debemos generar una alarma!
@@ -197,10 +197,6 @@ def checkTemperatureRequest():
 
 
 def checkTVOffRequest():
-    if globalVars.getConfigField('alarmKodiActive') =='0':
-        # En la BD se ha indicado que no debemos activar/parar Kodi
-        return None
-
     # Solo Raspi1 y Raspi3 tienen HDMI 1.4
     if (globalVars.raspiId != '1') and (globalVars.raspiId != '3'):
         return None
@@ -232,11 +228,6 @@ def checkTVOnRequest():
 
 def isPIRActive():
     global pirPIN
-
-    if globalVars.getConfigField('alarmPIRActive') =='0':
-        # En la BD se ha indicado que no debemos tener en cuenta el sensor PIR
-        return False
-
     pirActive = GPIO.input(pirPIN)
     if (pirActive):
         return True
@@ -377,15 +368,14 @@ if __name__ == "__main__":
                                             'Aviso ' +
                                             globalVars.raspiName, 600)
                         thread.start_new_thread(buzzer, (0.3,))
-                        if globalVars.getConfigField('alarmMP3Active') =='1':
-                            if (globalVars.raspiId == '1') or (
+                        if (globalVars.raspiId == '1') or (
                                 globalVars.raspiId == '3'):
-                                thread.start_new_thread(
-                                    playAlarmaKodi, (globalVars.pathAlarmaMP3, ))
-                            elif globalVars.raspiId == '4':
-                                thread.start_new_thread(
-                                    globalVars.playMP3,
-                                    (globalVars.pathAlarmaMP3, False))
+                            thread.start_new_thread(
+                                playAlarmaKodi, (globalVars.pathAlarmaMP3, ))
+                        elif globalVars.raspiId == '4':
+                            thread.start_new_thread(
+                                globalVars.playMP3,
+                                (globalVars.pathAlarmaMP3, False))
                 if waitingAlarm > 0:
                     waitingAlarm = waitingAlarm - 1
                 globalVars.checkAlarmOffRequest()

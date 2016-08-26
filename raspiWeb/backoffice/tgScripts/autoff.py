@@ -1,1 +1,1 @@
-autooff.py
+auto.py

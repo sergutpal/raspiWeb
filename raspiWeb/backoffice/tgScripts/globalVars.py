@@ -176,14 +176,15 @@ def setAlarmValue(pathDB, sql, field, value):
             DB.commit()
             cur.close()
             DB.close()
-            # Enviamos señal de cambio a todas las Pis para que
-            # arranquen/paren motion+camara
-            for i in range(1, numRaspis + 1):
-                redisRequestSet(redisAlarmSetRequest.replace('X', str(i)))
-                # Al iniciar el servicio Motion podemos tener falsas alarmas
-                # Por eso enviamos señal para ignorar todas las posibles
-                # detecciones del primer minuto
-                redisSet(redisMotionFirstMinuteIgnore.replace('X', str(i)), 'Ignorar los eventos del primer minuto', 60)
+            if (field =='alarmActive'):
+                # Enviamos señal de cambio a todas las Pis para que
+                # arranquen/paren motion+camara
+                for i in range(1, numRaspis + 1):
+                    redisRequestSet(redisAlarmSetRequest.replace('X', str(i)))
+                    # Al iniciar el servicio Motion podemos tener falsas alarmas
+                    # Por eso enviamos señal para ignorar todas las posibles
+                    # detecciones del primer minuto
+                    redisSet(redisMotionFirstMinuteIgnore.replace('X', str(i)), 'Ignorar los eventos del primer minuto', 60)
         return True
     except Exception as e:
         toLogFile('Error setAlarmValue: ' + str(e))
@@ -676,6 +677,28 @@ def watchdogRequest(sendToTelegram, piNumber='0'):
         watchdogNow()
     else:
         redisRequestSet(redisWatchdogRequest.replace('X', piNumber))
+
+
+def fail2ban(action):
+    global sendFile
+
+    cmd = '/usr/local/bin/fail2ban-client '
+    action = action.lower()
+    if (action == 'on'):
+        action = 'start'
+    elif (action == 'off'):
+        action = 'stop'
+    else:
+        action = 'status'
+    try:
+        cmd = cmd + action
+        toLogFile('Cmd fail2ban: ' + cmd)
+        process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+        txt = process.communicate()[0]
+        txt = 'Estado fail2ban: ' + txt
+        toFile(sendFile, txt)
+    except Exception as e:
+        toLogFile('Error fail2ban: ' + str(e))
 
 
 def firewall(action):

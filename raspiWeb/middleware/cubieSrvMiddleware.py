@@ -18,11 +18,12 @@ class CubieSrvMiddleware(object):
     def process_request(self, request):
         allowed_ips = globalVars.djangoIPAuth
         ip = self.get_client_ip(request)
-        #if ip not in allowed_ips:
-        #    msg = ''
-        #    # msg = 'allowed_ips: ' + allowed_ips +'. '
-        #    msg = msg + 'Peticion no autorizada de: ' + ip
-        #    globalVars.toLogFile(msg)
+        if ip not in allowed_ips:
+            msg = ''
+            # msg = 'allowed_ips: ' + allowed_ips +'. '
+            msg = msg + 'ATENCION POSIBLE PETICION NO AUTORIZADA DE: ' + ip
+            globalVars.toLogFile(msg)
+            globalVars.toFile(globalVars.sendFile, msg)
         #    raise Http404  # If user is not allowed raise Error
 
         try:

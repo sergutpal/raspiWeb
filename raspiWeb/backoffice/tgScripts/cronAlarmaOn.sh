@@ -1,1 +1,1 @@
-python /home/nfs/telegram/tgScripts/auto.py
+python /home/nfs/telegram/tgScripts/auto.py cron

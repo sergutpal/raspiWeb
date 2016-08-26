@@ -17,7 +17,7 @@ def isAnyMobilePhoneOn():
             hostsTxt = hostsTxt + ' ' + IP
         nm = nmap.PortScanner()
         nm.scan(hosts=hostsTxt, arguments='-sn')
-        # print 'Cmd: ' + nm.command_line()
+        print 'Cmd: ' + nm.command_line()
         hosts_list = [(x, nm[x]['status']['state']) for x in nm.all_hosts()]
         anyUp = False
         for host, status in hosts_list:

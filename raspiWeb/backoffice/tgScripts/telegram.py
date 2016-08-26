@@ -38,7 +38,7 @@ def checkPhoneAlarm():
             # Enviamos el aviso de alarma por Telegram
             sendToNC('msg ' + globalVars.tgDestinationAll + ' ' + message)
             mailTo = globalVars.getConfigField('mail')
-            if mailTo:
+            if mailTo and globalVars.getConfigField('alarmMailActive') =='1':
                 sendmail.send_mail(
                     mailTo, 'Alarma importante en casa!', None, message)
             # Solo hacemos una llamada de alarma cada 10 minutos como maximo
@@ -47,13 +47,15 @@ def checkPhoneAlarm():
             if previousCall is None:
                 globalVars.redisSet(
                     globalVars.redisAlarmaYaAvisadaCubie, message, 600)
-                for i in range(1, 4):
-                    callPhone = globalVars.getConfigField('phone' + str(i))
-                    if callPhone:
-                        globalVars.callPhone(callPhone)
-                        time.sleep(5)  # Esperamos 5s entre cada llamada
-                # Play alarma.mp3
-                globalVars.playMP3(globalVars.pathAlarmaMP3, False)
+                if globalVars.getConfigField('alarmPhoneActive') =='1':
+                    for i in range(1, 4):
+                        callPhone = globalVars.getConfigField('phone' + str(i))
+                        if callPhone:
+                            globalVars.callPhone(callPhone)
+                            time.sleep(5)  # Esperamos 5s entre cada llamada
+                if globalVars.getConfigField('alarmMP3Active') =='1':
+                    # Play alarma.mp3
+                    globalVars.playMP3(globalVars.pathAlarmaMP3, False)
         return None
     except Exception as e:
         globalVars.toLogFile('Error checkPhoneAlarm: ' + str(e))

@@ -5,6 +5,7 @@ import thread
 import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 
 import globalVars
 from musica import playMusic
@@ -45,6 +46,10 @@ def inicioMin(notifMsg):
 def inicio(request, notifMsg=''):
     values = inicioMin(notifMsg)
     values.update({'seeAll': False})
+    msg = 'Peticion Web CubieSrv: ' + notifMsg
+    globalVars.toLogFile(msg)
+    if notifMsg:
+        globalVars.toFile(globalVars.sendFile, msg)
     return render(request, 'inicio.html', values)
 
 
