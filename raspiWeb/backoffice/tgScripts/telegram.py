@@ -37,10 +37,9 @@ def checkPhoneAlarm():
         if message:
             # Enviamos el aviso de alarma por Telegram
             sendToNC('msg ' + globalVars.tgDestinationAll + ' ' + message)
-            mailTo = globalVars.getConfigField('mail')
-            if mailTo and globalVars.getConfigField('alarmMailActive') =='1':
+            if globalVars.getConfigField('alarmMailActive') =='1':
                 sendmail.send_mail(
-                    mailTo, 'Alarma importante en casa!', None, message)
+                    'Alarma importante en casa!', None, message)
             # Solo hacemos una llamada de alarma cada 10 minutos como maximo
             previousCall = globalVars.redisGet(
                 globalVars.redisAlarmaYaAvisadaCubie, False)
@@ -145,7 +144,7 @@ def checkGlobalVarsValues():
 
 def checkPlayMP3():
     try:
-        files = globalVars.filesByExt(globalVars.pathTmp, 'mp3')
+        files = globalVars.filesByExt(globalVars.pathTmpTelegram, 'mp3')
         for file in files:
             if globalVars.fileIsAvailable(file):
                 globalVars.playMP3(file, True)
@@ -161,7 +160,7 @@ def moveRpiCamTmp():
             path = os.path.join(src, file)
             if globalVars.fileIsAvailable(path):
                 if '.th.' not in path:
-                    shutil.move(path, globalVars.pathTmp)
+                    shutil.move(path, globalVars.pathTmpTelegram)
                 else:
                     os.remove(path)
     except Exception as e:
@@ -177,11 +176,11 @@ while (True):
         thread.start_new_thread(moveRpiCamTmp, ())
         thread.start_new_thread(sendMedia, ('send_photo', [
                   'png', 'gif', 'jpg'], globalVars.tgDestination,
-                  globalVars.pathTmp, globalVars.pathNFS))
+                  globalVars.pathTmpTelegram, globalVars.pathNFS))
         thread.start_new_thread(sendMedia, ('send_video', ['mp4', 'mpg',
                                           'mpeg', 'mkv', 'avi'],
                                 globalVars.tgDestination,
-                                globalVars.pathTmp,
+                                globalVars.pathTmpTelegram,
                                 globalVars.pathNFS))
         thread.start_new_thread(checkPlayMP3, ())
         # thread.start_new_thread(checkCPUTemp, ())

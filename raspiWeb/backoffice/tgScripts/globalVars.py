@@ -37,7 +37,7 @@ RpiCamPathTmp = pathTmpTelegram + 'RpiCam/'
 RpiCamStarted = False
 pathRpiCamFIFO = '/var/www/cam/FIFO'
 pathRpiCamJPG = '/dev/shm/mjpeg/cam.jpg'
-pathPhoto = pathTmp + 'telegram/RpiCam/RaspiX.jpg'
+pathPhoto = pathTmpTelegram + 'RpiCam/RaspiX.jpg'
 redisParkingRequest = 'openParking'
 redisPhotoRequest = 'insertFotoX'
 redisTVOffRequest = 'insertTVOffX'
@@ -442,7 +442,7 @@ def getConfigField(fieldName):
         sql = SQL_CONFIG_GET_FIELD.replace('field', fieldName)
         cur.execute(sql)
         data = cur.fetchone()
-        value = data[0]
+        value = str(data[0])
         cur.close()
         configDB.close()
         redisSet('config' + fieldName, value)

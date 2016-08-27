@@ -6,7 +6,6 @@ import shutil
 
 camera = None
 DELAY_FROM_PHOTOS = 1
-pathSendTelegram = globalVars.pathTmp
 pathTmp = '/tmp/'
 extensionPhoto = '.png'
 
@@ -44,7 +43,7 @@ def RpiCamPhoto(closeRpiCam):
         shutil.copyfile(globalVars.pathRpiCamJPG, tmpFile)
         #  shutil.copyfile(tmpFile, globalVars.pathPhoto.replace(
         #    'X', str(globalVars.raspiId)))
-        shutil.move(tmpFile, globalVars.pathTmp)
+        shutil.move(tmpFile, globalVars.pathTmpTelegram)
         return fileTo
     except Exception as e:
         globalVars.toLogFile('Error capturando fotografia (RpiCam): ' + str(e))
@@ -62,7 +61,6 @@ def cameraPhoto(closeRpiCam):
 def cameraAlarm():
     global camara
     global path
-    global pathSendTelegram
 
     try:
         for i in range(0, 3):

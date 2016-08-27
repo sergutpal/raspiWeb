@@ -9,22 +9,17 @@ import mimetypes
 import globalVars
 
 
-def send_mail(mailTo, subject, filesToAttach, Text):
-    SMTP_USER = 'sergutpalrpi@gmail.com'
-    SMTP_PWD = 'SGP24121976'
-    SMTP_HOST = 'smtp.gmail.com:587'
-    SMTP_FROM = 'Casa'
-    # SMTP_TO = mailTo; # ['sergutpal@hotmail.com', 'sergutpal@gmail.com',
-    # 'sgutierrez@aoc.cat', 'isharkova@gmail.com'];
-    SMTP_TO = ['sergutpal@hotmail.com', 'sergutpal@gmail.com',
-               'sgutierrez@aoc.cat', 'isharkova@gmail.com']
+def send_mail(subject, filesToAttach, Text, mailTo = ''):
+    SMTP_HOST = 'cubieSrv'
+    SMTP_FROM = 'sergutpalrpi@gmail.com'
+    if not mailTo:
+        mailTo = globalVars.getConfigField('mail')
+    SMTP_TO = mailTo
 
-    COMMASPACE = ', '
     outer = MIMEMultipart()
     outer['Subject'] = subject
     outer['From'] = SMTP_FROM
-    # outer['To'] = SMTP_TO;  # COMMASPACE.join(SMTP_TO);
-    outer['To'] = COMMASPACE.join(SMTP_TO)
+    outer['To'] = SMTP_TO
 
     msg = MIMEText(Text)
     outer.attach(msg)
@@ -63,6 +58,6 @@ def send_mail(mailTo, subject, filesToAttach, Text):
 
     smtp = smtplib.SMTP(SMTP_HOST)
     smtp.starttls()
-    smtp.login(SMTP_USER, SMTP_PWD)
-    smtp.sendmail(SMTP_FROM, SMTP_TO, outer.as_string())
+    # smtp.login(SMTP_USER, SMTP_PWD)
+    smtp.sendmail(SMTP_FROM, SMTP_TO.split(','), outer.as_string())
     smtp.quit()

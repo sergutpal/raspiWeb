@@ -47,9 +47,11 @@ def buzzer(freq):
     global pirPIN
     global buzzerTimes
 
+    print 'Buzzer: antes de comprobar el config'
     if globalVars.getConfigField('alarmBuzzerActive') =='0':
         # En la BD se ha indicado que no debe sonar el buzzer
         return None
+    print 'Buzzer: despues de comprobar el config: ' + globalVars.getConfigField('alarmBuzzerActive')
 
     for x in range(0, buzzerTimes):
         # Si la alarma no esta activa, entonces no tocamos el buzzer. Esto
@@ -246,6 +248,10 @@ def isPIRActive():
 
 def isDoorOpen():
     global doorPIN
+
+    if globalVars.getConfigField('alarmDoorActive') =='0':
+        # En la BD se ha indicado que no debemos tener en cuenta el sensor de la puerta
+        return False
 
     # Solo Raspi2 (parking) y Raspi4 (puerta principal) tienen doorOpen sensor
     if (globalVars.raspiId == '4') or (globalVars.raspiId == '2'):

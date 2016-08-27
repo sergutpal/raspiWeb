@@ -1,1 +1,0 @@
-/home/nfs/telegram/gpio/temperatura/bmp180/insertTemperatura.py

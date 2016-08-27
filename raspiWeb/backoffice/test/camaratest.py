@@ -8,7 +8,7 @@ import shutil
 
 camera = None;
 DELAY_FROM_PHOTOS = 1;
-pathSendTelegram = globalVars.pathTmp;
+pathSendTelegram = globalVars.pathTmpTelegram;
 pathTmp = '/tmp/';
 extensionPhoto = '.png';
 
