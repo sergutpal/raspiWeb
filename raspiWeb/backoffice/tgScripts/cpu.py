@@ -5,6 +5,7 @@ import psutil
 import datetime
 import sqlite3
 import subprocess
+import ip
 
 # command = "echo | vcgencmd measure_temp >> " + globalVars.sendFile;
 # process = subprocess.Popen(command, shell = True);
@@ -58,3 +59,6 @@ def writeInfo():
 if __name__ == "__main__":
     writeInfo()
     globalVars.firewall('status')
+    ip = ip.get_ip_public()
+    globalVars.toFile(globalVars.sendFile, "IP publica: " + ip)
+

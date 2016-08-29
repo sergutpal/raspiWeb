@@ -15,6 +15,7 @@ from foto import photoRequest
 from temperatura import sendTemperatureRequest
 from parking import parkingRequest
 from wakeonlan import wakeonlanRequest
+from ip import get_ip_public
 
 
 def getValueDB(pathDB, tableName, columnName, unity):
@@ -66,9 +67,11 @@ def inicioFull(request, notifMsg=''):
     temperatura_dormitorio = getValueDB(globalVars.pathTemperatureDB.replace(
         'X', '3'), 'temperatura', 'temperatura', ' grados')
     pathPhotos = getPathPhoto()
+    ip = get_ip_public()
 
     valuesFull = {'energiaValue': energia['value'],
                   'energiaTime': energia['time'],
+                  'ip': ip,
                   'temperatura_calleValue': temperatura_calle['value'],
                   'temperatura_calleTime': temperatura_calle['time'],
                   'temperatura_salonValue': temperatura_salon['value'],

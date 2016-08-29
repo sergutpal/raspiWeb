@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^alarma/(on|off)/$', alarma),
     url(r'^musica/(on|off)/$', musica),
     url(r'^m/(1|4)/$', musica1OR4),
-    url(r'^kodi/(1|3)/$', kodi),
+    url(r'^kodi/(1|2|3)/$', kodi),
     url(r'^foto/$', foto),
     url(r'^foto/(\d)/$', foto),
     url(r'^reboot/$', reboot),

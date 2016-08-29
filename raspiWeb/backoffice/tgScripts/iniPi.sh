@@ -7,8 +7,6 @@ ntpd -gq
 echo 0 >/sys/class/leds/led1/brightness
 echo 0 >/sys/class/leds/led0/brightness
 
-/home/nfs/telegram/tgScripts/iniAll.sh
-
 #START RASPIMJPEG SECTION
 mkdir -p /dev/shm/mjpeg
 chown www-data:www-data /dev/shm/mjpeg
@@ -24,6 +22,15 @@ echo "ru 0" > /var/www/cam/FIFO
 #END RASPIMJPEG SECTION
 
 python /home/nfs/telegram/gpio/pir/pir.py &
+
+/home/nfs/telegram/tgScripts/iniAll.sh
+
+host=$(</etc/hostname)
+if [ $host = "raspi2" ]; then
+	#/usr/local/bin/mpc clear
+	/usr/local/bin/mpc stop
+fi
+
 
 exit 0
 

@@ -31,6 +31,8 @@
 		<input type="checkbox" disabled data-toggle="toggle" data-on="Abierto" data-off="Cerrado" id="parkingChk" data-size="normal" {% if parking %} checked {% endif %}>
 	</h4>
 	{% if seeAll %}
+		<h4 id="ipLbl" class="text-primary"><strong>IP Pública:&nbsp; {{ ip }}</strong></h4>
+		<p>
  		<div id="chart-energia"></div>
  		<div id="chart-tempCalle"></div>
  		<div id="chart-tempSalon"></div>

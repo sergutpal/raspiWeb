@@ -89,4 +89,6 @@ def initCamera():
         globalVars.toLogFile('Error inicializando piCamera: ' + str(e))
     return
 
-# cameraPhoto(pathSendTelegram);
+
+if __name__ == "__main__":
+    cameraPhoto(True)

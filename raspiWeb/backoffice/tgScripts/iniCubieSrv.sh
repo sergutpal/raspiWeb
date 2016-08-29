@@ -19,11 +19,11 @@ python /home/nfs/telegram/tgScripts/telegram.py &
 /usr/sbin/ufw enable
 /usr/local/bin/fail2ban-client start
 
-/home/nfs/telegram/tgScripts/iniAll.sh
-
 python /home/nfs/telegram/tgScripts/info.py
 
-/usr/local/bin/mpc -h 127.0.0.1 -p 6601 clear
-/usr/local/bin/mpc -h 127.0.0.1 -p 6601 stop
+/home/nfs/telegram/tgScripts/iniAll.sh
+
+#/usr/local/bin/mpc -h 127.0.0.1 -p 6601 clear
+#/usr/local/bin/mpc -h 127.0.0.1 -p 6601 stop
 
 exit 0
