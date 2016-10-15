@@ -138,6 +138,18 @@ def checkKodiRequest():
     return None
 
 
+def checkMusicaRequest():
+    if globalVars.redisRequestGet(globalVars.redisMusicaRequest.replace('X',
+                                  globalVars.raspiId)):
+        globalVars.playMusic(True)
+        return True
+    if globalVars.redisRequestGet(globalVars.redisMusicaOffRequest.replace('X',
+                                  globalVars.raspiId)):
+        globalVars.stopMusic(True)
+        return True
+    return False
+
+
 def checkRebootRequest():
     if globalVars.redisRequestGet(globalVars.redisRebootRequest.replace('X',
                                   globalVars.raspiId)):
@@ -402,6 +414,7 @@ if __name__ == "__main__":
                 checkTVOnRequest()
                 checkMP3StreamingRequest()
                 checkKodiRequest()
+                checkMusicaRequest()
                 checkRebootRequest()
                 checkWatchdogRequest()
                 checkAlarmSetRequest()

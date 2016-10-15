@@ -1,16 +1,21 @@
 #!/usr/bin/python
 
-import subprocess
+import sys
 import globalVars
 
 
-def playMusic(sendTelegram):
-    command = globalVars.pathBaseTgScripts + "musica.sh"
-    subprocess.Popen(command, shell=True)
+def musicaPlay(restartMPD, sendFile):
+    if restartMPD:
+        globalVars.redisRequestSet(globalVars.redisMusicaRestartRequest)
+    globalVars.redisRequestSet(
+        globalVars.redisMusicaRequest.replace('X', '2'))
+    if sendFile:
+        globalVars.toFile(globalVars.sendFile, "Peticion Musica ON")
 
-    if sendTelegram:
-        globalVars.toFile(globalVars.sendFile, "mpc PLAYing")
-    return True
 
 if __name__ == "__main__":
-    playMusic(True)
+    if len(sys.argv) > 1:
+        restartMPD = True
+    else:
+        restartMPD = False
+    musicaPlay(restartMPD, True)

@@ -51,6 +51,9 @@ pathAlarmaMP3 = pathBase + 'mp3/alarma.mp3'
 pathTVOn = pathBase + 'mp3/alarma.mp3'
 redisMP3StreamingRequest = 'mp3StreamingX'
 redisKodiRequest = 'KodiRequestX'
+redisMusicaRequest = 'MusicaRequestX'
+redisMusicaRestartRequest = 'MusicaRestartRequest'
+redisMusicaOffRequest = 'MusicaOffRequestX'
 sendFile = pathTmpTelegram + 'send.txt'
 sendFileToAll = pathTmpTelegram + 'sendAll.txt'
 redisPhoneAlarmRequest = 'sendPhoneAlarm'
@@ -721,6 +724,34 @@ def firewall(action):
         toFile(sendFile, txt)
     except Exception as e:
         toLogFile('Error firewall: ' + str(e))
+
+
+def playMusic(sendTelegram):
+    global sendFile
+    global pathBaseTgScripts
+    global redisMusicaRestartRequest
+
+    if redisRequestGet(redisMusicaRestartRequest):
+        restart = " restart"
+    else:
+        restart = ""
+
+    command = pathBaseTgScripts + "musica.sh" + restart
+    subprocess.Popen(command, shell=True)
+
+    if sendTelegram:
+        toFile(sendFile, "mpc PLAYing")
+    return True
+
+
+def stopMusic(sendTelegram):
+    global sendFile
+
+    command = "/usr/local/bin/mpc stop -h 127.0.0.1"
+    subprocess.Popen(command, shell=True)
+    if (sendTelegram):
+        toFile(sendFile, "mpc STOP")
+    return True
 
 
 initGlobalVars()
