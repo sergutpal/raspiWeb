@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
-from django.conf.urls import include
 from raspiWeb.views import inicio, inicioFull, auto, alarma, musica, musica1OR4, \
                     kodi, foto, reboot, watchdog, temperatura, parking, \
                     wakeonlan, transmissionON, transmissionOFF, firewallON, \
@@ -28,8 +27,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),
     url(r'^inicio/$', inicioFull),
-    # url(r'^inicio/([\w\s.,]*)$', inicio), # Cualquier string se enviará a
-    # inicio para que muestre la notificacion flotante
     url(r'^auto/(on|off)/$', auto),
     url(r'^alarma/(on|off)/$', alarma),
     url(r'^musica/(on|off)/$', musica),

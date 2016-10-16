@@ -5,11 +5,10 @@ import thread
 import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
 
 import globalVars
-from musica import playMusic
-from musicaoff import stopMusic
+from musica import musicaPlay
+from musicaoff import musicaOff
 from kodi import kodiPlay
 from foto import photoRequest
 from temperatura import sendTemperatureRequest
@@ -43,6 +42,7 @@ def inicioMin(notifMsg):
               'parking': parking}
     return values
 
+
 @login_required
 def inicio(request, notifMsg=''):
     values = inicioMin(notifMsg)
@@ -52,6 +52,7 @@ def inicio(request, notifMsg=''):
     if notifMsg:
         globalVars.toFile(globalVars.sendFile, msg)
     return render(request, 'inicio.html', values)
+
 
 
 @login_required
@@ -126,10 +127,10 @@ def alarma(request, active):
 def musica(request, active=''):
     values = checkURLOnOff(active, None)
     if values['active']:
-        playMusic(False)
+        musicaPlay(False, False)
         msgNotif = 'Solicitud encender musica enviada'
     else:
-        stopMusic(False)
+        musicaOff(False)
         msgNotif = 'Solicitud apagar musica enviada'
     return inicio(request, msgNotif)
 
