@@ -13,9 +13,9 @@ DJANGO_WSGI_MODULE=raspiWeb.wsgi                     # WSGI module name
 
 # Activate the virtual environment
 cd $DJANGODIR
-#source ../bin/activate
-#export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
-#export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+source ../bin/activate
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
 # Create the run directory if it doesn't exist
 #RUNDIR=$(dirname $SOCKFILE)

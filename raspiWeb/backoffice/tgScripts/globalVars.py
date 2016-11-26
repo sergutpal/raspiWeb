@@ -170,8 +170,8 @@ def setAlarmValue(pathDB, sql, field, value):
         else:
             alarmStatus = INACTIVE
         alarmStatusOld = redisGet(field)
-        if (alarmStatusOld is None) or (alarmStatusOld != alarmStatus):
-            redisSet(field, alarmStatus)
+        redisSet(field, alarmStatus)
+        if (alarmStatusOld is None) or (alarmStatusOld != alarmStatus) or (1 == 1):
             sqlExec = sql.replace('valor', alarmStatus)
             DB = sqlite3.connect(pathDB)
             cur = DB.cursor()
@@ -179,15 +179,15 @@ def setAlarmValue(pathDB, sql, field, value):
             DB.commit()
             cur.close()
             DB.close()
-            if (field =='alarmActive'):
-                # Enviamos señal de cambio a todas las Pis para que
-                # arranquen/paren motion+camara
-                for i in range(1, numRaspis + 1):
-                    redisRequestSet(redisAlarmSetRequest.replace('X', str(i)))
-                    # Al iniciar el servicio Motion podemos tener falsas alarmas
-                    # Por eso enviamos señal para ignorar todas las posibles
-                    # detecciones del primer minuto
-                    redisSet(redisMotionFirstMinuteIgnore.replace('X', str(i)), 'Ignorar los eventos del primer minuto', 60)
+        if (field == 'alarmActive'):
+            # Enviamos señal de cambio a todas las Pis para que
+            # arranquen/paren motion+camara
+            for i in range(1, numRaspis + 1):
+                redisRequestSet(redisAlarmSetRequest.replace('X', str(i)))
+                # Al iniciar el servicio Motion podemos tener falsas alarmas
+                # Por eso enviamos señal para ignorar todas las posibles
+                # detecciones del primer minuto
+                redisSet(redisMotionFirstMinuteIgnore.replace('X', str(i)), 'Ignorar los eventos del primer minuto', 60)
         return True
     except Exception as e:
         toLogFile('Error setAlarmValue: ' + str(e))
@@ -231,10 +231,10 @@ def checkAlarmOffRequest():
             killOk = True
         if killOk:
             killProcessByName(mp3Cmd)
-            if killProcessByName(kodiCmd):
-                redisRequestSet(redisTVOffRequest.replace('X', '1'))
-                # Enviamos senyal para apagar la tv
-                redisRequestSet(redisTVOffRequest.replace('X', '3'))
+            killProcessByName(kodiCmd)
+            # Enviamos senyal para apagar la tv
+            redisRequestSet(redisTVOffRequest.replace('X', '1'))
+            redisRequestSet(redisTVOffRequest.replace('X', '3'))
         return None
     except Exception as e:
         toLogFile('Error checkAlarmOffRequest: ' + str(e))
@@ -547,6 +547,10 @@ def filesByExt(path, extList):
 
 def playMP3(pathMP3, deleteMP3):
     global mp3Cmd
+    global raspiId
+
+    if (raspiId != '2') and (raspiId != '4'):
+        return None
 
     try:
         mp3 = pathMP3

@@ -13,9 +13,15 @@ extensionPhoto = '.png'
 def RpiCamRaspiMJPEG(start):
     try:
         if start:
-            cmd = 'ru 1'
+            if not globalVars.RpiCamStarted:
+                cmd = 'ru 1'
+            else:
+                cmd = ''
         else:
-            cmd = 'ru 0'
+            if globalVars.RpiCamStarted:
+                cmd = 'ru 0'
+            else:
+                cmd = ''
         pathFIFO = globalVars.pathRpiCamFIFO
         globalVars.toFile(pathFIFO, cmd, False)
         globalVars.RpiCamStarted = start
