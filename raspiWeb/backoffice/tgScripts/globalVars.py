@@ -245,7 +245,7 @@ def callPhone(phoneNumber):
         toLogFile('Peticion callPhone: ' + phoneNumber)
         sipNumber = 'SIP/' + phoneNumber + '@netelip'
         call = Call(sipNumber, callerid="Cubie Alarm",
-                    wait_time=60, retry_time=60, max_retries=1)
+                    wait_time=60, retry_time=60, max_retries=0)
         con = Context('alerta', 's', '1')
         cf = CallFile(call, con, archive=True)
         cf.spool()
