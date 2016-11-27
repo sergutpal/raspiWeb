@@ -54,6 +54,8 @@ redisKodiRequest = 'KodiRequestX'
 redisMusicaRequest = 'MusicaRequestX'
 redisMusicaRestartRequest = 'MusicaRestartRequest'
 redisMusicaOffRequest = 'MusicaOffRequestX'
+redisPingRequest = 'PingRequestX'
+redisPingTimeoutKO = 'PingTimeoutKO'
 sendFile = pathTmpTelegram + 'send.txt'
 sendFileToAll = pathTmpTelegram + 'sendAll.txt'
 redisPhoneAlarmRequest = 'sendPhoneAlarm'
@@ -611,7 +613,7 @@ def redisSet(key, valor, secondsExpire=0):
 
 
 def redisRequestSet(keyRequest, valueRequest=''):
-    secondsExpire = 60
+    secondsExpire = 120
     if valueRequest == '':
         valueRequest = 'Peticion: ' + keyRequest
     return redisSet(keyRequest, valueRequest, secondsExpire)
@@ -628,6 +630,17 @@ def redisRequestGet(keyRequest):
             return False
     except Exception as e:
         toLogFile('redisRequestGet Key: ' + keyRequest + '. ' + str(e))
+        return None
+
+
+def redisDelete(key):
+    global redisSrv
+
+    try:
+        redisSrv.delete(key)
+        return True
+    except Exception as e:
+        toLogFile('redisDelete Key: ' + key + '. ' + str(e))
         return None
 
 
@@ -759,3 +772,4 @@ def stopMusic(sendTelegram):
 
 
 initGlobalVars()
+

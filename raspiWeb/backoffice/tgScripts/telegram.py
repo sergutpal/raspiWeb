@@ -8,6 +8,7 @@ import shutil
 import globalVars
 import thread
 import sendmail
+import ping
 # from pycall import CallFile, Call, Application
 
 hostname = globalVars.raspiName
@@ -167,6 +168,7 @@ def moveRpiCamTmp():
         globalVars.toLogFile('Error moveRpiCamTmp: ' + str(e))
     return
 
+
 checkGlobalVarsValues()
 while (True):
     try:
@@ -186,6 +188,7 @@ while (True):
         # thread.start_new_thread(checkCPUTemp, ())
         thread.start_new_thread(globalVars.flushSync,
                                 (globalVars.fileLog, False))
+        thread.start_new_thread(ping.checkPingReply, ())
         time.sleep(SECONDS_WAIT)
     except Exception as e:
         globalVars.toLogFile('Error procesando telegram.py: ' + str(e))

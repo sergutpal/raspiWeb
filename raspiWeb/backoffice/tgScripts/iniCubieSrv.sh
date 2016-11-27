@@ -33,4 +33,7 @@ find /home/imgPi/pi2/var/log -name "*.gz" -type f -delete
 find /home/imgPi/pi3/var/log -name "*.gz" -type f -delete
 find /home/imgPi/pi4/var/log -name "*.gz" -type f -delete
 find /home/nfs/telegram/logs -name "*.gz" -type f -delete
+host=$(</etc/hostname)
+iniFile="/home/nfs/telegram/logs/ini$host.log"
+echo CubieSrvOK >> $iniFile
 exit 0

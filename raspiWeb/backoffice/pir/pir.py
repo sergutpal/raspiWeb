@@ -7,6 +7,7 @@ import time
 import thread
 import subprocess
 import sqlite3
+import ping
 
 CHECK_SECONDS = 0.5     # Los sensores se comprueban cada CHECK_SECONDS
 PARKING_PULSE = 1.5     # Cuanto tiempo el rele que manda el pulsador del
@@ -240,6 +241,13 @@ def checkTVOnRequest():
     return None
 
 
+def checkPingRequest():
+    pingTimeStr = globalVars.redisGet(globalVars.redisPingTimeoutKO, False)
+    if pingTimeStr:
+        #  Hay peticion de ping para testear que no estemos ko
+        ping.setPingReply(globalVars.raspiId)
+
+
 def isPIRActive():
     global pirPIN
 
@@ -411,6 +419,7 @@ if __name__ == "__main__":
                 checkRebootRequest()
                 checkWatchdogRequest()
                 checkAlarmSetRequest()
+                checkPingRequest()
                 time.sleep(CHECK_SECONDS)
             except Exception as e:
                 txt = str(e)
