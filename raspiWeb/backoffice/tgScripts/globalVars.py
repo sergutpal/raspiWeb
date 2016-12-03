@@ -17,6 +17,7 @@ import redis
 numRaspis = 4
 redisSrv = redis.Redis("192.168.1.20")
 pathTmp = '/home/tmp/'
+pathDropBox = pathTmp + 'dropbox/'
 pathTmpTelegram = '/home/tmp/telegram/'
 pathBase = '/home/nfs/'
 pathBaseTelegram = pathBase + 'telegram/'
@@ -296,10 +297,10 @@ def flushSync(file, close):
     return
 
 
-def toFile(filePath, txt, flush=True):
+def toFile(filePath, txt, flush=True, mode='a'):
     try:
         # file = open(filePath, 'a+')
-        file = open(filePath, 'a')
+        file = open(filePath, mode)
         file.write(txt + '\n')
         if flush:
             flushSync(file, True)

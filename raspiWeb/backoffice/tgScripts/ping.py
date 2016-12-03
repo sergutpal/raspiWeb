@@ -3,7 +3,7 @@
 import globalVars
 import sys
 import time
-
+import dropboxSGP
 
 # Funcion que llamara cubieSrv desde un cron para comprobar si las raspis estan ok
 def sendPingRequest(piNumber=0):
@@ -18,6 +18,8 @@ def sendPingRequest(piNumber=0):
         fechahora = time.gmtime()
         fechahora = time.strftime("%d/%m/%Y %H:%M:%S", fechahora)
         globalVars.redisSet(globalVars.redisPingTimeoutKO, fechahora)
+
+        dropboxSGP.dropBoxUpdatePing()
         return True
     except Exception as e:
         globalVars.toLogFile('Error sendPingRequest: ' + str(e))
@@ -35,13 +37,15 @@ def checkPingReply():
             if secondsDiff > 120:
                 # Se ha superado el tiempo para recibir respuesta de las raspis.
                 # Hay que comprobar que todas las peticiones de ping esten ok
-                msgNoPing = 'Ping raspis: '
+                msgNoPing = 'Ping test raspis: '
+                KO = False
                 for i in range(1, globalVars.numRaspis + 1):
                     pingPi = globalVars.redisPingRequest.replace('X', str(i))
                     if globalVars.redisRequestGet(pingPi):
                         msgNoPing = msgNoPing + 'Pi ' + str(i) + ' KO. '
-                print msgNoPing
-                globalVars.toFile(globalVars.sendFile, msgNoPing)
+                        KO = True
+                if KO:
+                    globalVars.toFile(globalVars.sendFile, msgNoPing)
                 # Eliminamos la entrada del ping
                 globalVars.redisRequestGet(globalVars.redisPingTimeoutKO)
         return True

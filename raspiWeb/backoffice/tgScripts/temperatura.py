@@ -16,11 +16,11 @@ def getTemperatureHumidity():
                          'historicoTemperatura', 'temperatura', 'C',
                          globalVars.sendFileToAll)
     time.sleep(2)
-    globalVars.getValues(globalVars.pathTemperatureDB.replace('X', '2DHT22'),
-                         'HUMEDAD CALLE', 'temperatura',
-                         'historicoTemperatura', 'humedad', '%',
-                         globalVars.sendFileToAll)
-    time.sleep(2)
+    # globalVars.getValues(globalVars.pathTemperatureDB.replace('X', '2DHT22'),
+    #                      'HUMEDAD CALLE', 'temperatura',
+    #                     'historicoTemperatura', 'humedad', '%',
+    #                     globalVars.sendFileToAll)
+    # time.sleep(2)
     globalVars.getValues(globalVars.pathTemperatureDB.replace('X', '2DHT22'),
                          'TEMPERATURA CALLE DHT22', 'temperatura',
                          'historicoTemperatura', 'temperatura', 'C',

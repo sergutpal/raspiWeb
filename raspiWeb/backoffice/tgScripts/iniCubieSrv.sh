@@ -2,6 +2,7 @@
 
 mkdir /tmp/telegram
 mkdir /tmp/telegram/RpiCam
+mkdir /tmp/dropbox
 
 echo forcefsck > /forcefsck
 

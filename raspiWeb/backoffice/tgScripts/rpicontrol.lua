@@ -4,6 +4,8 @@ path = "/home/nfs/telegram/tgScripts"
 SERGIO = "Sergio"
 IRINA = "Irina"
 CAOC = "CAOC"
+PING = "AreyouOnline"
+PONG = "/PONG.py"
 
 function vardump(value, depth, key)
   local linePrefix = ""
@@ -116,7 +118,7 @@ function on_msg_receive (msg)
   msgFrom = msg.from.print_name
   if (msgFrom ==SERGIO) or (msgFrom ==IRINA) or (msgFrom ==CAOC) then
         local msgFull =string.lower(msg.text)
-        print('MENSAJE RECIBIDO de '..msgFrom..': #'..msgFull..'#')
+        -- print('MENSAJE RECIBIDO de '..msgFrom..': #'..msgFull..'#')
         local msgSplit =split(msgFull)
         local msgText =msgSplit[2]
         local msgParam1 =msgSplit[3]
@@ -128,12 +130,15 @@ function on_msg_receive (msg)
         if msgParam2 ~=nil then
           msgParams = msgParams..' '..msgParam2
         end
-	if file_exists(path..'/'..msgText..'.py') then
-                local cmd = 'python '..path..'/'..msgText..'.py'..msgParams
-                print('EJECUTANDO CMD: #'..cmd..'#')
-		os.execute(cmd)
-		return
-	end
+	      if file_exists(path..'/'..msgText..'.py') then
+          local cmd = 'python '..path..'/'..msgText..'.py'..msgParams
+		      os.execute(cmd)
+		      return
+	      end
+        if (msgText ==string.lower(PING)) then
+          local cmdPong = path..PONG
+          os.execute(cmdPong)
+        end
   end
 end
 
@@ -165,3 +170,5 @@ function on_binlog_replay_end ()
   started = 1
   postpone (cron, false, 1.0)
 end
+
+
