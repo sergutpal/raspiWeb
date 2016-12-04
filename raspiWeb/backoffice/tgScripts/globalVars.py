@@ -17,7 +17,15 @@ import redis
 numRaspis = 4
 redisSrv = redis.Redis("192.168.1.20")
 pathTmp = '/home/tmp/'
-pathDropBox = pathTmp + 'dropbox/'
+pathDropBoxFrom = pathTmp + 'dropbox/'
+pathDropBoxFromPing = pathDropBoxFrom + 'ping/'
+pathDropBoxFromBackup = pathDropBoxFrom + 'backup/'
+pathDropBoxTo = '/cubieSrv/'
+pathDropBoxToPing = pathDropBoxTo + 'ping/'
+pathDropBoxToBackup = pathDropBoxTo + 'backup/'
+pathDropBoxRead = pathDropBoxFrom + 'read/'
+PINGFILE = 'ping.txt'
+redisDropBoxIsBusy = 'dropboxIsBusy'
 pathTmpTelegram = '/home/tmp/telegram/'
 pathBase = '/home/nfs/'
 pathBaseTelegram = pathBase + 'telegram/'

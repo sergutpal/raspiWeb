@@ -1,0 +1,16 @@
+0-) Bot en el PC del curro para comprobar el ping de Dropbox y/o Telegram y avisar en caso de detectar un ko
+1-) Asterisk -> Que funcione por VPN y que salga el sonido
+2-) Raspi4 -> Parece que se queda sin energia y se cuelga
+3-) Abrir el parking (se necesita algún tipo de Rele)
+
+*-) Hacer backup HD cubieSrv completo
+
+*-) Configurar watchdogs en la cubie y en las raspis
+
+*-) Añadir raspi5 en el sotano con sensor puerta abierta y sensor humo
+
+*-) privoxy para poder navegar desde wifi publica
+*-) Añadir sensor temperatura en Raspi4
+
+*-) Emisor infrarojos para encender la estufa
+*-) Sensor humo/gases

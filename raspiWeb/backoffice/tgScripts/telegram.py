@@ -9,6 +9,8 @@ import globalVars
 import thread
 import sendmail
 import ping
+import dropboxSGP
+
 # from pycall import CallFile, Call, Application
 
 hostname = globalVars.raspiName
@@ -189,6 +191,7 @@ while (True):
         thread.start_new_thread(globalVars.flushSync,
                                 (globalVars.fileLog, False))
         thread.start_new_thread(ping.checkPingReply, ())
+        thread.start_new_thread(dropboxSGP.dropBoxSync, ())
         time.sleep(SECONDS_WAIT)
     except Exception as e:
         globalVars.toLogFile('Error procesando telegram.py: ' + str(e))

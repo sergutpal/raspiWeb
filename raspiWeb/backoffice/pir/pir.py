@@ -195,7 +195,7 @@ def checkMotionAlarmRequest():
 def checkPhotoRequest():
     if globalVars.redisRequestGet(globalVars.redisPhotoRequest.replace('X',
                                   globalVars.raspiId)):
-        thread.start_new_thread(camara.cameraPhoto, (True,))
+        thread.start_new_thread(camara.cameraPhoto, (True, True))
     return None
 
 

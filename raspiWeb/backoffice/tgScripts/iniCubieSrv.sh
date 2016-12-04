@@ -3,6 +3,8 @@
 mkdir /tmp/telegram
 mkdir /tmp/telegram/RpiCam
 mkdir /tmp/dropbox
+mkdir /tmp/dropbox/backup
+mkdir /tmp/dropbox/ping
 
 echo forcefsck > /forcefsck
 
@@ -10,6 +12,7 @@ cp /home/nfs/telegram/db/backupEmptyDB/efergy.db /tmp/telegram/efergy.db
 cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi1.db
 cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi2DHT22.db
 cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi3.db
+cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi4.db
 
 chmod -R 777 /tmp/telegram
 
@@ -38,3 +41,4 @@ host=$(</etc/hostname)
 iniFile="/home/nfs/telegram/logs/ini$host.log"
 echo CubieSrvOK >> $iniFile
 exit 0
+

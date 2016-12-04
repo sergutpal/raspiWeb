@@ -34,7 +34,7 @@ def RpiCamRaspiMJPEG(start):
         return globalVars.RpiCamStarted
 
 
-def RpiCamPhoto(closeRpiCam):
+def RpiCamPhoto(closeRpiCam, sendTelegram=False):
     global pathTmp
     try:
         if not globalVars.RpiCamStarted:
@@ -45,20 +45,21 @@ def RpiCamPhoto(closeRpiCam):
             RpiCamRaspiMJPEG(False)
         tmpFile = pathTmp + 'raspi' + globalVars.raspiId + \
             '_' + time.strftime('%d%m%y_%H%M%S') + '.jpg'
-        fileTo = pathTmp + 'raspi' + globalVars.raspiId + '.jpg'
+        fileName = 'raspi' + globalVars.raspiId + '.jpg'
+        fileTo = pathTmp + fileName
         shutil.copyfile(globalVars.pathRpiCamJPG, tmpFile)
-        #  shutil.copyfile(tmpFile, globalVars.pathPhoto.replace(
-        #    'X', str(globalVars.raspiId)))
-        shutil.move(tmpFile, globalVars.pathTmpTelegram)
+        if sendTelegram:
+            shutil.copyfile(tmpFile, globalVars.pathTmpTelegram + fileName)
+        shutil.move(tmpFile, globalVars.pathDropBoxFrom)
         return fileTo
     except Exception as e:
         globalVars.toLogFile('Error capturando fotografia (RpiCam): ' + str(e))
         return ''
 
 
-def cameraPhoto(closeRpiCam):
+def cameraPhoto(closeRpiCam, sendTelegram=False):
     try:
-        return RpiCamPhoto(closeRpiCam)
+        return RpiCamPhoto(closeRpiCam, sendTelegram)
     except Exception as e:
         globalVars.toLogFile('Error capturando fotografia (RpiCam): ' + str(e))
     return ''
@@ -69,8 +70,8 @@ def cameraAlarm():
     global path
 
     try:
-        for i in range(0, 3):
-            cameraPhoto(False)
+        for i in range(0, 60):
+            cameraPhoto(False, False)
             time.sleep(DELAY_FROM_PHOTOS)
         RpiCamRaspiMJPEG(False)
     except Exception as e:
