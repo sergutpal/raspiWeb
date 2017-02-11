@@ -199,6 +199,13 @@ def checkPhotoRequest():
     return None
 
 
+def checkCameraOffRequest():
+    if globalVars.redisRequestGet(globalVars.redisCameraOffRequest.replace('X',
+                                  globalVars.raspiId)):
+        thread.start_new_thread(camara.stopCamera, ())
+    return None
+
+
 def checkTemperatureRequest():
     if globalVars.redisRequestGet(globalVars.redisTempetureInsertRequest.
                                   replace('X', globalVars.raspiId)):
@@ -410,6 +417,7 @@ if __name__ == "__main__":
                 globalVars.checkAlarmOffRequest()
                 checkOpenParkingRequest()
                 checkPhotoRequest()
+                checkCameraOffRequest()
                 checkTemperatureRequest()
                 checkTVOffRequest()
                 checkTVOnRequest()

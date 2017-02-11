@@ -49,6 +49,7 @@ pathRpiCamJPG = '/dev/shm/mjpeg/cam.jpg'
 pathPhoto = pathTmpTelegram + 'RpiCam/RaspiX.jpg'
 redisParkingRequest = 'openParking'
 redisPhotoRequest = 'insertFotoX'
+redisCameraOffRequest = 'redisCameraOffRequestX'
 redisTVOffRequest = 'insertTVOffX'
 redisTVOnRequest = 'insertTVOnX'
 redisAlarmOffRequest = 'alarmOffX'
@@ -160,7 +161,9 @@ def isAlarmActive():
         data = cur.fetchone()
         cur.close()
         alarmDB.close()
-        if (str(data[0]) == ACTIVE):
+        value = str(data[0])
+        redisSet('alarmActive', value)
+        if (value == ACTIVE):
             return True
         else:
             return False

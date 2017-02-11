@@ -11,11 +11,12 @@ def sendPingRequest(piNumber=0):
         if piNumber == 0:
             for i in range(1, globalVars.numRaspis + 1):
                 pingRequest = globalVars.redisPingRequest.replace('X', str(i))
-                globalVars.redisSet(pingRequest, pingRequest)
+                globalVars.redisSet(pingRequest, pingRequest, 240)
         else:
             pingRequest = globalVars.redisPingRequest.replace('X', str(piNumber))
             globalVars.redisSet(pingRequest, pingRequest)
-        fechahora = time.gmtime()
+        # fechahora = time.gmtime()
+        fechahora = time.localtime()
         fechahora = time.strftime("%d/%m/%Y %H:%M:%S", fechahora)
         globalVars.redisSet(globalVars.redisPingTimeoutKO, fechahora)
 
@@ -31,7 +32,8 @@ def checkPingReply():
         pingTimeStr = globalVars.redisGet(globalVars.redisPingTimeoutKO, False)
         if pingTimeStr:
             pingTime = time.strptime(pingTimeStr, '%d/%m/%Y %H:%M:%S')
-            now = time.gmtime()
+            # now = time.gmtime()
+            now = time.localtime()
             secondsDiff = time.mktime(now) - time.mktime(pingTime)
             if secondsDiff > 120:
                 # Se ha superado el tiempo para recibir respuesta de las raspis.
@@ -45,7 +47,7 @@ def checkPingReply():
                         KO = True
                 if KO:
                     globalVars.toFile(globalVars.sendFile, msgNoPing)
-                    globalVars.toFile(globalVars.pathDropBoxFromPing, msgNoPing)
+                    # globalVars.toFile(globalVars.pathDropBoxFromPing, msgNoPing)
                 # Eliminamos la entrada del ping
                 globalVars.redisRequestGet(globalVars.redisPingTimeoutKO)
         return True
@@ -63,7 +65,8 @@ def setPingReply(piNumber):
 
 def updatePing():
     try:
-        fechaHora = time.gmtime()
+        # fechaHora = time.gmtime()
+        fechaHora = time.localtime()
         fechaHora = time.strftime('%d/%m/%Y %H:%M:%S', fechaHora)
 
         fileFromName = globalVars.PINGFILE

@@ -172,6 +172,7 @@ def moveRpiCamTmp():
 
 
 checkGlobalVarsValues()
+i = 1
 while (True):
     try:
         thread.start_new_thread(checkPhoneAlarm, ())
@@ -190,8 +191,12 @@ while (True):
         # thread.start_new_thread(checkCPUTemp, ())
         thread.start_new_thread(globalVars.flushSync,
                                 (globalVars.fileLog, False))
-        thread.start_new_thread(ping.checkPingReply, ())
+        if (i % 120) ==0:
+            thread.start_new_thread(ping.checkPingReply, ())
         thread.start_new_thread(dropboxSGP.dropBoxSync, ())
         time.sleep(SECONDS_WAIT)
+        if i > 1000000:
+            i = 0
+        i = i + 1
     except Exception as e:
         globalVars.toLogFile('Error procesando telegram.py: ' + str(e))

@@ -5,6 +5,7 @@ import datetime
 import time
 import os
 import dropbox
+import telegramSGP
 
 
 class DropBoxTransfer:
@@ -55,7 +56,7 @@ class DropBoxTransfer:
             globalVars.toLogFile('Error uploadFolder: ' + str(e))
         return False
 
-    def downloadFile(self, pathFrom, pathTo=None, deleteNewLine=False):
+    def downloadFile(self, pathFrom, pathTo=None):
         try:
             dbx = dropbox.Dropbox(self.access_token)
             globalVars.toLogFile('DropBox download: ' + pathFrom)
@@ -63,37 +64,21 @@ class DropBoxTransfer:
             content = res.content
             if pathTo:
                 with open(pathTo, "w") as f:
-                    f.write(content)
-            if deleteNewLine:
-                content = content.replace('\n', '')
+                    f.write(content.decode('utf-8'))
+                    f.close()
             return content
         except Exception as e:
             globalVars.toLogFile('Error downloadFile: ' + str(e))
         return False
 
 
-def dropBoxSync():
-    try:
-        if not globalVars.redisGet(globalVars.redisDropBoxIsBusy, False):
-            # Indicamos mediante una clave en Redis que Dropbox esta ocupado intentando evitar subir
-            # ficheros con concurrencia. La clave tendra una vigencia de 3h (10800s)
-            globalVars.redisSet(globalVars.redisDropBoxIsBusy, globalVars.redisDropBoxIsBusy, 10800)
-            dbx = DropBoxTransfer()
-            dbx.uploadFolder(globalVars.pathDropBoxFrom)
-            dbx.uploadFolder(globalVars.pathDropBoxFromPing, globalVars.pathDropBoxToPing)
-            dbx.uploadFolder(globalVars.pathDropBoxFromBackup, globalVars.pathDropBoxToBackup)
-            # Al acabar limpiamos la clave para que se ejecute en la proxima iteracion de telegram
-            globalVars.redisDelete(globalVars.redisDropBoxIsBusy)
-        return True
-    except Exception as e:
-        globalVars.toLogFile('Error dropBoxSync: ' + str(e))
-    return False
-
-
 def dropBoxReadPing():
     try:
         dbx = DropBoxTransfer()
-        content = dbx.downloadFile(globalVars.pathDropBoxToPing + globalVars.PINGFILE, None, True)
+        content = dbx.downloadFile(globalVars.pathDropBoxToPing + globalVars.PINGFILE, None)
+        content = content.decode('utf-8')
+        content = content.replace('\n', '')
+        globalVars.toLogFile('Ping: ' + content)
         return content
     except Exception as e:
         globalVars.toLogFile('Error dropBoxReadPing: ' + str(e))
@@ -105,10 +90,10 @@ def checkDropboxPingIsExpired():
         pingTimeStr = dropBoxReadPing()
         if not pingTimeStr:
             return True
-        pingTime = time.strptime(pingTimeStr, '%d/%m/%Y %H:%M:%S')
-        now = time.gmtime()
-        secondsDiff = time.mktime(now) - time.mktime(pingTime)
-        if secondsDiff > 2400:   # 40 minutos
+        pingTime = datetime.datetime.strptime(pingTimeStr, '%d/%m/%Y %H:%M:%S')
+        now = datetime.datetime.now()
+        secondsDiff = (now - pingTime).total_seconds()
+        if secondsDiff > 2400:   # 40 minutos            
             return True
         return False
     except Exception as e:
@@ -117,4 +102,4 @@ def checkDropboxPingIsExpired():
 
 
 if __name__ == "__main__":
-    dropBoxSync()
+    checkDropboxPingIsExpired()

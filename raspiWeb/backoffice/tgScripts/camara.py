@@ -10,6 +10,19 @@ pathTmp = '/tmp/'
 extensionPhoto = '.png'
 
 
+def stopCamera():
+    try:
+        time.sleep(DELAY_FROM_PHOTOS)
+        cmd = 'ru 0'
+        pathFIFO = globalVars.pathRpiCamFIFO
+        globalVars.toFile(pathFIFO, cmd, False)
+        globalVars.RpiCamStarted = False
+        return True
+    except Exception as e:
+        globalVars.toLogFile('Error stopCamera: ' + str(e))
+        return False
+
+
 def RpiCamRaspiMJPEG(start):
     try:
         if start:
@@ -73,7 +86,7 @@ def cameraAlarm():
         for i in range(0, 60):
             cameraPhoto(False, False)
             time.sleep(DELAY_FROM_PHOTOS)
-        RpiCamRaspiMJPEG(False)
+        stopCamera()
     except Exception as e:
         globalVars.toLogFile('Error cameraAlarm (picamara): ' + str(e))
     return

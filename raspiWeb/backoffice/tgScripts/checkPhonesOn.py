@@ -22,7 +22,7 @@ def isAnyMobilePhoneOn():
         anyUp = False
         for host, status in hosts_list:
             anyUp = True
-            # print('{0}:{1}'.format(host, status))
+            print('{0}:{1}'.format(host, status))
         return anyUp
     except Exception as e:
         print e
@@ -31,7 +31,7 @@ def isAnyMobilePhoneOn():
 
 
 def checkModeAuto():
-    MAX_CHECKS = 30
+    MAX_CHECKS = 50
     WAIT_CHECK = 2
 
     try:
