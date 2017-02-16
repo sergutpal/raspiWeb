@@ -13,7 +13,7 @@ DJANGO_WSGI_MODULE=raspiWeb.wsgi                     # WSGI module name
 
 # Activate the virtual environment
 cd $DJANGODIR
-source ../bin/activate
+#source ../bin/activate
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
@@ -29,5 +29,5 @@ exec /usr/local/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --user=$USER --group=$GROUP \
   --bind=127.0.0.1:8008 \
   #--max-requests 1 \ # El valor a 1 sirve para desarrollo: reload gunicorn en cada peticion de forma que siempre ejecuta el ultimo codigo actualizado
-  --log-level=error \
+  --log-level=debug \
   --log-file=/home/nfs/raspiWeb/logs/gunicorn.log

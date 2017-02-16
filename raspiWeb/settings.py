@@ -34,7 +34,7 @@ SECRET_KEY = 's#*y0&w(lgij=&ig51mw5$j+u7-9m-e=6aiz3o_tc$r7+82zh^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'sergutpal.dynu.com', 'localhost', '127.0.0.1']
 
 
 # Application definition

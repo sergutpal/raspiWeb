@@ -3,6 +3,7 @@
 import time
 import thread
 import sqlite3
+import django
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
@@ -37,9 +38,10 @@ def inicioMin(notifMsg):
     alarma = globalVars.isAlarmActive()
     auto = globalVars.isAlarmAuto()
     parking = globalVars.isParkingOpen()
+    djangovers = django.VERSION
 
     values = {'notifMsg': notifMsg, 'alarma': alarma, 'auto': auto,
-              'parking': parking}
+              'parking': parking, 'djangovers': djangovers}
     return values
 
 

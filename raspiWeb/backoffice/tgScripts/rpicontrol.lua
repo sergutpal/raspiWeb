@@ -3,6 +3,8 @@ our_id = 0
 path = "/home/nfs/telegram/tgScripts"
 SERGIO = "Sergio"
 IRINA = "Irina"
+ANDREU = "Andreu"
+VALERIA = "Valeria"
 CAOC = "CAOC"
 PING = "AreyouOnline"
 PONG = "/PONG.py"
@@ -116,7 +118,7 @@ function on_msg_receive (msg)
   -- do_notify (get_title (msg.from, msg.to), msg.text)
 
   msgFrom = msg.from.print_name
-  if (msgFrom ==SERGIO) or (msgFrom ==IRINA) or (msgFrom ==CAOC) then
+  if (msgFrom ==SERGIO) or (msgFrom ==IRINA) or (msgFrom ==CAOC) or (msgFrom ==ANDREU) or (msgFrom ==VALERIA) then
         local msgFull =string.lower(msg.text)
         -- print('MENSAJE RECIBIDO de '..msgFrom..': #'..msgFull..'#')
         local msgSplit =split(msgFull)
@@ -130,15 +132,15 @@ function on_msg_receive (msg)
         if msgParam2 ~=nil then
           msgParams = msgParams..' '..msgParam2
         end
-	      if file_exists(path..'/'..msgText..'.py') then
-          local cmd = 'python '..path..'/'..msgText..'.py'..msgParams
-		      os.execute(cmd)
-		      return
-	      end
-        if (msgText ==string.lower(PING)) then
-          local cmdPong = path..PONG
-          os.execute(cmdPong)
-        end
+	  if file_exists(path..'/'..msgText..'.py') then
+              local cmd = 'python '..path..'/'..msgText..'.py'..msgParams
+              os.execute(cmd)
+	      return
+	  end
+        #if (msgText ==string.lower(PING)) then
+        #  local cmdPong = path..PONG
+        #  os.execute(cmdPong)
+        #end
   end
 end
 
