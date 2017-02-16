@@ -19,7 +19,8 @@ def main(argv):
         if IPEvent and ((globalVars.getConfigField('IPAuto1') == IPEvent) or
                         (globalVars.getConfigField('IPAuto2') == IPEvent) or
                         (globalVars.getConfigField('IPAuto3') == IPEvent)):
-            if (globalVars.isAlarmActive() and globalVars.isAlarmAuto()):
+            # if (globalVars.isAlarmActive() and globalVars.isAlarmAuto()):
+            if (globalVars.isAlarmActive()):
                 globalVars.setAlarm(False)
                 globalVars.toFile(globalVars.sendFileToAll,
                                   "Alarma desactivada automaticamente")
