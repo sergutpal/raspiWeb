@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+from django.utils.deprecation import MiddlewareMixin
 from django.contrib import auth
 from django.http import Http404
 import globalVars
 
 
-class CubieSrvMiddleware(object):
+class CubieSrvMiddleware(MiddlewareMixin):
     # Check if client IP is allowed
 
     def get_client_ip(self, request):
