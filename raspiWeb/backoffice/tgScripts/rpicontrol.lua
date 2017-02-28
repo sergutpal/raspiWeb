@@ -137,10 +137,10 @@ function on_msg_receive (msg)
               os.execute(cmd)
 	      return
 	  end
-        #if (msgText ==string.lower(PING)) then
-        #  local cmdPong = path..PONG
-        #  os.execute(cmdPong)
-        #end
+        if (msgText ==string.lower(PING)) then
+          local cmdPong = path..PONG
+          os.execute(cmdPong)
+        end
   end
 end
 

@@ -71,6 +71,7 @@ sendFileToAll = pathTmpTelegram + 'sendAll.txt'
 redisPhoneAlarmRequest = 'sendPhoneAlarm'
 redisAlarmaYaAvisadaCubie = 'alarmaYaAvisadaCubie'
 redisAlarmaYaAvisadaRaspi = 'alarmaYaAvisadaRaspiX'
+redisAlarmaBolsaYaAvisada = 'alarmaYaAvisadaBolsaX'
 tgDestination = 'Sergio'
 tgDestinationAll = 'Casa'
 MAX_CPU_TEMP_ALERT = 80.0
