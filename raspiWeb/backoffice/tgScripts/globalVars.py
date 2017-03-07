@@ -85,6 +85,7 @@ DATETIME_LAST_24H = "datetime('now', 'localtime', '-1 day')"
 DATETIME_LAST_2HOUR = "datetime('now', 'localtime', '-2 hour')"
 ACTIVE = '1'
 INACTIVE = '0'
+NIGHTMODE = '2'
 SQL_ALARM_SELECT = 'SELECT activa FROM alarma;'
 SQL_ALARM_UPDATE = 'INSERT INTO historicoAlarma(activa, data) VALUES ' + \
     '(valor,' + DATETIME_NOW + ' );'
@@ -145,17 +146,15 @@ def isAlarmAuto():
             return False
 
 
-def isAlarmActive():
+def getAlarmValue():
     global pathAlarmDB
     global SQL_ALARM_SELECT
-    global ACTIVE
 
     try:
-        alarmActive = redisGetBool('alarmActive')
-        if alarmActive is not None:
-            return alarmActive
-        # Si no hay valor en la cache, hay que ir a la BD SQLite a comprobar el
-        # valor
+        alarmStatus = redisGet('alarmActive')
+        if alarmStatus is not None:
+            return alarmStatus
+
         alarmDB = sqlite3.connect(pathAlarmDB)
         cur = alarmDB.cursor()
         cur.execute(SQL_ALARM_SELECT)
@@ -163,11 +162,41 @@ def isAlarmActive():
         cur.close()
         alarmDB.close()
         value = str(data[0])
+
         redisSet('alarmActive', value)
-        if (value == ACTIVE):
+        return value
+    except Exception as e:
+        toLogFile('Error getAlarmValue: ' + str(e))
+        return False
+
+
+def isNightModeActive():
+    global NIGHTMODE
+
+    try:
+        value = getAlarmValue()
+        if (value == NIGHTMODE):
             return True
         else:
             return False
+    except Exception as e:
+        toLogFile('Error isNightModeActive: ' + str(e))
+        return False
+
+
+def isAlarmActive():
+    global ACTIVE
+    global raspiId
+
+    try:
+        value = getAlarmValue()
+        if (value == ACTIVE):
+            return True
+        else:
+            if (raspiId != '3'):  # En el modo noche, la unica Raspi que no debe estar "atenta" es la Raspi3
+                return isNightModeActive()
+            else:
+                return False
     except Exception as e:
         toLogFile('Error isAlarmActive: ' + str(e))
         return False
@@ -176,24 +205,26 @@ def isAlarmActive():
 def setAlarmValue(pathDB, sql, field, value):
     global ACTIVE
     global INACTIVE
+    global NIGHTMODE
     global redisAlarmSetRequest
     global numRaspis
 
     try:
-        if (value):
-            alarmStatus = ACTIVE
+        if (value == NIGHTMODE):
+            alarmStatus = NIGHTMODE
         else:
-            alarmStatus = INACTIVE
-        alarmStatusOld = redisGet(field)
+            if (value):
+                alarmStatus = ACTIVE
+            else:
+                alarmStatus = INACTIVE
         redisSet(field, alarmStatus)
-        if (alarmStatusOld is None) or (alarmStatusOld != alarmStatus) or (1 == 1):
-            sqlExec = sql.replace('valor', alarmStatus)
-            DB = sqlite3.connect(pathDB)
-            cur = DB.cursor()
-            cur.execute(sqlExec)
-            DB.commit()
-            cur.close()
-            DB.close()
+        sqlExec = sql.replace('valor', alarmStatus)
+        DB = sqlite3.connect(pathDB)
+        cur = DB.cursor()
+        cur.execute(sqlExec)
+        DB.commit()
+        cur.close()
+        DB.close()
         if (field == 'alarmActive'):
             # Enviamos señal de cambio a todas las Pis para que
             # arranquen/paren motion+camara

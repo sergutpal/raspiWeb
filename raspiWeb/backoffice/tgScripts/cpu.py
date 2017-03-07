@@ -13,10 +13,13 @@ import ip
 
 def writeInfo():
     try:
-        if (globalVars.isAlarmActive()):
-            txt = 'La alarma esta ACTIVADA. '
+        if (globalVars.isNightModeActive()):
+            txt = 'La alarma esta en modo NOCHE. '
         else:
-            txt = 'La alarma esta desactivada. '
+            if (globalVars.isAlarmActive()):
+                txt = 'La alarma esta ACTIVADA. '
+            else:
+                txt = 'La alarma esta desactivada. '
         if (globalVars.isAlarmAuto()):
             txt = txt + 'Alarma: Modo automatico activado. '
         else:
@@ -50,15 +53,16 @@ def writeInfo():
         txt = txt + '. Boottime: ' + \
             datetime.datetime.fromtimestamp(
                 bootime).strftime('%d/%m/%y %H:%M:%S')
+        print(txt)
     except Exception as e:
-        txt = txt + '. ' + str(e)
+        txt = 'Error writeInfo: ' + str(e)
     finally:
         globalVars.toFile(globalVars.sendFile, txt)
 
 
 if __name__ == "__main__":
     writeInfo()
-    globalVars.firewall('status')
-    ip = ip.get_ip_public()
-    globalVars.toFile(globalVars.sendFile, "IP publica: " + ip)
+    #globalVars.firewall('status')
+    #ip = ip.get_ip_public()
+    #globalVars.toFile(globalVars.sendFile, "IP publica: " + ip)
 
