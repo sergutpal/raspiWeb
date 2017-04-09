@@ -30,7 +30,9 @@ int isAlarmActive(sqlite3 *db) {
 	value = qrySelectOneValueInt(db, SQL_IS_ALARM_ACTIVE, &error);
 	if (error) // Si hay error consideramos que la alarma está inactiva
 		value = 0;
-	return value;
+        if (value >1) // Si estamos en modo nocturno, no consideramos que estamos en modo Alarma
+                value = 0;
+        return value;
 }
 
 void getSetupPi(sqlite3 *db, int idPi, int *dht22, int *dht11, int *pir, int *camera, int *HCSR04, int *Buzzer) {

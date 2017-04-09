@@ -5,6 +5,7 @@ SERGIO = "Sergio"
 IRINA = "Irina"
 ANDREU = "Andreu"
 VALERIA = "Valeria"
+RASPIBOT = "raspiBot"
 CAOC = "CAOC"
 PING = "AreyouOnline"
 PONG = "/PONG.py"
@@ -118,10 +119,10 @@ function on_msg_receive (msg)
   -- do_notify (get_title (msg.from, msg.to), msg.text)
 
   msgFrom = msg.from.print_name
-  if (msgFrom ==SERGIO) or (msgFrom ==IRINA) or (msgFrom ==CAOC) or (msgFrom ==ANDREU) or (msgFrom ==VALERIA) then
-        local msgFull =string.lower(msg.text)
+  local msgFull =string.lower(msg.text)
+  local msgSplit =split(msgFull)
+  if (msgFrom ==SERGIO) or (msgFrom ==IRINA) or (msgFrom ==CAOC) or (msgFrom ==ANDREU) or (msgFrom ==VALERIA) then    
         -- print('MENSAJE RECIBIDO de '..msgFrom..': #'..msgFull..'#')
-        local msgSplit =split(msgFull)
         local msgText =msgSplit[2]
         local msgParam1 =msgSplit[3]
         local msgParam2 =msgSplit[4]
@@ -141,6 +142,13 @@ function on_msg_receive (msg)
           local cmdPong = path..PONG
           os.execute(cmdPong)
         end
+  else
+    if (msgFrom ==RASPIBOT) and (string.sub(msgFull, 1, 4) =='sgp.') then       
+      -- Es un mensaje de etiqueta NFC      
+      local cmd = 'python '..path..'/nfc.py '..msgFull
+      -- print('MENSAJE NFC RECIBIDO: '..cmd)
+      os.execute(cmd)
+    end
   end
 end
 

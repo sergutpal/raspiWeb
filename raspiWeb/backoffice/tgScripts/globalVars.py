@@ -26,6 +26,7 @@ pathDropBoxToBackup = pathDropBoxTo + 'backup/'
 pathDropBoxRead = pathDropBoxFrom + 'read/'
 PINGFILE = 'ping.txt'
 redisDropBoxIsBusy = 'dropboxIsBusy'
+redisNFCIsBusy = 'redisNFCIsBusy'
 pathTmpTelegram = '/home/tmp/telegram/'
 pathBase = '/home/nfs/'
 pathBaseTelegram = pathBase + 'telegram/'
@@ -193,7 +194,7 @@ def isAlarmActive():
         if (value == ACTIVE):
             return True
         else:
-            if (raspiId != '3'):  # En el modo noche, la unica Raspi que no debe estar "atenta" es la Raspi3
+            if (raspiId != '3' and raspiId != '1'):  # En el modo noche, la unica Raspi que no debe estar "atenta" es la Raspi3. Tampoco Raspi1 que parece que está dando falsas alarmas
                 return isNightModeActive()
             else:
                 return False

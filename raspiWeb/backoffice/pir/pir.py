@@ -10,7 +10,7 @@ import sqlite3
 import ping
 
 CHECK_SECONDS = 0.5     # Los sensores se comprueban cada CHECK_SECONDS
-PARKING_PULSE = 1.5     # Cuanto tiempo el rele que manda el pulsador del
+PARKING_PULSE = 0.6     # Cuanto tiempo el rele que manda el pulsador del
                         # parking debe estar apretado para abrir el motor
                         # del parking
 WAIT_SECONDS_ALARM = 600
