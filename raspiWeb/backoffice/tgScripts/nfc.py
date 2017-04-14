@@ -23,8 +23,21 @@ import sqlite3
 
 CMD_TEST_OK = "sgp"
 MAX_DELAY_CMD = 30
-REPEAT_CMD_SECONDS = 15
+REPEAT_CMD_SECONDS = 20
 SQL_ALARM_SELECT = 'SELECT COUNT(*) FROM androidAuthNFC WHERE androidID ="ANDROID_ID_XXXX";'
+
+
+def checkNFCBlock():
+    try:
+        if globalVars.getConfigField('blockNFC') == '1':
+            globalVars.toLogFile('checkNFCBlock: peticion NFC ignorada porque blockNFC esta activado')
+            return True
+        else:
+            return False
+    except Exception as e:
+        globalVars.toLogFile('Error checkNFCBlock: ' + str(e))
+        return False
+
 
 
 def checkNFCFree():
@@ -38,7 +51,6 @@ def checkNFCFree():
 
 
 def checkAndroidID(androidID):
-
     sql = SQL_ALARM_SELECT.replace('ANDROID_ID_XXXX', androidID)
     try:
         configDB = sqlite3.connect(globalVars.pathConfigDB)
@@ -107,7 +119,7 @@ if __name__ == "__main__":
     try:
         if len(sys.argv) >=2:
             cmd = sys.argv[1]
-            if checkNFCFree():
+            if not checkNFCBlock() and checkNFCFree():
                 parseExecNFC(cmd)
     except Exception as e:
         globalVars.toLogFile('Error NFC: ' + str(e))

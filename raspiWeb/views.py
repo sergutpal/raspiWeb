@@ -14,6 +14,7 @@ from kodi import kodiPlay
 from foto import photoRequest
 from temperatura import sendTemperatureRequest
 from parking import parkingRequest
+from flush import flushAll
 from wakeonlan import wakeonlanRequest
 from ip import get_ip_public
 
@@ -265,6 +266,12 @@ def transmissionON(request):
 def transmissionOFF(request):
     globalVars.supervisor('transmission', False)
     return inicio(request, 'Solicitud Transmission OFF enviada')
+
+
+@login_required
+def flush(request):
+    flushAll()
+    return inicio(request, 'Solicitud Flush enviada')
 
 
 @login_required

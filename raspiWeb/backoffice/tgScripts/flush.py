@@ -19,5 +19,9 @@ def flushRedis():
         return False
 
 
-if __name__ == "__main__":
+def flushAll():
     flushRedis()
+
+
+if __name__ == "__main__":
+    flushAll()
