@@ -37,10 +37,13 @@ python /home/nfs/telegram/tgScripts/info.py
 #find /home/imgPi/pi3/var/log -name "*.gz" -type f -delete
 #find /home/imgPi/pi4/var/log -name "*.gz" -type f -delete
 #find /home/nfs/telegram/logs -name "*.gz" -type f -delete
+rm -rf /home/imgPi/pi1/var/www/cam/media/*
+rm -rf /home/imgPi/pi2/var/www/cam/media/*
+rm -rf /home/imgPi/pi3/var/www/cam/media/*
+rm -rf /home/imgPi/pi4/var/www/cam/media/*
 #truncate -s 0 /home/nfs/telegram/logs/*
 #truncate -s 0 /var/log/*
 host=$(</etc/hostname)
 iniFile="/home/nfs/telegram/logs/ini$host.log"
 echo CubieSrvOK >> $iniFile
 exit 0
-
