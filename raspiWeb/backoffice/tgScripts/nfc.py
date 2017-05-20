@@ -91,7 +91,7 @@ def parseExecNFC(cmd):
 
         cmdTime = time.strptime(c[3], '%d%m%Y_%H%M%S')
         now = time.localtime()
-        secondsDiff = time.mktime(now) - time.mktime(cmdTime)
+        secondsDiff = abs(time.mktime(now) - time.mktime(cmdTime))
         if secondsDiff > MAX_DELAY_CMD:
             globalVars.toLogFile('parseExecNFC han pasado mas de ' + str(MAX_DELAY_CMD) + ' segundos. Comando: ' + cmd + ' ignorado')
             return False
