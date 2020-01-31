@@ -1,4 +1,4 @@
 #!/bin/bash
 
-python /home/nfs/telegram/tgScripts/checkPhonesOn.py
+python3 /home/nfs/telegram/tgScripts/checkPhonesOn.py
 exit $?

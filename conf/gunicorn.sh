@@ -13,7 +13,7 @@ DJANGO_WSGI_MODULE=raspiWeb.wsgi                     # WSGI module name
 
 # Activate the virtual environment
 cd $DJANGODIR
-#source ../bin/activate
+source /home/nfs/raspiWeb/raspiweb/bin/activate
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
@@ -23,11 +23,12 @@ export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
-exec /usr/local/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+#exec /usr/local/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+exec gunicorn ${DJANGO_WSGI_MODULE}:application \
   --name $NAME \
   --workers $NUM_WORKERS \
   --user=$USER --group=$GROUP \
   --bind=127.0.0.1:8008 \
   #--max-requests 1 \ # El valor a 1 sirve para desarrollo: reload gunicorn en cada peticion de forma que siempre ejecuta el ultimo codigo actualizado
   --log-level=debug \
-  --log-file=/home/nfs/raspiWeb/logs/gunicorn.log
+  --log-file=/home/tmp/gunicorn.log

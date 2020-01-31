@@ -20,5 +20,6 @@ int insertEfergy(sqlite3 *db, float energia) {
   char sql[255];
 
   sprintf(sql, SQL_INSERT_EFERGY, energia, DATETIME_NOW);
+  system("/home/nfs/telegram/gpio/efergy/efergyToMQTT.sh");
   return qryNonUpdate(db, sql);
 }

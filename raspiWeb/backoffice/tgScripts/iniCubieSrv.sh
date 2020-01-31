@@ -1,12 +1,8 @@
 #!/bin/sh -e
 
-mkdir /tmp/telegram
-mkdir /tmp/telegram/RpiCam
-mkdir /tmp/dropbox
-mkdir /tmp/dropbox/backup
-mkdir /tmp/dropbox/ping
-
 echo forcefsck > /forcefsck
+
+/home/nfs/telegram/tgScripts/iniTmps.sh
 
 cp /home/nfs/telegram/db/backupEmptyDB/efergy.db /tmp/telegram/efergy.db
 cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi1.db
@@ -14,21 +10,15 @@ cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/tempera
 cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi3.db
 cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi4.db
 
-chmod -R 777 /tmp/telegram
-
 # /usr/local/bin/noip2 &
-
-python /home/nfs/telegram/tgScripts/telegram.py &
+python3 /home/nfs/telegram/tgScripts/telegram.py &
 
 /usr/sbin/ufw enable
-/usr/local/bin/fail2ban-client start
+#/usr/local/bin/fail2ban-client start
 
-python /home/nfs/telegram/tgScripts/info.py
+/usr/local/squid/sbin/squid -YC -N -f /etc/squid/squid.conf &
 
 /home/nfs/telegram/tgScripts/iniAll.sh
-
-#/usr/local/bin/mpc -h 127.0.0.1 -p 6601 clear
-#/usr/local/bin/mpc -h 127.0.0.1 -p 6601 stop
 
 #find / -name ".nfs000*" -type f -delete  # Borramos todos los ficheros temporales del NFS que se hayan podido quedar residentes
 #find /var/log -name "*.gz" -type f -delete
@@ -38,12 +28,27 @@ python /home/nfs/telegram/tgScripts/info.py
 #find /home/imgPi/pi4/var/log -name "*.gz" -type f -delete
 #find /home/nfs/telegram/logs -name "*.gz" -type f -delete
 rm -rf /home/imgPi/pi1/var/www/cam/media/*
-rm -rf /home/imgPi/pi2/var/www/cam/media/*
+#rm -rf /home/imgPi/pi2/var/www/cam/media/*
 rm -rf /home/imgPi/pi3/var/www/cam/media/*
 rm -rf /home/imgPi/pi4/var/www/cam/media/*
-#truncate -s 0 /home/nfs/telegram/logs/*
-#truncate -s 0 /var/log/*
-host=$(</etc/hostname)
-iniFile="/home/nfs/telegram/logs/ini$host.log"
-echo CubieSrvOK >> $iniFile
+#truncate --size=0 /home/nfs/telegram/logs/*
+#truncate --size=0 /var/log/*
+#truncate --size=0 /var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Logs/*
+
+chmod 777 -R /var/run/php
+
+echo 0 >/sys/class/leds/led1/brightness
+echo 0 >/sys/class/leds/led0/brightness
+
+/home/nfs/telegram/tgScripts/iniPi.sh &
+
+/home/nfs/telegram/gpio/efergy/efergy.sh &
+
+/home/nfs/telegram/tgScripts/firewall.sh
+
+/usr/local/bin/mpc -h 127.0.0.1 -p 6600 clear
+/usr/local/bin/mpc -h 127.0.0.1 -p 6600 stop
+
+python3 /home/nfs/telegram/tgScripts/info.py
+
 exit 0

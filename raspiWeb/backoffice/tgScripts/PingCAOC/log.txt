@@ -1,0 +1,124 @@
+29/07/19 08:02:48  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:02:48  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:02:48  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:03:26  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:03:26  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:03:26  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:03:44  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:03:44  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:03:44  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:05:24  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:05:24  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:05:24  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:05:24  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:06:27  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:06:27  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:06:27  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:06:27  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:09:03  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:09:03  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:09:03  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:09:03  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:09:36  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:09:36  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:09:36  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:09:36  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:09:52  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:09:52  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:09:52  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:09:52  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:11:00  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:11:00  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:11:00  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:11:00  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:13:57  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:13:57  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:13:57  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:13:57  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:16:39  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:16:39  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:16:39  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:16:39  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:17:14  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:17:14  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:17:14  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:17:14  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:18:00  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:18:00  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:18:00  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:18:00  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:18:17  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:18:17  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:18:17  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:18:24  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:18:24  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:18:24  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:18:33  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:18:33  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:18:33  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:19:56  - raspiX. downloadFile inicio
+29/07/19 08:19:56  - raspiX. downloadFile token ok
+29/07/19 08:19:56  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:19:56  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:19:56  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:19:56  - raspiX. Error checkDropboxPingIsExpired: can only concatenate str (not "NoneType") to str
+29/07/19 08:21:00  - raspiX. downloadFile inicio
+29/07/19 08:21:00  - raspiX. downloadFile token ok
+29/07/19 08:21:00  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:21:00  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:21:00  - raspiX. content ok
+29/07/19 08:21:00  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:21:09  - raspiX. downloadFile inicio
+29/07/19 08:21:09  - raspiX. downloadFile token ok
+29/07/19 08:21:09  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:21:09  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:21:09  - raspiX. content ok
+29/07/19 08:21:09  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:22:33  - raspiX. downloadFile inicio
+29/07/19 08:22:33  - raspiX. downloadFile token ok
+29/07/19 08:22:33  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:22:33  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:22:33  - raspiX. content ok
+29/07/19 08:22:33  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:27:06  - raspiX. downloadFile inicio
+29/07/19 08:27:06  - raspiX. downloadFile token ok
+29/07/19 08:27:06  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 08:27:06  - raspiX. Error downloadFile: Timeout value connect was Timeout(connect=30, read=30, total=None), but it must be an int, float or None.
+29/07/19 08:27:06  - raspiX. content ok
+29/07/19 08:27:06  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:29:24  - raspiX. downloadFile inicio
+29/07/19 08:29:24  - raspiX. Error downloadFile: module 'dropbox' has no attribute 'Dropbox'
+29/07/19 08:29:24  - raspiX. content ok
+29/07/19 08:29:24  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:39:30  - raspiX. downloadFile inicio
+29/07/19 08:39:30  - raspiX. Error downloadFile: module 'dropbox' has no attribute 'Dropbox'
+29/07/19 08:39:30  - raspiX. content ok
+29/07/19 08:39:30  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:41:17  - raspiX. downloadFile inicio
+29/07/19 08:41:17  - raspiX. Error downloadFile: module 'dropbox' has no attribute 'Dropbox'
+29/07/19 08:41:17  - raspiX. content ok
+29/07/19 08:41:17  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:42:37  - raspiX. downloadFile inicio
+29/07/19 08:42:37  - raspiX. Error downloadFile: module 'dropbox' has no attribute 'Dropbox'
+29/07/19 08:42:37  - raspiX. content ok
+29/07/19 08:42:37  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 08:43:46  - raspiX. downloadFile inicio
+29/07/19 08:43:46  - raspiX. Error downloadFile: module 'dropbox' has no attribute 'Dropbox'
+29/07/19 08:43:46  - raspiX. content ok
+29/07/19 08:43:46  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 09:16:25  - raspiX. downloadFile inicio
+29/07/19 09:16:25  - raspiX. downloadFile token ok
+29/07/19 09:16:25  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 09:16:25  - raspiX. kokokoko
+29/07/19 09:16:25  - raspiX. Error downloadFile: can only concatenate str (not "bytes") to str
+29/07/19 09:16:25  - raspiX. content ok
+29/07/19 09:16:25  - raspiX. Error dropBoxReadPing: 'bool' object has no attribute 'decode'
+29/07/19 09:18:46  - raspiX. downloadFile inicio
+29/07/19 09:18:47  - raspiX. downloadFile token ok
+29/07/19 09:18:47  - raspiX. DropBox download: /cubieSrv/ping/ping.txt
+29/07/19 09:18:47  - raspiX. kokokoko
+29/07/19 09:18:47  - raspiX. antes del return
+29/07/19 09:18:47  - raspiX. content ok
+29/07/19 09:18:47  - raspiX. content decode ok
+29/07/19 09:18:47  - raspiX. content replace ok
+29/07/19 09:18:47  - raspiX. Ping: 29/07/2019 09:14:45

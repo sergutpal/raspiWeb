@@ -6,7 +6,6 @@ import socket
 import datetime
 import os
 import shutil
-import thread
 import subprocess
 
 CHECK_SECONDS = 0.3;
@@ -21,7 +20,7 @@ def initGPIO():
     GPIO.setup(pirPIN, GPIO.IN)
     return 1;
   except Exception as e:
-    print 'Error inicializando GPIO: ' + str(e) +'\n';
+    print('Error inicializando GPIO: ' + str(e) +'\n');
     return 0;
 
 def isPIRActive():

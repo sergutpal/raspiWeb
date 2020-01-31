@@ -59,7 +59,6 @@ class DropBoxTransfer:
     def downloadFile(self, pathFrom, pathTo=None):
         try:
             dbx = dropbox.Dropbox(self.access_token)
-            globalVars.toLogFile('DropBox download: ' + pathFrom)
             metadata, res = dbx.files_download(pathFrom)
             content = res.content
             if pathTo:
@@ -75,10 +74,9 @@ class DropBoxTransfer:
 def dropBoxReadPing():
     try:
         dbx = DropBoxTransfer()
-        content = dbx.downloadFile(globalVars.pathDropBoxToPing + globalVars.PINGFILE, None)
+        content = dbx.downloadFile(globalVars.pathDropBoxToPing + globalVars.PINGFILE)
         content = content.decode('utf-8')
         content = content.replace('\n', '')
-        globalVars.toLogFile('Ping: ' + content)
         return content
     except Exception as e:
         globalVars.toLogFile('Error dropBoxReadPing: ' + str(e))
@@ -93,7 +91,7 @@ def checkDropboxPingIsExpired():
         pingTime = datetime.datetime.strptime(pingTimeStr, '%d/%m/%Y %H:%M:%S')
         now = datetime.datetime.now()
         secondsDiff = (now - pingTime).total_seconds()
-        if secondsDiff > 2400:   # 40 minutos            
+        if secondsDiff > 2400:   # 40 minutos
             return True
         return False
     except Exception as e:

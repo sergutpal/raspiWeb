@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import time
-import thread
+from _thread import start_new_thread
 import sqlite3
 import django
 from django.shortcuts import render
@@ -12,11 +12,13 @@ from musica import musicaPlay
 from musicaoff import musicaOff
 from kodi import kodiPlay
 from foto import photoRequest
-from temperatura import sendTemperatureRequest
+from temperatura import sendLastTemperatureTelegram
 from parking import parkingRequest
 from flush import flushAll
 from wakeonlan import wakeonlanRequest
 from ip import get_ip_public
+from MQTTSend import pubMQTTMsg
+import MQTTServer
 
 
 def getValueDB(pathDB, tableName, columnName, unity):
@@ -87,7 +89,7 @@ def inicioFull(request, notifMsg=''):
     return render(request, 'inicio.html', values)
 
 
-def checkURLOnOff(active, getValueFunction, msgNotif='', msgFemale=False):
+def checkURLOnOff(active, msgNotif='', msgFemale=False):
     if active.lower() == 'on':
         set = True
         active = True
@@ -105,24 +107,30 @@ def checkURLOnOff(active, getValueFunction, msgNotif='', msgFemale=False):
     return {'active': active, 'status': status, 'set': set}
 
 
-def setValueOnOff(active, setFunction, getValueFunction, msgNotif, msgFemale):
-    values = checkURLOnOff(active, getValueFunction, msgNotif, msgFemale)
-    if values['set']:
-        setFunction(values['active'])
-    return values
+def setValueOnOff(active, topic, msgNotif, msgFemale):
+    try:
+        values = checkURLOnOff(active, msgNotif, msgFemale)
+        if values['set']:
+            if values['active']:
+               payload = MQTTServer.payloadAlarmaON
+            else:
+               payload = MQTTServer.payloadAlarmaOFF
+            globalVars.toLogFile('setValueOnOff antes de publicar ')
+            pubMQTTMsg(topic, payload)
+        return values
+    except Exception as e:
+        globalVars.toLogFile('Error setValueOnOff: ' + str(e))
 
 
 @login_required
 def auto(request, active):
-    values = setValueOnOff(active, globalVars.setAlarmAuto,
-                           globalVars.isAlarmAuto, 'Modo auto', False)
+    values = setValueOnOff(active, MQTTServer.topicAlarmaAuto, 'Modo auto', False)
     return inicio(request, values['status'])
 
 
 @login_required
 def alarma(request, active):
-    values = setValueOnOff(active, globalVars.setAlarm,
-                           globalVars.isAlarmActive, 'Alarma', True)
+    values = setValueOnOff(active, MQTTServer.topicAlarma, 'Alarma', True)
     return inicio(request, values['status'])
 
 
@@ -171,7 +179,7 @@ def foto(request, piNumber='0'):
 
 @login_required
 def temperatura(request, piNumber='0'):
-    sendTemperatureRequest(int(piNumber))
+    sendLastTemperatureTelegram()
     time.sleep(5)
     return inicio(request, 'Solicitud temperatura ' + piNumber + ' enviada')
 
@@ -214,7 +222,7 @@ def wakeonlan(request):
 @login_required
 def reboot(request, piNumber='-1'):
     if piNumber != '-1':
-        thread.start_new_thread(globalVars.rebootRequest, (False, piNumber))
+        start_new_thread(globalVars.rebootRequest, (False, piNumber))
         # if piNumber == '0':
         #     allPi = True
         # else:
@@ -235,7 +243,7 @@ def reboot(request, piNumber='-1'):
                     piNumber = '0'
             else:
                 piNumber = '0'
-            thread.start_new_thread(
+            start_new_thread(
                 globalVars.rebootRequest, (False, piNumber))
             # if piNumber == '0':
             #     allPi = True

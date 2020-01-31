@@ -15,16 +15,24 @@ import redis
 # En esta variable indicamos cuantas raspis tenemos para los bucles de
 # peticion (solicitar temperatura, foto, tv, etc.)
 numRaspis = 4
-redisSrv = redis.Redis("192.168.1.20")
+redisSrv = redis.Redis("192.168.1.20", decode_responses=True)
 pathTmp = '/home/tmp/'
+pathDeleteLogic = '/home/nfs/tmp/ToDelete'
 pathDropBoxFrom = pathTmp + 'dropbox/'
 pathDropBoxFromPing = pathDropBoxFrom + 'ping/'
 pathDropBoxFromBackup = pathDropBoxFrom + 'backup/'
+pathDropBoxFromCamEntrada = pathDropBoxFrom + 'camEntrada/'
+pathDropBoxFromCamComedor = pathDropBoxFrom + 'camComedor/'
+pathDropBoxFromVideo = pathDropBoxFrom + 'video/'
 pathDropBoxTo = '/cubieSrv/'
 pathDropBoxToPing = pathDropBoxTo + 'ping/'
 pathDropBoxToBackup = pathDropBoxTo + 'backup/'
+pathDropBoxToCamEntrada = pathDropBoxTo + 'camEntrada/'
+pathDropBoxToCamComedor = pathDropBoxTo + 'camComedor/'
+pathDropBoxToVideo = pathDropBoxTo + 'video/'
 pathDropBoxRead = pathDropBoxFrom + 'read/'
 PINGFILE = 'ping.txt'
+redisPuertaParkingAbierta = 'PuertaParkingAbierta'
 redisDropBoxIsBusy = 'dropboxIsBusy'
 redisNFCIsBusy = 'redisNFCIsBusy'
 pathTmpTelegram = '/home/tmp/telegram/'
@@ -37,7 +45,7 @@ pathEfergyDB = pathTmpTelegram + 'efergy.db'
 pathAlarmDB = pathBaseTelegram + 'db/alarma.db'
 pathTemperatureDB = pathTmpTelegram + 'temperaturaraspiX.db'
 pathParkingDB = pathBaseTelegram + 'db/parking.db'
-logFile = pathBaseTelegram + 'logs/log.txt'
+logFile = pathTmpTelegram + 'logs/log.txt'
 alertFile = pathBaseTelegram + 'logs/logAlerts.txt'
 redisAlarmRequest = 'AlarmRequestX'
 redisAlarmMotionRequest = 'AlarmMotionRequestX'
@@ -46,10 +54,15 @@ redisTempetureInsertRequest = 'insertTemperaturaX'
 RpiCamPathTmp = pathTmpTelegram + 'RpiCam/'
 RpiCamStarted = False
 pathRpiCamFIFO = '/var/www/cam/FIFO'
+pathRpiCamMedia = '/var/www/cam/media/'
 pathRpiCamJPG = '/dev/shm/mjpeg/cam.jpg'
 pathPhoto = pathTmpTelegram + 'RpiCam/RaspiX.jpg'
+pathVideo = pathTmpTelegram + 'RpiCam/RaspiX.mp4'
+pathAlexaTTS=pathBaseTgScripts +'alexaTTS/'
 redisParkingRequest = 'openParking'
 redisPhotoRequest = 'insertFotoX'
+redisVideoRequest = 'insertVideoX'
+redisCameraStartRequest = 'insertCameraStartX'
 redisCameraOffRequest = 'redisCameraOffRequestX'
 redisTVOffRequest = 'insertTVOffX'
 redisTVOnRequest = 'insertTVOnX'
@@ -101,7 +114,12 @@ mp3Cmd = 'mpg123'
 kodiCmd = 'kodi'
 SPACE_SEPARATOR = 100
 djangoIPAuth = ''
-raspiId = 0
+aqaraMotionNum = 4
+aqaraDoorNum = 3
+timeVideoRecord = 60
+rtspEntrada = 'rtsp://admin:VTLOZG@192.168.1.220:554'
+rtspSalon = 'rtsp://admin:KVHPVD@192.168.1.224:554'
+raspiId = '0'
 raspiName = 'raspiX'
 
 
@@ -271,9 +289,9 @@ def checkAlarmOffRequest():
 
     try:
         killOk = False
-        if ((raspiId == 0) and (redisRequestGet(redisAlarmOffRequestCubie))):
+        if ((raspiId == '0') and (redisRequestGet(redisAlarmOffRequestCubie))):
             killOk = True
-        if ((raspiId > 0) and
+        if ((raspiId != '0') and
                 (redisRequestGet(redisAlarmOffRequest.replace('X', raspiId)))):
             killOk = True
         if killOk:
@@ -311,7 +329,7 @@ def getRaspiId():
     if raspiN.isdigit():
         return raspiN
     else:
-        return 0  # Es la Cubie y la identificamos con el 0
+        return '0'  # Es la Cubie y la identificamos con el 0
 
 
 def getTemperatureDBPath():
@@ -330,9 +348,9 @@ def flushSync(file, close):
         try:
             os.fsync(file.fileno())
         except Exception as e:
-            # Ignoramos la excepcion: las pipes no permiten estan operacion y
+            # Ignoramos la excepcion: las pipes no permiten esta operacion y
             # por eso generan una excepcion!
-            # print 'Excepcion fsync: ' + str(e)
+            # print('Excepcion fsync: ' + str(e))
             pass
         if close:
             file.close()
@@ -430,20 +448,31 @@ def moveFile(filepath, directory):
 
 
 def findProcess(processName):
-    ps = subprocess.Popen("ps -C " + processName,
-                          shell=True, stdout=subprocess.PIPE)
-    output = ps.stdout.read()
-    ps.stdout.close()
-    ps.wait()
-    return output
+    #ps = subprocess.Popen("ps -C " + processName,
+    #                      shell=True, stdout=subprocess.PIPE, universal_newlines=True, bufsize=1)
+    #output = ps.stdout.read()
+    #ps.stdout.close()
+    #ps.wait()
+    #return output
+
+    found = False
+    try:
+        processName = processName.lower()
+        for proc in psutil.process_iter():
+            procName = proc.name()
+            procName = procName.lower()
+            if processName in procName:
+                proc.kill()
+                found = True
+        return found
+    except Exception as e:
+        toLogFile('Error findProcess: ' + str(e))
+        return False
 
 
 def isProcessRunning(processName):
     output = findProcess(processName)
-    if re.search(processName, output) is None:
-        return False
-    else:
-        return True
+    return output
 
 
 def killProcessByName(processName):
@@ -596,14 +625,14 @@ def playMP3(pathMP3, deleteMP3):
     global mp3Cmd
     global raspiId
 
-    if (raspiId != '2') and (raspiId != '4'):
-        return None
+#    if (raspiId != '0') and (raspiId != '3'):
+#        return None
 
     try:
         mp3 = pathMP3
         if not isProcessRunning(mp3Cmd):
             toLogFile('Reproduciendo MP3: ' + mp3)
-            subprocess.Popen(mp3Cmd + ' "' + mp3 + '"', shell=True)
+            subprocess.Popen(mp3Cmd + ' "' + mp3 + '"', shell=True, universal_newlines=True, bufsize=1)
             if deleteMP3:
                 try:
                     time.sleep(10)
@@ -747,7 +776,7 @@ def watchdogRequest(sendToTelegram, piNumber='0'):
 def fail2ban(action):
     global sendFile
 
-    cmd = '/usr/local/bin/fail2ban-client '
+    cmd = '/usr/bin/fail2ban-client '
     action = action.lower()
     if (action == 'on'):
         action = 'start'
@@ -758,8 +787,9 @@ def fail2ban(action):
     try:
         cmd = cmd + action
         toLogFile('Cmd fail2ban: ' + cmd)
-        process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
-        txt = process.communicate()[0]
+        process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, universal_newlines=True, bufsize=1)
+        #txt = process.communicate()[0]
+        txt = 'Desconocido'
         txt = 'Estado fail2ban: ' + txt
         toFile(sendFile, txt)
     except Exception as e:
@@ -780,9 +810,10 @@ def firewall(action):
     try:
         cmd = cmd + action
         toLogFile('Cmd UFW: ' + cmd)
-        process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
-        txt = process.communicate()[0]
-        txt = 'Estado Firewall(UFW): ' + txt
+        process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, universal_newlines=True, bufsize=1)
+        #txt = process.communicate()[0]
+        #txt = 'Estado Firewall(UFW): ' + txt
+        txt = 'Estado Firewall(UFW) desconocido'
         toFile(sendFile, txt)
     except Exception as e:
         toLogFile('Error firewall: ' + str(e))
@@ -809,11 +840,44 @@ def playMusic(sendTelegram):
 def stopMusic(sendTelegram):
     global sendFile
 
-    command = "/usr/local/bin/mpc stop -h 127.0.0.1"
+    #toLogFile('SGP llegando peticion mo')
+    command = "/usr/bin/mpc stop -h 127.0.0.1"
     subprocess.Popen(command, shell=True)
     if (sendTelegram):
-        toFile(sendFile, "mpc STOP")
+    	toFile(sendFile, "mpc STOP SGP")
     return True
+
+
+def getUniqueIdFromDate():
+    ts = time.localtime()
+    ts = time.strftime("%d%m%Y_%H%M%S", ts)
+    return ts
+
+
+def playAlexaTTS(path):
+    global raspiId
+    global pathAlexaTTS
+
+    if (raspiId != '0'):
+        return None
+
+    try:
+        pathAlarmaTTS = pathAlexaTTS + path
+        toLogFile('playAlexaTTS: ' + pathAlarmaTTS)
+        subprocess.Popen(pathAlarmaTTS, shell=True, universal_newlines=True, bufsize=1)
+        return True
+    except Exception as e:
+        toLogFile('Error playAlexaTTS: ' + str(e))
+        return False
+
+
+def fireAlarm(alerta):
+    strAlert = dateTime() + raspiName + alerta + '\n'
+    redisSet(redisPhoneAlarmRequest, strAlert)
+    for i in range(0, numRaspis + 1):
+        redisRequestSet(
+            redisAlarmRequest.replace('X',str(i)))
+    toFile(alertFile, strAlert)
 
 
 initGlobalVars()

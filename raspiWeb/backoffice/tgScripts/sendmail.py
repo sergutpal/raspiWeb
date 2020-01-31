@@ -10,8 +10,10 @@ import globalVars
 
 
 def send_mail(subject, filesToAttach, Text, mailTo = ''):
-    SMTP_HOST = 'cubieSrv'
+    # SMTP_HOST = '127.0.0.1'
+    SMTP_HOST = 'smtp.gmail.com: 587'
     SMTP_FROM = 'sergutpalrpi@gmail.com'
+    SMTP_PWD = 'VGs08022007'
     if not mailTo:
         mailTo = globalVars.getConfigField('mail')
     SMTP_TO = mailTo
@@ -56,8 +58,10 @@ def send_mail(subject, filesToAttach, Text, mailTo = ''):
                                'attachment', filename=filename)
                 outer.attach(msg)
 
+    #smtp = smtplib.SMTP(SMTP_HOST)
     smtp = smtplib.SMTP(SMTP_HOST)
     smtp.starttls()
-    # smtp.login(SMTP_USER, SMTP_PWD)
+    smtp.login(SMTP_FROM, SMTP_PWD)
+    globalVars.toLogFile(outer.as_string())
     smtp.sendmail(SMTP_FROM, SMTP_TO.split(','), outer.as_string())
     smtp.quit()

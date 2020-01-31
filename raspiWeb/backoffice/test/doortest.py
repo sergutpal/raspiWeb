@@ -6,7 +6,6 @@ import socket
 import datetime
 import os
 import shutil
-import thread
 import subprocess
 
 CHECK_SECONDS = 0.3;
@@ -22,23 +21,23 @@ def initGPIO():
     GPIO.setup(doorPIN, GPIO.IN)
     return 1;
   except Exception as e:
-    print 'Error inicializando GPIO: ' + str(e) +'\n';
+    print('Error inicializando GPIO: ' + str(e) +'\n');
     return 0;
 
 def isDoorOpen():
   global doorPIN;
   pinActive = GPIO.input(doorPIN);
   if (pinActive):
-    return False;
-  else:
     return True;
+  else:
+    return False;
 
 ok =initGPIO();
 if (ok ==1):
   while (True):
     pinActive = isDoorOpen();
     if (pinActive):
-      print ('Abierta!!!!!');
+      print('Abierta!!!!!');
     else:
-      print ('Nada');
+      print('Nada');
     time.sleep(CHECK_SECONDS);

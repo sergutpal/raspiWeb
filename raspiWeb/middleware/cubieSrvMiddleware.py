@@ -28,14 +28,14 @@ class CubieSrvMiddleware(MiddlewareMixin):
         #    raise Http404  # If user is not allowed raise Error
 
         try:
-            if ip in allowed_ips and not request.user.is_authenticated():
+            if ip in allowed_ips and not request.user.is_authenticated:
                 # Si es una IP de confianza, hacemos el login automatico
                 usrName = globalVars.getConfigField('autoLoginUser')
                 usrPasswd = globalVars.getConfigField('autoLoginPasswd')
                 user = auth.authenticate(username=usrName, password=usrPasswd)
                 if user is not None and user.is_active:
                     auth.login(request, user)
-                    globalVars.toLogFile('Login automático desde IP: ' + ip)
+                    globalVars.toLogFile('Login automatico desde IP: ' + ip)
         except Exception as e:
             globalVars.toLogFile('Error CubieSrvMiddleware.process_request: ' +
                                  str(e))

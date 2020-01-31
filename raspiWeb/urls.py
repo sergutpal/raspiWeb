@@ -15,15 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.contrib.auth.views import login, logout
+from django.contrib.auth.views import LoginView #, logout
 from raspiWeb.views import inicio, inicioFull, auto, alarma, musica, musica1OR4, \
                     kodi, foto, reboot, watchdog, temperatura, parking, \
                     wakeonlan, transmissionON, transmissionOFF, flush, \
                     firewallON, firewallOFF
 
 urlpatterns = [
-    url(r'^accounts/login/$', login, {'template_name': 'admin/login.html'}),
-    url(r'^accounts/logout/$', logout, {'template_name': 'admin/login.html'}),
+    #url(r'^accounts/login/$', login, {'template_name': 'admin/login.html'}),
+    url(r'^accounts/login/$', LoginView.as_view(template_name='admin/login.html'), name="login"),
+#    url(r'^accounts/logout/$', logout, {'template_name': 'admin/login.html'}),
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),
     url(r'^inicio/$', inicioFull),

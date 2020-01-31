@@ -1,1 +1,1 @@
-python /home/nfs/telegram/tgScripts/temperatura.py
+python3 /home/nfs/telegram/tgScripts/temperatura.py

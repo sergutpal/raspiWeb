@@ -122,7 +122,7 @@ function on_msg_receive (msg)
   local msgFull =string.lower(msg.text)
   local msgSplit =split(msgFull)
   if (msgFrom ==SERGIO) or (msgFrom ==IRINA) or (msgFrom ==CAOC) or (msgFrom ==ANDREU) or (msgFrom ==VALERIA) then    
-        -- print('MENSAJE RECIBIDO de '..msgFrom..': #'..msgFull..'#')
+        --print('MENSAJE RECIBIDO de '..msgFrom..': #'..msgFull..'#')
         local msgText =msgSplit[2]
         local msgParam1 =msgSplit[3]
         local msgParam2 =msgSplit[4]
@@ -134,7 +134,8 @@ function on_msg_receive (msg)
           msgParams = msgParams..' '..msgParam2
         end
         if file_exists(path..'/'..msgText..'.py') then
-            local cmd = 'python '..path..'/'..msgText..'.py'..msgParams
+            local cmd = 'python3 '..path..'/'..msgText..'.py'..msgParams
+            --print('Voy a ejecutar: '..cmd)
             os.execute(cmd)
             return
         end
@@ -145,8 +146,8 @@ function on_msg_receive (msg)
   else
     if (msgFrom ==RASPIBOT) and (string.sub(msgFull, 1, 4) =='sgp.') then       
       -- Es un mensaje de etiqueta NFC      
-      local cmd = 'python '..path..'/nfc.py '..msgFull
-      -- print('MENSAJE NFC RECIBIDO: '..cmd)
+      local cmd = 'python3 '..path..'/nfc.py '..msgFull
+      print('MENSAJE NFC RECIBIDO: '..cmd)
       os.execute(cmd)
     end
   end

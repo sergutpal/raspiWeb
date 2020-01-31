@@ -23,6 +23,27 @@ ufw allow from 192.168.1.41 port 1:65535 proto tcp
 ufw allow from 192.168.1.41 port 1:65535 proto udp
 ufw allow from 192.168.1.42 port 1:65535 proto tcp
 ufw allow from 192.168.1.42 port 1:65535 proto udp
+ufw allow from 192.168.1.43 port 1:65535 proto tcp
+ufw allow from 192.168.1.43 port 1:65535 proto udp
+ufw allow from 192.168.1.44 port 1:65535 proto tcp
+ufw allow from 192.168.1.44 port 1:65535 proto udp
+ufw allow from 192.168.1.45 port 1:65535 proto tcp
+ufw allow from 192.168.1.45 port 1:65535 proto udp
+ufw allow from 192.168.1.46 port 1:65535 proto tcp
+ufw allow from 192.168.1.46 port 1:65535 proto udp
+ufw allow from 192.168.1.47 port 1:65535 proto tcp
+ufw allow from 192.168.1.47 port 1:65535 proto udp
+ufw allow from 192.168.1.50 port 1:65535 proto tcp
+ufw allow from 192.168.1.50 port 1:65535 proto udp
+ufw allow from 192.168.1.51 port 1:65535 proto tcp
+ufw allow from 192.168.1.51 port 1:65535 proto udp
+ufw allow from 192.168.1.217 port 1:65535 proto tcp
+ufw allow from 192.168.1.217 port 1:65535 proto udp
+ufw allow from 192.168.1.218 port 1:65535 proto tcp
+ufw allow from 192.168.1.218 port 1:65535 proto udp
+ufw allow from 192.168.1.219 port 1:65535 proto tcp
+ufw allow from 192.168.1.219 port 1:65535 proto udp
+
 ufw allow from 10.8.0.9 port 1:65535 proto tcp
 ufw allow from 10.8.0.9 port 1:65535 proto udp
 ufw allow from 10.8.0.10 port 1:65535 proto tcp
@@ -33,11 +54,16 @@ ufw allow from 10.8.0.12 port 1:65535 proto tcp
 ufw allow from 10.8.0.12 port 1:65535 proto udp
 ufw allow from 10.8.0.13 port 1:65535 proto tcp
 ufw allow from 10.8.0.13 port 1:65535 proto udp
-#host=$(</etc/hostname)
-#if [ $host = "cubieSrv" ]; then
-    ufw allow 49001/tcp  # Openvpn
-#    ufw allow 49003/tcp  # SSH
-#fi
+ufw allow from 157.97.65.88 port 1:65535 proto tcp
+ufw allow from 157.97.65.88 port 1:65535 proto udp
+
+
+# ufw allow 49001/tcp  # Openvpn
+# ufw allow 49003/tcp  # SSH
+
+
+
 ufw default deny incoming
-ufw enable
+ufw --force enable
+ufw logging off
 #ufw status numbered

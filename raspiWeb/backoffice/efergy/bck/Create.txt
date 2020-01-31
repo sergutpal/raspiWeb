@@ -1,0 +1,61 @@
+CREATE TABLE configPi(idPi INTEGER PRIMARY KEY NOT NULL, dht22 INTEGER, dht11 INTEGER, pir INTEGER, camara INTEGER, HCSR04 INTEGER, Buzzer INTEGER);
+
+INSERT INTO configPi(idPi, dht22, dht11, pir, camara, HCSR04, Buzzer) VALUES (30, 0, 0, 0, 0, 0, 0);
+INSERT INTO configPi(idPi, dht22, dht11, pir, camara, HCSR04, Buzzer) VALUES (31, 1, 0, 1, 1, 0, 1);
+
+
+
+
+CREATE TABLE alarma(activa INTEGER);
+INSERT INTO alarma (activa) VALUES (0);
+CREATE TABLE historicoAlarma(id INTEGER PRIMARY KEY NOT NULL, activa INTEGER NOT NULL, data DATETIME NULL);
+
+CREATE TRIGGER trg_historico_actualiza_alarma AFTER INSERT ON historicoAlarma
+BEGIN
+    UPDATE alarma SET activa = new.activa;
+END;
+
+
+
+CREATE TABLE efergy(energia FLOAT, data DATETIME NULL);
+INSERT INTO efergy (energia, data) VALUES (0, datetime('1900-01-01 00:00:00'));
+CREATE TABLE historicoEfergy(id INTEGER PRIMARY KEY  NOT NULL, energia FLOAT NOT NULL, data DATETIME NULL);
+
+CREATE TRIGGER trg_historico_actualiza_efergy AFTER INSERT ON historicoEfergy
+BEGIN
+    UPDATE efergy SET energia = new.energia, data = new.data;
+END;
+
+
+CREATE TABLE temperatura(temperatura FLOAT, data DATETIME NULL);
+INSERT INTO temperatura (temperatura) VALUES (0);
+CREATE TABLE historicoTemperatura(id INTEGER PRIMARY KEY NOT NULL, temperatura FLOAT NOT NULL, data DATETIME NULL);
+
+CREATE TRIGGER trg_historico_actualiza_temperatura AFTER INSERT ON historicoTemperatura
+BEGIN
+    UPDATE temperatura SET temperatura = new.temperatura, data = new.data;
+END;
+
+
+
+
+INSERT INTO historicoEfergy (energia, data) VALUES (12003.23, datetime('now'));
+INSERT INTO historicoAlarma (activa, data) VALUES (0, datetime('now'));
+INSERT INTO historicoTemperatura (temperatura, data) VALUES (27.5, datetime('now'));
+
+SELECT activa FROM alarma;
+SELECT * FROM efergy;
+SELECT * FROM temperatura;
+
+
+INSERT INTO historicoEfergy (energia, data) VALUES (201.53, datetime('now'));
+INSERT INTO historicoAlarma (activa, data) VALUES (1, datetime('now'));
+INSERT INTO historicoAlarma (activa, data) VALUES (1, datetime('now'));
+
+
+
+
+delete from historicoalarma;
+delete from historicoefergy;
+delete from historicotemperatura;
+vacuum;

@@ -34,7 +34,7 @@ SECRET_KEY = 's#*y0&w(lgij=&ig51mw5$j+u7-9m-e=6aiz3o_tc$r7+82zh^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'sergutpal.dynu.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [u'sergutpal.dynu.com', 'localhost', '127.0.0.1', '192.168.1.20']
 
 
 # Application definition
@@ -50,13 +50,13 @@ INSTALLED_APPS = [
     # 'favicon',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+#    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.gzip.GZipMiddleware',
@@ -88,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'raspiWeb',
-        'USER': 'pi',
-        'PASSWORD': 'SGP24121976',
+        'USER': 'root',
+        'PASSWORD': 'SGp24121976',
         'HOST': '192.168.1.20',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }

@@ -44,7 +44,7 @@ def getTemperaturePressure():
     pressure = sensor.read_pressure();
     return temperature;
   except Exception as e:
-    print 'Error getTemperaturePressure: ' + str(e) + '\n';
+    print('Error getTemperaturePressure: ' + str(e) + '\n');
     return None;
 
 def insertTemperaturePressure():
@@ -53,10 +53,10 @@ def insertTemperaturePressure():
 
   getTemperaturePressure();
   try:
-    print 'Temperatura: ' + str(round(temperature, 1));
-    print 'Presion: ' + str(round(pressure, 1));
+    print('Temperatura: ' + str(round(temperature, 1)));
+    print('Presion: ' + str(round(pressure, 1)));
   except Exception as e:
-    print 'Error insertTemperaturePressure: ' + str(e);
+    print('Error insertTemperaturePressure: ' + str(e));
     return None;
 
 insertTemperaturePressure();

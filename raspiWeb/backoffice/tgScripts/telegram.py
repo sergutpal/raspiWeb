@@ -6,7 +6,7 @@ from datetime import datetime
 import subprocess
 import shutil
 import globalVars
-import thread
+from _thread import start_new_thread
 import sendmail
 import ping
 import dropboxSGP
@@ -24,13 +24,24 @@ def sendToNC(cmd):
     try:
         globalVars.toLogFile('Mensaje a enviar (nc): @' + cmd + '@')
         nc = subprocess.Popen(ncCommand, shell=True,
-                              stdin=subprocess.PIPE, stdout=globalVars.fileLog)
+                              stdin=subprocess.PIPE, stdout=globalVars.fileLog, universal_newlines = True, bufsize=1)
+        #cmd = cmd.encode()
         nc.stdin.write(cmd)
-        nc.stdin.write('safe_quit')
+        nc.stdin.write('safe_quit()')
         return None
     except Exception as e:
         globalVars.toLogFile('Error sendToNC: ' + str(e))
         return None
+
+
+def callPhoneAlarm():
+    if globalVars.getConfigField('alarmPhoneActive') =='1':
+        for i in range(1, 4):
+            callPhone = globalVars.getConfigField('phone' + str(i))
+            if callPhone:
+                globalVars.callPhone(callPhone)
+                time.sleep(5)  # Esperamos 5s entre cada llamada
+
 
 
 def checkPhoneAlarm():
@@ -39,22 +50,20 @@ def checkPhoneAlarm():
             globalVars.redisPhoneAlarmRequest, True)  # Eliminamos el mensaje
         if message:
             # Enviamos el aviso de alarma por Telegram
-            sendToNC('msg ' + globalVars.tgDestinationAll + ' ' + message)
+            txt = 'msg ' + globalVars.tgDestination + ' ' + message
+            sendToNC(txt)
+            globalVars.toLogFile('msg ' + globalVars.tgDestination + ' ' + message)
             if globalVars.getConfigField('alarmMailActive') =='1':
                 sendmail.send_mail(
                     'Alarma importante en casa!', None, message)
             # Solo hacemos una llamada de alarma cada 10 minutos como maximo
             previousCall = globalVars.redisGet(
                 globalVars.redisAlarmaYaAvisadaCubie, False)
+            globalVars.playAlexaTTS('alarma.sh')
             if previousCall is None:
                 globalVars.redisSet(
                     globalVars.redisAlarmaYaAvisadaCubie, message, 600)
-                if globalVars.getConfigField('alarmPhoneActive') =='1':
-                    for i in range(1, 4):
-                        callPhone = globalVars.getConfigField('phone' + str(i))
-                        if callPhone:
-                            globalVars.callPhone(callPhone)
-                            time.sleep(5)  # Esperamos 5s entre cada llamada
+                callPhoneAlarm()
                 if globalVars.getConfigField('alarmMP3Active') =='1':
                     # Play alarma.mp3
                     globalVars.playMP3(globalVars.pathAlarmaMP3, False)
@@ -69,6 +78,29 @@ def checkMessage():
     time.sleep(SECONDS_WAIT)
     sendMessage(globalVars.tgDestination, globalVars.sendFile, False)
     return None
+
+
+def checkPuertaParkingAbierta():
+    try:
+        existeClave = globalVars.redisGet(globalVars.redisPuertaParkingAbierta, False)
+        if (existeClave):
+            fechaHoraIni = globalVars.redisGet(globalVars.redisPuertaParkingAbierta, False)
+            fechaHoraIni = time.strptime(fechaHoraIni, '%d/%m/%Y %H:%M:%S')
+            now = time.localtime()
+            secondsDiff = time.mktime(now) - time.mktime(fechaHoraIni)
+            if secondsDiff > 300:
+                fechahora = time.time() + 600 # Una vez hecho el primer aviso, avisaremos cada 15 minutos en vez de cada 5
+                fechahora = time.strftime("%d/%m/%Y %H:%M:%S", time.localtime(fechahora))
+                globalVars.redisSet(globalVars.redisPuertaParkingAbierta, fechahora)
+
+                # Si la puerta lleva abierta más de 5 minutos, debemos enviar la alerta
+                globalVars.toFile(globalVars.sendFile, 'LA PUERTA DEL PARKING LLEVA ABIERTA MUCHO RATO!!!')
+                globalVars.playAlexaTTS('parkingAbierto.sh')
+                callPhoneAlarm()
+
+    except Exception as e:
+        globalVars.toLogFile('Error checkPuertaParkingAbierta: ' + str(e))
+        return
 
 
 def sendMessage(tgDestination, file, sendAlarm):
@@ -175,25 +207,26 @@ checkGlobalVarsValues()
 i = 1
 while (True):
     try:
-        thread.start_new_thread(checkPhoneAlarm, ())
-        thread.start_new_thread(globalVars.checkAlarmOffRequest, ())
-        thread.start_new_thread(checkMessage, ())
-        thread.start_new_thread(moveRpiCamTmp, ())
-        thread.start_new_thread(sendMedia, ('send_photo', [
+        start_new_thread(checkPhoneAlarm, ())
+        start_new_thread(globalVars.checkAlarmOffRequest, ())
+        start_new_thread(checkPuertaParkingAbierta, ())
+        start_new_thread(checkMessage, ())
+        start_new_thread(moveRpiCamTmp, ())
+        start_new_thread(sendMedia, ('send_photo', [
                   'png', 'gif', 'jpg'], globalVars.tgDestination,
                   globalVars.pathTmpTelegram, globalVars.pathNFS))
-        thread.start_new_thread(sendMedia, ('send_video', ['mp4', 'mpg',
+        start_new_thread(sendMedia, ('send_video', ['mp4', 'mpg',
                                           'mpeg', 'mkv', 'avi'],
                                 globalVars.tgDestination,
                                 globalVars.pathTmpTelegram,
                                 globalVars.pathNFS))
-        thread.start_new_thread(checkPlayMP3, ())
-        # thread.start_new_thread(checkCPUTemp, ())
-        thread.start_new_thread(globalVars.flushSync,
+        start_new_thread(checkPlayMP3, ())
+        # start_new_thread(checkCPUTemp, ())
+        start_new_thread(globalVars.flushSync,
                                 (globalVars.fileLog, False))
-        if (i % 120) ==0:
-            thread.start_new_thread(ping.checkPingReply, ())
-        thread.start_new_thread(dropboxSGP.dropBoxSync, ())
+        if (i % 120 == 0):
+            start_new_thread(ping.checkPingReply, ())
+        start_new_thread(dropboxSGP.dropBoxSync, ())
         time.sleep(SECONDS_WAIT)
         if i > 1000000:
             i = 0

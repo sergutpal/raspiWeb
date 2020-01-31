@@ -5,7 +5,6 @@ import socket
 import datetime
 import os
 import shutil
-import thread
 import subprocess
 
 buzzerPIN = 40; # GPIO21
@@ -20,7 +19,7 @@ def initGPIO():
     GPIO.output(buzzerPIN, 0);
     return 1;
   except Exception as e:
-    print 'Error inicializando GPIO: ' + str(e) +'\n';
+    print('Error inicializando GPIO: ' + str(e) +'\n');
     return 0;
 
 def buzzer(freq, repeat):
@@ -34,6 +33,6 @@ def buzzer(freq, repeat):
 
 ok =initGPIO();
 if (ok ==1):
-  print 'antes de buzzer';
-  buzzer(0.3, 10);
-  print 'despues de buzzer';
+  print('antes de buzzer');
+  buzzer(0.3, 5);
+  print('despues de buzzer');
