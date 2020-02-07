@@ -10,7 +10,7 @@ import shutil
 class DropBoxTransfer:
     def __init__(self):
         # sergutpalrpi@gmail.com
-        access_token = '_v-BqRmJ1ZAAAAAAAAAALI8Oy4QfZyllBVyDU7hAU6F8-QOiTEevNqq1-GZ6OLOi'
+        access_token = '_v-BqRmJ1ZAAAAAAAA5R1F2yGyHPTdl2WEGzZJF8LVHP47eyxB6_zkymUyux64JS'
 
         self.access_token = access_token
 

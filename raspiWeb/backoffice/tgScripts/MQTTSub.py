@@ -16,7 +16,7 @@ disconnect_flag = False
 def on_disconnect(client, userdata, rc):
     global disconnect_flag
 
-    s = "MQTTSub DISCONNECT MQTT:  "  +str(rc) + "!!!!"
+    s = "MQTTSub DISCONNECT MQTT:  "  +str(rc) + "!!!"
     toLogFile(s)
     globalVars.toFile(globalVars.sendFile, s)
     disconnect_flag = True

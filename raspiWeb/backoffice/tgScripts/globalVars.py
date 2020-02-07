@@ -33,6 +33,7 @@ pathDropBoxToVideo = pathDropBoxTo + 'video/'
 pathDropBoxRead = pathDropBoxFrom + 'read/'
 PINGFILE = 'ping.txt'
 redisPuertaParkingAbierta = 'PuertaParkingAbierta'
+redisLogSize = 'LogSize'
 redisDropBoxIsBusy = 'dropboxIsBusy'
 redisNFCIsBusy = 'redisNFCIsBusy'
 pathTmpTelegram = '/home/tmp/telegram/'
@@ -625,24 +626,26 @@ def playMP3(pathMP3, deleteMP3):
     global mp3Cmd
     global raspiId
 
-#    if (raspiId != '0') and (raspiId != '3'):
-#        return None
+    if (raspiId == '3'):
+        cmd = pathBaseTgScripts + 'pi3BTMP3.sh'
+        #return True
+    else:
+        cmd = mp3Cmd + ' "' + pathMP3 + '"'
 
     try:
-        mp3 = pathMP3
         if not isProcessRunning(mp3Cmd):
-            toLogFile('Reproduciendo MP3: ' + mp3)
-            subprocess.Popen(mp3Cmd + ' "' + mp3 + '"', shell=True, universal_newlines=True, bufsize=1)
+            #toLogFile('Reproduciendo MP3: ' + pathMP3)
+            subprocess.Popen(cmd, shell=True, universal_newlines=True, bufsize=1)
             if deleteMP3:
                 try:
                     time.sleep(10)
-                    os.remove(mp3)
+                    os.remove(pathMP3)
                 except Exception as e:
                     toLogFile('Error deleteMP3: ' + str(e))
-        return
+        return True
     except Exception as e:
         toLogFile('Error playMP3: ' + str(e))
-        return
+        return False
 
 
 def redisGet(key, clearKey=False):
@@ -878,6 +881,21 @@ def fireAlarm(alerta):
         redisRequestSet(
             redisAlarmRequest.replace('X',str(i)))
     toFile(alertFile, strAlert)
+
+
+def getLogSize():
+    try:
+        size = os.path.getsize(logFile)
+        return str(size)
+    except Exception as e:
+        toLogFile('Error getLogSize: ' + str(e))
+        return "0"
+
+
+# Esta función se llama desde cron cada 1h
+def setIniLogSize():
+    sizeLogFile = getLogSize()
+    redisSet(redisLogSize, sizeLogFile)
 
 
 initGlobalVars()

@@ -1,3 +1,6 @@
+#!/bin/bash
+
+set +e
 
 find / -name ".nfs000*" -type f -delete  # Borramos todos los ficheros temporales del NFS que se hayan podido quedar residentes
 find /var/log -name "*.gz" -type f -delete
@@ -20,6 +23,14 @@ truncate --size=0 /home/tmp/telegram/logs/*
 truncate --size=0 /home/imgPi/pi1/var/log/*
 truncate --size=0 /home/imgPi/pi3/var/log/*
 truncate --size=0 /home/imgPi/pi4/var/log/*
+
+truncate --size=0 /home/imgPi/pi1/var/log/zigbee2mqtt/*
+truncate --size=0 /home/imgPi/pi3/var/log/zigbee2mqtt/*
+truncate --size=0 /home/imgPi/pi4/var/log/zigbee2mqtt/*
+
+truncate --size=0 /home/imgPi/pi1/var/log/apt/*
+truncate --size=0 /home/imgPi/pi3/var/log/apt/*
+truncate --size=0 /home/imgPi/pi4/var/log/apt/*
 
 rm -rf /home/nfs/tmp/ToDelete/*
 

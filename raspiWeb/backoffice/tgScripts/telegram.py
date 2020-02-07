@@ -97,9 +97,28 @@ def checkPuertaParkingAbierta():
                 globalVars.toFile(globalVars.sendFile, 'LA PUERTA DEL PARKING LLEVA ABIERTA MUCHO RATO!!!')
                 globalVars.playAlexaTTS('parkingAbierto.sh')
                 callPhoneAlarm()
-
     except Exception as e:
         globalVars.toLogFile('Error checkPuertaParkingAbierta: ' + str(e))
+        return
+
+
+def checkLogTooBig():
+    try:
+        setSize = False
+        existeClave = globalVars.redisGet(globalVars.redisLogSize, False)
+        if (existeClave):
+            sizeLogFile = globalVars.getLogSize()
+            oldSize = globalVars.redisGet(globalVars.redisLogSize, False)
+            sizeDiff = int(sizeLogFile) - int(oldSize)
+            if sizeDiff > 100000: # si el log crece > 100KB en la última hora, significa que hay algún problema y hay que reportarlo
+                globalVars.toFile(globalVars.sendFile, 'El log está creciendo demasiado! Habría que revisarlo')
+                setSize = True
+        else:
+                setSize = True
+        if setSize:
+            globalVars.setIniLogSize()
+    except Exception as e:
+        globalVars.toLogFile('Error checkLogTooBig: ' + str(e))
         return
 
 
@@ -210,6 +229,7 @@ while (True):
         start_new_thread(checkPhoneAlarm, ())
         start_new_thread(globalVars.checkAlarmOffRequest, ())
         start_new_thread(checkPuertaParkingAbierta, ())
+        start_new_thread(checkLogTooBig, ())        
         start_new_thread(checkMessage, ())
         start_new_thread(moveRpiCamTmp, ())
         start_new_thread(sendMedia, ('send_photo', [

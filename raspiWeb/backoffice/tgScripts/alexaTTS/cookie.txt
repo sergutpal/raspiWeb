@@ -1,6 +1,12 @@
 IMPORTANTE: al principio no había manera de que funcionara. No daba ningún error, pero Alexa no decía nada de nada. Generé de nuevo la cookie, y entonces todo comenzó a funcionar a la primera !!??
 Moraleja: a la que deje de funcionar, intentar generar de nuevo la cookie	
 
+Pasos para generar la cookie:
+0-) Borrar todos los ficheros de la subcarpeta tmp
+1-) Entrar en Firefox en ventana de incognito
+2-) Autenticarnos en www.amazon.es y alexa.amazon.es 
+3-) Exportar (con el plugin) todas las cookies de todos los dominios (cookie.txt) y copiarla en la subcarpeta tmp/ como .alexa.cookie
+4-) Probar cualquier script (.sh) para verificar que funcione
 
 
 https://www.codementor.io/@slavko/controlling-amazon-echo-dot-with-shell-a-bit-of-fun-mz6xxz92n
