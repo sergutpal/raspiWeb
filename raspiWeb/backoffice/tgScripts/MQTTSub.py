@@ -1,4 +1,4 @@
-#import context  # Ensures paho is in PYTHONPATH
+# Prueba GIT 07022020
 import paho.mqtt.client as mqtt
 import json
 from globalVars import toLogFile
