@@ -3,7 +3,11 @@ VOL=100
 #/home/nfs/telegram/tgScripts/alexaTTS/alexatts.sh "$MSG" ALL $VOL
 
 /home/nfs/telegram/tgScripts/alexaTTS/alexatts.sh "$MSG" DotSalon $VOL
+sleep 1
 #/home/nfs/telegram/tgScripts/alexaTTS/alexatts.sh "$MSG" DotDormitorio $VOL   # En el dormitorio queremos que suene el altavoz normal via bluetooth
+#sleep 1
 /home/nfs/telegram/tgScripts/alexaTTS/alexatts.sh "$MSG" DotDespacho $VOL
+sleep 1
 /home/nfs/telegram/tgScripts/alexaTTS/alexatts.sh "$MSG" ShowPeques $VOL
+sleep 1
 /home/nfs/telegram/tgScripts/alexaTTS/alexatts.sh "$MSG" ShowCocina $VOL

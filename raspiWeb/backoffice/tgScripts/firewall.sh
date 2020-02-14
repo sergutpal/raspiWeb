@@ -5,6 +5,8 @@ ufw --force reset
 ufw default allow outgoing
 ufw allow from 192.168.1.15 port 1:65535 proto tcp
 ufw allow from 192.168.1.15 port 1:65535 proto udp
+ufw allow from 192.168.1.17 port 1:65535 proto tcp
+ufw allow from 192.168.1.17 port 1:65535 proto udp
 ufw allow from 192.168.1.20 port 1:65535 proto tcp
 ufw allow from 192.168.1.20 port 1:65535 proto udp
 ufw allow from 192.168.1.31 port 1:65535 proto tcp

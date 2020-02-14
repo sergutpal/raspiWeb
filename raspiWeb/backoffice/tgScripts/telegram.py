@@ -56,17 +56,20 @@ def checkPhoneAlarm():
             if globalVars.getConfigField('alarmMailActive') =='1':
                 sendmail.send_mail(
                     'Alarma importante en casa!', None, message)
+
             # Solo hacemos una llamada de alarma cada 10 minutos como maximo
             previousCall = globalVars.redisGet(
                 globalVars.redisAlarmaYaAvisadaCubie, False)
-            globalVars.playAlexaTTS('alarma.sh')
             if previousCall is None:
                 globalVars.redisSet(
                     globalVars.redisAlarmaYaAvisadaCubie, message, 600)
                 callPhoneAlarm()
                 if globalVars.getConfigField('alarmMP3Active') =='1':
                     # Play alarma.mp3
-                    globalVars.playMP3(globalVars.pathAlarmaMP3, False)
+                    globalVars.playMP3(globalVars.pathAlarmaMP3, False, True)
+
+            globalVars.playAlexaTTS('alarma.sh')
+            time.sleep(30)  # Esperamos 30s antes de que se mate el proceso para asegurarnos que acaba todo correctamente
         return None
     except Exception as e:
         globalVars.toLogFile('Error checkPhoneAlarm: ' + str(e))
@@ -95,8 +98,9 @@ def checkPuertaParkingAbierta():
 
                 # Si la puerta lleva abierta más de 5 minutos, debemos enviar la alerta
                 globalVars.toFile(globalVars.sendFile, 'LA PUERTA DEL PARKING LLEVA ABIERTA MUCHO RATO!!!')
-                globalVars.playAlexaTTS('parkingAbierto.sh')
                 callPhoneAlarm()
+                globalVars.playAlexaTTS('parkingAbierto.sh')
+                time.sleep(30)  # Esperamos 30s antes de que se mate el proceso para asegurarnos que acaba todo correctamente
     except Exception as e:
         globalVars.toLogFile('Error checkPuertaParkingAbierta: ' + str(e))
         return

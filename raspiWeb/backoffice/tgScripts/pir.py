@@ -221,6 +221,13 @@ def checkCameraOffRequest():
     return None
 
 
+def checkTimbreRequest():
+    if globalVars.redisRequestGet(globalVars.redisTimbreRequest.replace('X',
+                                  globalVars.raspiId)):
+        start_new_thread(globalVars.playMP3, (globalVars.pathTimbreMP3, False, False))
+    return None
+
+
 def checkCameraStartRequest():
     if globalVars.redisRequestGet(globalVars.redisCameraStartRequest.replace('X',
                                   globalVars.raspiId)):
@@ -468,6 +475,7 @@ if __name__ == "__main__":
                 checkPingRequest()
                 checkCameraStartRequest()
                 checkCameraOffRequest()
+                checkTimbreRequest()
                 time.sleep(CHECK_SECONDS)
             except Exception as e:
                 txt = str(e)

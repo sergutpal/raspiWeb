@@ -60,6 +60,8 @@ def getMQTTAlarmaAuto(msg):
 
 def getMQTTTimbre(msg):
     toLogFile('Recibido msg Timbre: ' + msg.topic + "@. Payload: @" + str(msg.payload) + "@")
+    for i in range(1, globalVars.numRaspis + 1):
+	    globalVars.redisRequestSet(globalVars.redisTimbreRequest.replace('X',str(i)))
     globalVars.toFile(globalVars.sendFile, "Atención: están llamando al timbre de la puerta!!")
     globalVars.playAlexaTTS('timbre.sh')
 

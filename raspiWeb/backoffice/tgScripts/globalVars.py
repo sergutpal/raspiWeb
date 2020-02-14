@@ -49,6 +49,7 @@ pathParkingDB = pathBaseTelegram + 'db/parking.db'
 logFile = pathTmpTelegram + 'logs/log.txt'
 alertFile = pathBaseTelegram + 'logs/logAlerts.txt'
 redisAlarmRequest = 'AlarmRequestX'
+redisTimbreRequest = 'TimbreRequestX'
 redisAlarmMotionRequest = 'AlarmMotionRequestX'
 redisMotionFirstMinuteIgnore = 'MotionIgnoreFirstMinuteX'
 redisTempetureInsertRequest = 'insertTemperaturaX'
@@ -73,6 +74,8 @@ redisAlarmSetRequest = 'alarmSetX'
 redisRebootRequest = 'rebootX'
 redisWatchdogRequest = 'watchdogX'
 pathAlarmaMP3 = pathBase + 'mp3/alarma.mp3'
+pathTimbreMP3 = pathBase + 'mp3/timbre.mp3'
+pathParkingAbiertoMP3 = pathBase + 'mp3/parkingAbierto.mp3'
 pathTVOn = pathBase + 'mp3/alarma.mp3'
 redisMP3StreamingRequest = 'mp3StreamingX'
 redisKodiRequest = 'KodiRequestX'
@@ -622,11 +625,11 @@ def filesByExt(path, extList):
     return filesExt
 
 
-def playMP3(pathMP3, deleteMP3):
+def playMP3(pathMP3, deleteMP3, isAlarm=False):
     global mp3Cmd
     global raspiId
 
-    if (raspiId == '3'):
+    if ((raspiId == '3') and isAlarm):
         cmd = pathBaseTgScripts + 'pi3BTMP3.sh'
         #return True
     else:
