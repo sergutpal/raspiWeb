@@ -24,6 +24,7 @@ def parkingRequest(waitSeconds='0'):
 
 
 if __name__ == "__main__":
+    globalVars.toLogFile('Peticions abrePparking recibida')
     try:
         waitSeconds = int(sys.argv[1])
     except Exception as e:

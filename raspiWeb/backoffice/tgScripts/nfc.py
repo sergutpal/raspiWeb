@@ -22,8 +22,8 @@ import sqlite3
 
 
 CMD_TEST_OK = "sgp"
-MAX_DELAY_CMD = 30
-REPEAT_CMD_SECONDS = 20
+MAX_DELAY_CMD = 30          # Si pasan más de MAX_DELAY_CMD segundos desde la recepción del mensaje, lo ignoramos
+REPEAT_CMD_SECONDS = 10     # Si llegan nuevos mensajes dentro de los REPEAT_CMD_SECONDS del mensaje anterior procesado, los ignoramos 
 SQL_ALARM_SELECT = 'SELECT COUNT(*) FROM androidAuthNFC WHERE androidID ="ANDROID_ID_XXXX";'
 
 

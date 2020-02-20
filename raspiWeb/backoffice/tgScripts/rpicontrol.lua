@@ -135,7 +135,7 @@ function on_msg_receive (msg)
         end
         if file_exists(path..'/'..msgText..'.py') then
             local cmd = 'python3 '..path..'/'..msgText..'.py'..msgParams
-            --print('Voy a ejecutar: '..cmd)
+            print('Voy a ejecutar: '..cmd)
             os.execute(cmd)
             return
         end

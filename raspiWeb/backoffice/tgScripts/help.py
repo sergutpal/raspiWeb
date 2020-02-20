@@ -11,6 +11,7 @@ def msgHelp(txt):
 
 def sendHelp():
     msgHelp("Principales comandos que acepta Telegram Raspi:")
+    msgHelp("abreparking: abre la puerta del parking")
     msgHelp("alarmaon: activa la alarma")
     msgHelp("alarmaoff: desactiva la alarma")
     msgHelp("auto: activa el modo AUTO de la alarma")

@@ -12,9 +12,9 @@ topicAlarmaAuto = "raspi/alarmaAuto"
 payloadAlarmaON = b'ON'
 payloadAlarmaOFF = b'OFF'
 
-topicParkingOpen = "parking/open"
-payloadParkingOpen = 'open'
-topicPuertaParking = "zigbee2mqtt/PuertaParking"
+topicParkingOpen = "esp8266PKG/cmd"
+payloadParkingOpen = 'parking'
+topicPuertaParking = "zigbee2mqtt/Door1"
 
 
 
