@@ -13,7 +13,7 @@ from musicaoff import musicaOff
 from kodi import kodiPlay
 from foto import photoRequest
 from temperatura import sendLastTemperatureTelegram
-from abreParking import parkingRequest
+from abreparking import parkingRequest
 from flush import flushAll
 from wakeonlan import wakeonlanRequest
 from ip import get_ip_public
