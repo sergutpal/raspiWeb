@@ -60,6 +60,8 @@ ufw allow from 10.8.0.13 port 1:65535 proto tcp
 ufw allow from 10.8.0.13 port 1:65535 proto udp
 ufw allow from 157.97.65.88 port 1:65535 proto tcp
 ufw allow from 157.97.65.88 port 1:65535 proto udp
+ufw allow from 188.87.153.100 port 1:65535 proto tcp
+ufw allow from 188.87.153.100 port 1:65535 proto udp
 
 
 # ufw allow 49001/tcp  # Openvpn
