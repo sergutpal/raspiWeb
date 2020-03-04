@@ -63,6 +63,9 @@ ufw allow from 157.97.65.88 port 1:65535 proto udp
 ufw allow from 188.87.153.100 port 1:65535 proto tcp
 ufw allow from 188.87.153.100 port 1:65535 proto udp
 
+# IPs Alexa Amazon
+ufw allow from 54.171.139.177 port 80:443 proto tcp
+
 
 # ufw allow 49001/tcp  # Openvpn
 # ufw allow 49003/tcp  # SSH
