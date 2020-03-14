@@ -6,6 +6,7 @@ from alarmaon import setAlarmOn
 from alarmaoff import setAlarmOff
 from auto import setAlarmAutoOn
 from autooff import setAlarmAutoOff
+import foto
 import globalVars
 import MQTTServer
 import time
@@ -60,9 +61,10 @@ def getMQTTAlarmaAuto(msg):
 
 def getMQTTTimbre(msg):
     toLogFile('Recibido msg Timbre: ' + msg.topic + "@. Payload: @" + str(msg.payload) + "@")
-    for i in range(1, globalVars.numRaspis + 1):
+    for i in range(0, globalVars.numRaspis + 1):
 	    globalVars.redisRequestSet(globalVars.redisTimbreRequest.replace('X',str(i)))
     globalVars.toFile(globalVars.sendFile, "Atención: están llamando al timbre de la puerta!!")
+    foto.photoEntrada()
     globalVars.playAlexaTTS('timbre.sh')
 
 
@@ -80,6 +82,22 @@ def getMQTTHumo(msg):
     js = json.loads(msg.payload)
     if js['smoke']:  # ATENCIÓN está saltando una alerta de humo!!!!!
         globalVars.fireAlarm(' ALARMA HUMO!!!!!! ' + msg.topic)
+
+
+def getMQTTRTL433(msg):
+    REPEAT_CMD_SECONDS = 2  # Si llegan nuevos mensajes dentro de los REPEAT_CMD_SECONDS del mensaje anterior procesado, los ignoramos 
+    # Esta funcion comprueba que no hayan llegado 2 comandos rtl_433 muy seguidos. En ese caso entendemos que
+    # puede deberse a una segunda lectura demasiado rapida y en ese caso ignoramos la segunda cmd
+    if globalVars.redisGet(globalVars.redisRTL433IsBusy, False):
+        return False
+
+    js = json.loads(msg.payload)
+    if (js['id'] ==MQTTServer.payloadRTL433Timbre1) or (js['id'] ==MQTTServer.payloadRTL433Timbre2):
+        getMQTTTimbre(msg)
+    if (js['id'] ==MQTTServer.payloadRTL433Parking1) or (js['id'] ==MQTTServer.payloadRTL433Parking2):
+        getMQTTParking(msg)
+    globalVars.redisSet(globalVars.redisRTL433IsBusy, globalVars.redisRTL433IsBusy, REPEAT_CMD_SECONDS)
+    return True
 
 
 
@@ -103,6 +121,8 @@ def on_message(mqttc, obj, msg):
             getMQTTAqaraAlarm(msg)
        if msg.topic[:-1] == MQTTServer.topicAqaraDoor.replace('X', ''):
             getMQTTAqaraAlarm(msg)
+       if msg.topic == MQTTServer.topicRTL433:
+            getMQTTRTL433(msg)
     except Exception as e:
         toLogFile('Error on_message: ' + str(e))
 
@@ -131,6 +151,7 @@ def iniMQTT():
             for i in range(1, globalVars.aqaraDoorNum + 1):
                 mqttc.subscribe(MQTTServer.topicAqaraDoor.replace('X', str(i)), qos=0)
             mqttc.subscribe(MQTTServer.topicEfergy, qos=0)
+            mqttc.subscribe(MQTTServer.topicRTL433, qos=0)
             disconnect_flag = False
             toLogFile('MQTTProcess.initMQTT OK')
             return True
