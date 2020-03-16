@@ -6,6 +6,7 @@ from alarmaon import setAlarmOn
 from alarmaoff import setAlarmOff
 from auto import setAlarmAutoOn
 from autooff import setAlarmAutoOff
+from abreparking import parkingRequest
 import foto
 import globalVars
 import MQTTServer
@@ -95,7 +96,7 @@ def getMQTTRTL433(msg):
     if (js['id'] ==MQTTServer.payloadRTL433Timbre1) or (js['id'] ==MQTTServer.payloadRTL433Timbre2):
         getMQTTTimbre(msg)
     if (js['id'] ==MQTTServer.payloadRTL433Parking1) or (js['id'] ==MQTTServer.payloadRTL433Parking2):
-        getMQTTParking(msg)
+        parkingRequest(0)
     globalVars.redisSet(globalVars.redisRTL433IsBusy, globalVars.redisRTL433IsBusy, REPEAT_CMD_SECONDS)
     return True
 

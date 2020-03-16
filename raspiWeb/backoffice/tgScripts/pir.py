@@ -98,20 +98,9 @@ def checkMP3StreamingRequest():
 
 
 def openParking(waitSeconds=0):
-    #global parkingPIN
-    #global PARKING_PULSE
-
     try:
         if waitSeconds > 0:
             time.sleep(waitSeconds)
-        #GPIO.setwarnings(False)
-        #GPIO.setmode(GPIO.BOARD)
-        #GPIO.setup(parkingPIN, GPIO.OUT)
-        #GPIO.output(parkingPIN, True)
-        #time.sleep(PARKING_PULSE)
-        #GPIO.output(parkingPIN, False)
-
-        globalVars.toLogFile('openParking antes del pubMQTT')
         pubMQTTMsg(MQTTServer.topicParkingOpen, MQTTServer.payloadParkingOpen)
         #globalVars.toLogFile('ABRIENDO PARKING!')
         globalVars.toFile(globalVars.sendFile, 'ABRIENDO PARKING!')
@@ -128,7 +117,6 @@ def checkOpenParkingRequest():
     # Borramos la clave despues de leerla
     waitSeconds = globalVars.redisGet(globalVars.redisParkingRequest, True)
     if waitSeconds:
-        globalVars.toLogFile('voy a ejecutar openParking')
         waitSeconds = int(waitSeconds)
         start_new_thread(openParking, (waitSeconds,))
     return True
