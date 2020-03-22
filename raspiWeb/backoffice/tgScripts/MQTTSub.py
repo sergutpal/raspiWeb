@@ -125,7 +125,7 @@ def on_message(mqttc, obj, msg):
        if msg.topic == MQTTServer.topicRTL433:
             getMQTTRTL433(msg)
     except Exception as e:
-        toLogFile('Error on_message: ' + str(e))
+        # toLogFile('Error on_message: ' + str(e))
 
 
 def iniMQTT():
