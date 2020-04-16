@@ -92,14 +92,17 @@ def getMQTTRTL433(msg):
     if globalVars.redisGet(globalVars.redisRTL433IsBusy, False):
         return False
 
-    js = json.loads(msg.payload)
-    if (js['id'] ==MQTTServer.payloadRTL433Timbre1) or (js['id'] ==MQTTServer.payloadRTL433Timbre2):
-        getMQTTTimbre(msg)
-    if (js['id'] ==MQTTServer.payloadRTL433Parking1) or (js['id'] ==MQTTServer.payloadRTL433Parking2):
-        parkingRequest(0)
-    globalVars.redisSet(globalVars.redisRTL433IsBusy, globalVars.redisRTL433IsBusy, REPEAT_CMD_SECONDS)
-    return True
-
+    try:
+        js = json.loads(msg.payload)
+        if (js['id'] ==MQTTServer.payloadRTL433Timbre1) or (js['id'] ==MQTTServer.payloadRTL433Timbre2):
+            getMQTTTimbre(msg)
+        if (js['id'] ==MQTTServer.payloadRTL433Parking1) or (js['id'] ==MQTTServer.payloadRTL433Parking2):
+            parkingRequest(0)
+        globalVars.redisSet(globalVars.redisRTL433IsBusy, globalVars.redisRTL433IsBusy, REPEAT_CMD_SECONDS)
+        return True
+    except Exception as e:
+        toLogFile('Error getMQTTRTL433: ' + str(e))
+        return False
 
 
 def on_message(mqttc, obj, msg):
@@ -126,6 +129,8 @@ def on_message(mqttc, obj, msg):
             getMQTTRTL433(msg)
     except Exception as e:
         # toLogFile('Error on_message: ' + str(e))
+        return False
+
 
 
 def iniMQTT():
