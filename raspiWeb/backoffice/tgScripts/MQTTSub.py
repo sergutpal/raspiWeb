@@ -101,7 +101,7 @@ def getMQTTRTL433(msg):
         globalVars.redisSet(globalVars.redisRTL433IsBusy, globalVars.redisRTL433IsBusy, REPEAT_CMD_SECONDS)
         return True
     except Exception as e:
-        toLogFile('Error getMQTTRTL433: ' + str(e))
+        #toLogFile('Error getMQTTRTL433: ' + str(e))
         return False
 
 
