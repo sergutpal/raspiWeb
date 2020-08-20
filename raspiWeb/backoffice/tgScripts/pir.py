@@ -297,6 +297,8 @@ def isPIRActive():
 def isDoorOpen():
     global doorPIN
 
+    return False  # eliminarlo cuando el sensor esté conectado en Raspi4
+
     if globalVars.getConfigField('alarmDoorActive') =='0':
         # En la BD se ha indicado que no debemos tener en cuenta el sensor de la puerta
         return False
