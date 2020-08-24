@@ -40,7 +40,7 @@ def callPhoneAlarm():
             callPhone = globalVars.getConfigField('phone' + str(i))
             if callPhone:
                 globalVars.callPhone(callPhone)
-                time.sleep(5)  # Esperamos 5s entre cada llamada
+                time.sleep(45)  # Esperamos 45s entre cada llamada para asegurarnos que la linea principal esté libre
 
 
 
@@ -69,7 +69,7 @@ def checkPhoneAlarm():
                     globalVars.playMP3(globalVars.pathAlarmaMP3, False, True)
 
             globalVars.playAlexaTTS('alarma.sh')
-            time.sleep(30)  # Esperamos 30s antes de que se mate el proceso para asegurarnos que acaba todo correctamente
+            time.sleep(120)  # Esperamos 120s antes de que se mate el proceso para asegurarnos que acaba todo correctamente
         return None
     except Exception as e:
         globalVars.toLogFile('Error checkPhoneAlarm: ' + str(e))

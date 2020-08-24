@@ -630,7 +630,7 @@ def playMP3(pathMP3, deleteMP3, isAlarm=False):
     global mp3Cmd
     global raspiId
 
-    if ((raspiId == '3') and isAlarm):
+    if (((raspiId == '3') or (raspiId == '0')) and isAlarm):
         cmd = pathBaseTgScripts + 'pi3BTMP3.sh'
         #return True
     else:

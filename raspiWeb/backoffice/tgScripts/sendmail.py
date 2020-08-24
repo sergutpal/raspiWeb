@@ -10,6 +10,7 @@ import globalVars
 
 
 def send_mail(subject, filesToAttach, Text, mailTo = ''):
+  try:
     # SMTP_HOST = '127.0.0.1'
     SMTP_HOST = 'smtp.gmail.com: 587'
     SMTP_FROM = 'sergutpalrpi@gmail.com'
@@ -65,3 +66,6 @@ def send_mail(subject, filesToAttach, Text, mailTo = ''):
     globalVars.toLogFile(outer.as_string())
     smtp.sendmail(SMTP_FROM, SMTP_TO.split(','), outer.as_string())
     smtp.quit()
+  except Exception as e:
+    globalVars.toLogFile('Error sendMail: ' + str(e))
+    return 0
