@@ -92,7 +92,7 @@ def checkPuertaParkingAbierta():
             now = time.localtime()
             secondsDiff = time.mktime(now) - time.mktime(fechaHoraIni)
             if secondsDiff > 300:
-                fechahora = time.time() + 600 # Una vez hecho el primer aviso, avisaremos cada 15 minutos en vez de cada 5
+                fechahora = time.time() + 7200 # Una vez hecho el primer aviso, avisaremos cada 2h en vez de cada 5
                 fechahora = time.strftime("%d/%m/%Y %H:%M:%S", time.localtime(fechahora))
                 globalVars.redisSet(globalVars.redisPuertaParkingAbierta, fechahora)
 
@@ -233,7 +233,7 @@ while (True):
         start_new_thread(checkPhoneAlarm, ())
         start_new_thread(globalVars.checkAlarmOffRequest, ())
         start_new_thread(checkPuertaParkingAbierta, ())
-        start_new_thread(checkLogTooBig, ())        
+        start_new_thread(checkLogTooBig, ())
         start_new_thread(checkMessage, ())
         start_new_thread(moveRpiCamTmp, ())
         start_new_thread(sendMedia, ('send_photo', [

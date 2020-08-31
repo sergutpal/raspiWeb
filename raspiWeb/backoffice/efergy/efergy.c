@@ -33,7 +33,7 @@ rtl_fm -f 433550000 -s 200000 -r 96000 -g 19.7 2>/dev/null | ./EfergyRPI_001
 #include <unistd.h>
 
 #define MAX_WATTS_ALERT_NO_ALARM 8000
-#define MAX_WATTS_ALERT_ALARM 600
+#define MAX_WATTS_ALERT_ALARM 1800
 #define MAX_WATTS_VALID 15000
 #define ALERT_WATTS_TIME_PERIOD 600 // Cada cuantos segundos se envia la alerta de energia
 #define ALERT_NO_ENERGY "ALERTA! Efergy detecta 0W de consumo! Posiblemente se ha ido la luz!!\n" // Importante anyadir el salto de linea para Telegram!
