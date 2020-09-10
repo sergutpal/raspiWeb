@@ -93,11 +93,16 @@ def getMQTTRTL433(msg):
         return False
 
     try:
+        toLogFile('Mensaje RTL433 recibido: ')
         js = json.loads(msg.payload)
-        if (js['id'] ==MQTTServer.payloadRTL433Timbre1) or (js['id'] ==MQTTServer.payloadRTL433Timbre2):
+        id = str(js['id'])
+        toLogFile(id)
+        if (id ==MQTTServer.payloadRTL433Timbre1) or (id ==MQTTServer.payloadRTL433Timbre2):
             getMQTTTimbre(msg)
-        if (js['id'] ==MQTTServer.payloadRTL433Parking1) or (js['id'] ==MQTTServer.payloadRTL433Parking2):
-            parkingRequest(0)
+        if (id ==MQTTServer.payloadRTL433Parking1) or (id ==MQTTServer.payloadRTL433Parking2) or (id ==MQTTServer.payloadRTL433Parking3) or (id ==MQTTServer.payloadRTL433Parking4) or (id ==MQTTServer.payloadRTL433Parking5):
+            # parkingRequest(0)
+            globalVars.toFile(globalVars.sendFile, "Peticion radio abrir parking recibida (" + id + ")")
+
         globalVars.redisSet(globalVars.redisRTL433IsBusy, globalVars.redisRTL433IsBusy, REPEAT_CMD_SECONDS)
         return True
     except Exception as e:

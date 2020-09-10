@@ -226,6 +226,7 @@ def moveRpiCamTmp():
     return
 
 
+time.sleep(10) # Esperamos a que la raspi haya arrancado e iniciado todos los procesos (crear carpetas temporales, etc.)
 checkGlobalVarsValues()
 i = 1
 while (True):

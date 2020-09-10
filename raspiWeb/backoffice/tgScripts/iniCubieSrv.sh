@@ -11,7 +11,8 @@ cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/tempera
 cp /home/nfs/telegram/db/backupEmptyDB/temperaturaraspi.db /tmp/telegram/temperaturaraspi4.db
 
 # /usr/local/bin/noip2 &
-python3 /home/nfs/telegram/tgScripts/telegram.py &
+
+#python3 /home/nfs/telegram/tgScripts/telegram.py &
 
 /usr/sbin/ufw enable
 #/usr/local/bin/fail2ban-client start

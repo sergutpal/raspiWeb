@@ -32,8 +32,10 @@ payloadPCOFF = b'{"state":"OFF","linkquality":0}'
 topicGetTemperaturas = "getTemperatures"
 
 topicRTL433 = "RTL433/cmd"
-payloadRTL433Timbre1 = 899219  # Timbre real
-payloadRTL433Timbre2 = 25742   # Timbre real
-payloadRTL433Parking1 = 651568 # Parking real
-payloadRTL433Parking2 = 1607   # Parking real
-
+payloadRTL433Timbre1 = "899219"  # Timbre real
+payloadRTL433Timbre2 = "25742"   # Timbre real
+payloadRTL433Parking1 = "651568" # Parking real
+payloadRTL433Parking2 = "1607"   # Parking real
+payloadRTL433Parking3 = "4656"   # Parking real
+payloadRTL433Parking4 = "602592" # Parking real
+payloadRTL433Parking5 = "827952" # Parking real
