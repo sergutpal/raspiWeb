@@ -41,6 +41,8 @@ ufw allow from 192.168.1.51 port 1:65535 proto tcp
 ufw allow from 192.168.1.51 port 1:65535 proto udp
 ufw allow from 192.168.1.60 port 1:65535 proto tcp
 ufw allow from 192.168.1.60 port 1:65535 proto udp
+ufw allow from 192.168.1.61 port 1:65535 proto tcp
+ufw allow from 192.168.1.61 port 1:65535 proto udp
 ufw allow from 192.168.1.216 port 1:65535 proto tcp
 ufw allow from 192.168.1.216 port 1:65535 proto udp
 ufw allow from 192.168.1.217 port 1:65535 proto tcp
