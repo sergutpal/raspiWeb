@@ -9,6 +9,7 @@ mqttPwd = "SGp24121976"
 
 topicAlarma = "raspi/alarma"
 topicAlarmaAuto = "raspi/alarmaAuto"
+topicRadioParking = "raspi/radioParking"
 payloadAlarmaON = b'ON'
 payloadAlarmaOFF = b'OFF'
 
@@ -23,7 +24,7 @@ topicEfergy = "efergy"
 
 topicAqaraMotion = "zigbee2mqtt/MoveX"
 topicAqaraDoor = "zigbee2mqtt/DoorX"
-topicHumoSalon = "zigbee2mqtt/HumoSalon"
+topicHumo = "zigbee2mqtt/HumoX"
 
 topicWOLPC = "zigbee2mqtt/SonoffPC/set"
 payloadWOLPC = b'{"state":"ON","linkquality":0}'
@@ -37,5 +38,5 @@ payloadRTL433Timbre2 = "25742"   # Timbre real
 payloadRTL433Parking1 = "651568" # Parking real
 payloadRTL433Parking2 = "1607"   # Parking real
 payloadRTL433Parking3 = "4656"   # Parking real
-payloadRTL433Parking4 = "602592" # Parking real
-payloadRTL433Parking5 = "827952" # Parking real
+payloadRTL433Parking4 = "827952" # Parking real
+payloadRTL433Naranja = "602592"  # WOL

@@ -40,11 +40,13 @@ def getValueDB(pathDB, tableName, columnName, unity):
 def inicioMin(notifMsg):
     alarma = globalVars.isAlarmActive()
     auto = globalVars.isAlarmAuto()
-    parking = globalVars.isParkingOpen()
+    radioParking = globalVars.getConfigField('radioParking')
+    parking = radioParking == '1'
     djangovers = django.VERSION
+    ip = get_ip_public()
 
     values = {'notifMsg': notifMsg, 'alarma': alarma, 'auto': auto,
-              'parking': parking, 'djangovers': djangovers}
+              'parking': parking, 'djangovers': djangovers, 'ip': ip}
     return values
 
 
@@ -73,11 +75,9 @@ def inicioFull(request, notifMsg=''):
     temperatura_dormitorio = getValueDB(globalVars.pathTemperatureDB.replace(
         'X', '3'), 'temperatura', 'temperatura', ' grados')
     pathPhotos = getPathPhoto()
-    ip = get_ip_public()
 
     valuesFull = {'energiaValue': energia['value'],
                   'energiaTime': energia['time'],
-                  'ip': ip,
                   'temperatura_calleValue': temperatura_calle['value'],
                   'temperatura_calleTime': temperatura_calle['time'],
                   'temperatura_salonValue': temperatura_salon['value'],
@@ -131,6 +131,12 @@ def auto(request, active):
 @login_required
 def alarma(request, active):
     values = setValueOnOff(active, MQTTServer.topicAlarma, 'Alarma', True)
+    return inicio(request, values['status'])
+
+
+@login_required
+def radioParking(request, active):
+    values = setValueOnOff(active, MQTTServer.topicRadioParking, 'Radio Parking', False)
     return inicio(request, values['status'])
 
 

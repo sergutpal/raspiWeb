@@ -6,8 +6,8 @@ import sys
 
 def parkingRequest(waitSeconds='0'):
     try:
-        if globalVars.getConfigField('blockParking') == '1':
-            globalVars.toLogFile('parkingRequest: peticion ignorada porque blockParking esta activado')
+        if globalVars.getConfigField('radioParking') != '1':
+            globalVars.toLogFile('parkingRequest: peticion ignorada porque radioParking esta desactivado')
             return False
 
         if globalVars.isAlarmActive():

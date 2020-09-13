@@ -109,6 +109,7 @@ SQL_ALARM_SELECT = 'SELECT activa FROM alarma;'
 SQL_ALARM_UPDATE = 'INSERT INTO historicoAlarma(activa, data) VALUES ' + \
     '(valor,' + DATETIME_NOW + ' );'
 SQL_AUTO_UPDATE = 'UPDATE config SET alarmAuto = valor;'
+SQL_RADIOPARKING_UPDATE = 'UPDATE config SET radioParking = valor;'
 SQL_GET_LAST = 'SELECT column, data FROM table;'
 SQL_SELECT_HISTORY = 'SELECT COUNT(*) AS NumTotal, MAX(column) AS Maximo, ' + \
     'MIN(column) as Minimo, AVG(column) as Media ' + \
@@ -121,6 +122,7 @@ SPACE_SEPARATOR = 100
 djangoIPAuth = ''
 aqaraMotionNum = 4
 aqaraDoorNum = 3
+aqaraSmokeNum = 3
 timeVideoRecord = 60
 rtspEntrada = 'rtsp://admin:VTLOZG@192.168.1.220:554'
 rtspSalon = 'rtsp://admin:KVHPVD@192.168.1.224:554'
@@ -900,6 +902,36 @@ def getLogSize():
 def setIniLogSize():
     sizeLogFile = getLogSize()
     redisSet(redisLogSize, sizeLogFile)
+
+
+def setRadioParking(value):
+    global pathConfigDB
+    global SQL_RADIOPARKING_UPDATE
+    global sendFile
+
+    sql = SQL_RADIOPARKING_UPDATE
+    try:
+        redisSet('configradioParking', value)
+        sqlExec = sql.replace('valor', value)
+        DB = sqlite3.connect(pathConfigDB)
+        cur = DB.cursor()
+        cur.execute(sqlExec)
+        DB.commit()
+        cur.close()
+        DB.close()
+        toFile(sendFile, "Radio Parking actualizado a " + value)
+        return True
+    except Exception as e:
+        toLogFile('Error setRadioParking: ' + str(e))
+        return False
+
+
+def setRadioParkingOff():
+    setRadioParking('0')
+
+
+def setRadioParkingOn():
+    setRadioParking('1')
 
 
 initGlobalVars()

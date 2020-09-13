@@ -7,6 +7,7 @@ from alarmaoff import setAlarmOff
 from auto import setAlarmAutoOn
 from autooff import setAlarmAutoOff
 from abreparking import parkingRequest
+from wol import wakeonlanRequest
 import foto
 import globalVars
 import MQTTServer
@@ -60,6 +61,13 @@ def getMQTTAlarmaAuto(msg):
         setAlarmAutoOff('MQTT')
 
 
+def getMQTTRadioParking(msg):
+    if (msg.payload ==MQTTServer.payloadAlarmaON):
+        globalVars.setRadioParkingOn()
+    if (msg.payload ==MQTTServer.payloadAlarmaOFF):
+        globalVars.setRadioParkingOff()
+
+
 def getMQTTTimbre(msg):
     toLogFile('Recibido msg Timbre: ' + msg.topic + "@. Payload: @" + str(msg.payload) + "@")
     for i in range(0, globalVars.numRaspis + 1):
@@ -99,10 +107,12 @@ def getMQTTRTL433(msg):
         toLogFile(id)
         if (id ==MQTTServer.payloadRTL433Timbre1) or (id ==MQTTServer.payloadRTL433Timbre2):
             getMQTTTimbre(msg)
-        if (id ==MQTTServer.payloadRTL433Parking1) or (id ==MQTTServer.payloadRTL433Parking2) or (id ==MQTTServer.payloadRTL433Parking3) or (id ==MQTTServer.payloadRTL433Parking4) or (id ==MQTTServer.payloadRTL433Parking5):
-            # parkingRequest(0)
+        if (id ==MQTTServer.payloadRTL433Parking1) or (id ==MQTTServer.payloadRTL433Parking2) or (id ==MQTTServer.payloadRTL433Parking3) or (id ==MQTTServer.payloadRTL433Parking4):
+            parkingRequest(0)
             globalVars.toFile(globalVars.sendFile, "Peticion radio abrir parking recibida (" + id + ")")
-
+        if (id ==MQTTServer.payloadRTL433Naranja):
+            wakeonlanRequest(False)
+            globalVars.toFile(globalVars.sendFile, "Peticion radio WOL (" + id + ")")
         globalVars.redisSet(globalVars.redisRTL433IsBusy, globalVars.redisRTL433IsBusy, REPEAT_CMD_SECONDS)
         return True
     except Exception as e:
@@ -122,7 +132,9 @@ def on_message(mqttc, obj, msg):
            getMQTTAlarma(msg)
        if msg.topic == MQTTServer.topicAlarmaAuto:
            getMQTTAlarmaAuto(msg)
-       if msg.topic == MQTTServer.topicHumoSalon:
+       if msg.topic == MQTTServer.topicRadioParking:
+           getMQTTRadioParking(msg)
+       if msg.topic[:-1] == MQTTServer.topicHumo.replace('X', ''):
            getMQTTHumo(msg)
        if (msg.topic == MQTTServer.topicTimbre) and (msg.payload ==MQTTServer.payloadTimbre):
             getMQTTTimbre(msg)
@@ -155,7 +167,9 @@ def iniMQTT():
             mqttc.subscribe(MQTTServer.topicPuertaParking, qos=0)
             mqttc.subscribe(MQTTServer.topicAlarma, qos=0)
             mqttc.subscribe(MQTTServer.topicAlarmaAuto, qos=0)
-            mqttc.subscribe(MQTTServer.topicHumoSalon, qos=0)
+            mqttc.subscribe(MQTTServer.topicRadioParking, qos=0)
+            for i in range(1, globalVars.aqaraSmokeNum + 1):
+                mqttc.subscribe(MQTTServer.topicHumo.replace('X', str(i)), qos=0)
             mqttc.subscribe(MQTTServer.topicTimbre, qos=0)
             for i in range(1, globalVars.aqaraMotionNum + 1):
                 mqttc.subscribe(MQTTServer.topicAqaraMotion.replace('X', str(i)), qos=0)

@@ -27,15 +27,15 @@
 	<h4 id="autoLbl" class="text-primary"><strong>Modo Auto:</strong>
 		<input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF" id="autoChk" data-size="normal" {% if auto %} checked {% endif %}>
 	</h4>
-	<h4 id="parkingLbl" class="text-primary"><strong>Parking:&nbsp;</strong>
-		<input type="checkbox" disabled data-toggle="toggle" data-on="Abierto" data-off="Cerrado" id="parkingChk" data-size="normal" {% if parking %} checked {% endif %}>
+	<h4 id="parkingLbl" class="text-primary"><strong>Radio Parking:&nbsp;</strong>
+		<input type="checkbox" data-toggle="toggle" data-on="Activado" data-off="Bloqueado" id="parkingChk" data-size="normal" {% if parking %} checked {% endif %}>
 	</h4>
-	
+
+        <p>	
+        <h4 id="ipLbl" class="text-primary"><strong>IP Pública:&nbsp; {{ ip }}</strong></h4>
 	<!-- <h4 id="djangoLbl" class="text-primary"><strong>Django version:&nbsp; {{ djangovers }}</strong></h4> -->
 
 	{% if seeAll %}
-		<h4 id="ipLbl" class="text-primary"><strong>IP Pública:&nbsp; {{ ip }}</strong></h4>
-		<p>
  		<div id="chart-energia"></div>
  		<div id="chart-tempCalle"></div>
  		<div id="chart-tempSalon"></div>

@@ -9,6 +9,9 @@ function init() {
 	$('#autoChk').change(function() {
                 ChkOnChange('#autoChk', '/auto/on/','/auto/off/');
         });
+        $('#parkingChk').change(function() {
+                ChkOnChange('#parkingChk', '/radioParking/on/','/radioParking/off/');
+        });
 	sNotifMsg = $('#notifMsg').attr('value')
 	if (sNotifMsg)
 		$('#alarmaLbl').notify(sNotifMsg, notifOptions);

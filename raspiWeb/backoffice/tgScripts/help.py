@@ -32,6 +32,8 @@ def sendHelp():
     msgHelp("musicaoff: desactiva el MPD")
     msgHelp("wol: enciende el PC (activando el sonoff)")
     msgHelp("woloff: apaga el PC (desactivando el sonoff)")
+    msgHelp("radioon: habilita las ordenes de radio (abrir parking, ...)")
+    msgHelp("radiooff: desactiva las ordenes de radio (abrir el parking, ...)")
     msgHelp("t: envia las temperaturas al canal raspiBot")
     msgHelp("flush: elimina todas las entradas de Redis")
     msgHelp("info: envia un resumen de los principales parametros")
