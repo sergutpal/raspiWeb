@@ -40,3 +40,9 @@ payloadRTL433Parking2 = "1607"   # Parking real
 payloadRTL433Parking3 = "4656"   # Parking real
 payloadRTL433Parking4 = "827952" # Parking real
 payloadRTL433Naranja = "602592"  # WOL
+
+topicClick1 = "zigbee2mqtt/Click1/action"
+payloadClickSingle = b'single'
+payloadClickDouble = b'double'
+payloadClickHold = b'hold'
+

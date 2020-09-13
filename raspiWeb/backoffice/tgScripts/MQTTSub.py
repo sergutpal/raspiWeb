@@ -88,9 +88,14 @@ def getMQTTAqaraAlarm(msg):
 
 
 def getMQTTHumo(msg):
-    js = json.loads(msg.payload)
-    if js['smoke']:  # ATENCIÓN está saltando una alerta de humo!!!!!
-        globalVars.fireAlarm(' ALARMA HUMO!!!!!! ' + msg.topic)
+    try:
+        js = json.loads(msg.payload)
+        if js['smoke']:  # ATENCIÓN está saltando una alerta de humo!!!!!
+            globalVars.fireAlarm(' ALARMA HUMO!!!!!! ' + msg.topic)
+        return True
+    except Exception as e:
+        toLogFile('Error getMQTTHumo: ' + str(e))
+        return False
 
 
 def getMQTTRTL433(msg):
@@ -108,8 +113,9 @@ def getMQTTRTL433(msg):
         if (id ==MQTTServer.payloadRTL433Timbre1) or (id ==MQTTServer.payloadRTL433Timbre2):
             getMQTTTimbre(msg)
         if (id ==MQTTServer.payloadRTL433Parking1) or (id ==MQTTServer.payloadRTL433Parking2) or (id ==MQTTServer.payloadRTL433Parking3) or (id ==MQTTServer.payloadRTL433Parking4):
-            parkingRequest(0)
-            globalVars.toFile(globalVars.sendFile, "Peticion radio abrir parking recibida (" + id + ")")
+            if globalVars.getConfigField('radioParking') == '1':
+                parkingRequest(0)
+                globalVars.toFile(globalVars.sendFile, "Peticion radio abrir parking recibida (" + id + ")")
         if (id ==MQTTServer.payloadRTL433Naranja):
             wakeonlanRequest(False)
             globalVars.toFile(globalVars.sendFile, "Peticion radio WOL (" + id + ")")
@@ -117,6 +123,20 @@ def getMQTTRTL433(msg):
         return True
     except Exception as e:
         #toLogFile('Error getMQTTRTL433: ' + str(e))
+        return False
+
+def getMQTTClick1(msg):
+    try:
+        action = msg.payload
+        if action ==MQTTServer.payloadClickSingle:  # Pulsacion estandard: unica y corta
+            globalVars.toFile(globalVars.sendFile, "Click1 simple")
+        if action ==MQTTServer.payloadClickDouble:  # Pulsacion doble click
+            globalVars.toFile(globalVars.sendFile, "Click1 doble click")
+        if action ==MQTTServer.payloadClickHold:  # Pulsacion larga
+            globalVars.toFile(globalVars.sendFile, "Click1 laaaarga")
+        return True
+    except Exception as e:
+        toLogFile('Error getMQTTClick1: ' + str(e))
         return False
 
 
@@ -144,6 +164,8 @@ def on_message(mqttc, obj, msg):
             getMQTTAqaraAlarm(msg)
        if msg.topic == MQTTServer.topicRTL433:
             getMQTTRTL433(msg)
+       if msg.topic == MQTTServer.topicClick1:
+            getMQTTClick1(msg)
     except Exception as e:
         # toLogFile('Error on_message: ' + str(e))
         return False
@@ -177,6 +199,7 @@ def iniMQTT():
                 mqttc.subscribe(MQTTServer.topicAqaraDoor.replace('X', str(i)), qos=0)
             mqttc.subscribe(MQTTServer.topicEfergy, qos=0)
             mqttc.subscribe(MQTTServer.topicRTL433, qos=0)
+            mqttc.subscribe(MQTTServer.topicClick1, qos=0)
             disconnect_flag = False
             toLogFile('MQTTProcess.initMQTT OK')
             return True
