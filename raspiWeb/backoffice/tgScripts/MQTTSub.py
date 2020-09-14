@@ -8,6 +8,7 @@ from auto import setAlarmAutoOn
 from autooff import setAlarmAutoOff
 from abreparking import parkingRequest
 from wol import wakeonlanRequest
+from woloff import wakeonlanOffRequest
 import foto
 import globalVars
 import MQTTServer
@@ -129,10 +130,14 @@ def getMQTTClick1(msg):
     try:
         action = msg.payload
         if action ==MQTTServer.payloadClickSingle:  # Pulsacion estandard: unica y corta
+            wakeonlanRequest(True)
             globalVars.toFile(globalVars.sendFile, "Click1 simple")
         if action ==MQTTServer.payloadClickDouble:  # Pulsacion doble click
+            wakeonlanRequest(True)
+            wakeonlanOffRequest()
             globalVars.toFile(globalVars.sendFile, "Click1 doble click")
         if action ==MQTTServer.payloadClickHold:  # Pulsacion larga
+            wakeonlanOffRequest()
             globalVars.toFile(globalVars.sendFile, "Click1 laaaarga")
         return True
     except Exception as e:
