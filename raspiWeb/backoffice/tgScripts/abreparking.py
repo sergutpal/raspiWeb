@@ -15,8 +15,10 @@ def parkingRequest(waitSeconds='0'):
                 globalVars.toFile(globalVars.sendFile, "Alarma desactivada")
 
         globalVars.redisRequestSet(globalVars.redisParkingRequest, waitSeconds)
+
         globalVars.toFile(globalVars.sendFile,
                           "Abriendo parking en " + waitSeconds + " segundos")
+
         return True
     except Exception as e:
         globalVars.toLogFile('Error parkingRequest: ' + str(e))

@@ -115,7 +115,7 @@ def getMQTTRTL433(msg):
             getMQTTTimbre(msg)
         if (id ==MQTTServer.payloadRTL433Parking1) or (id ==MQTTServer.payloadRTL433Parking2) or (id ==MQTTServer.payloadRTL433Parking3) or (id ==MQTTServer.payloadRTL433Parking4):
             if globalVars.getConfigField('radioParking') == '1':
-                parkingRequest(0)
+                parkingRequest('0')
                 globalVars.toFile(globalVars.sendFile, "Peticion radio abrir parking recibida (" + id + ")")
         if (id ==MQTTServer.payloadRTL433Naranja):
             wakeonlanRequest(False)
