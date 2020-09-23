@@ -46,3 +46,4 @@ payloadClickSingle = b'single'
 payloadClickDouble = b'double'
 payloadClickHold = b'hold'
 
+topicPV = "PV"
