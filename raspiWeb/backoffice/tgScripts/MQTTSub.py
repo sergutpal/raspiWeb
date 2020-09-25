@@ -99,6 +99,10 @@ def getMQTTHumo(msg):
         return False
 
 
+# Para que funcione los comandos de radio deben darse las siguientes condiciones:
+# 1-) El proceso MQTTSub debe estar en ejecución en cubieSrv (supervisor)
+# 2-) El check "RadioParking" debe estar activado (sergutpal.dynu.com)
+# 3-) En la raspi4 debemos tener el USB radio conectado y funcionando correctamente. En caso de cuelgue, hay que hacer un /root/resetUSB.sh
 def getMQTTRTL433(msg):
     REPEAT_CMD_SECONDS = 2  # Si llegan nuevos mensajes dentro de los REPEAT_CMD_SECONDS del mensaje anterior procesado, los ignoramos 
     # Esta funcion comprueba que no hayan llegado 2 comandos rtl_433 muy seguidos. En ese caso entendemos que
