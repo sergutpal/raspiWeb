@@ -91,7 +91,7 @@ def getMQTTAqaraAlarm(msg):
 def getMQTTHumo(msg):
     try:
         js = json.loads(msg.payload)
-        if js['smoke']:  # ATENCIÓN está saltando una alerta de humo!!!!!
+        if (js['smoke']) and (js['smoke_density'] >0):  # ATENCIÓN está saltando una alerta de humo!!!!!
             globalVars.fireAlarm(' ALARMA HUMO!!!!!! ' + msg.topic)
         return True
     except Exception as e:
