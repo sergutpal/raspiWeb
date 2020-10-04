@@ -8,12 +8,14 @@ find /home/imgPi/pi1/var/log -name "*.gz" -type f -delete
 #find /home/imgPi/pi2/var/log -name "*.gz" -type f -delete
 find /home/imgPi/pi3/var/log -name "*.gz" -type f -delete
 find /home/imgPi/pi4/var/log -name "*.gz" -type f -delete
+find /home/imgPi/pi5/var/log -name "*.gz" -type f -delete
 find /home/nfs/telegram/logs -name "*.gz" -type f -delete
 
 rm -rf /home/imgPi/pi1/var/www/cam/media/*
 #rm -rf /home/imgPi/pi2/var/www/cam/media/*
 rm -rf /home/imgPi/pi3/var/www/cam/media/*
 rm -rf /home/imgPi/pi4/var/www/cam/media/*
+rm -rf /home/imgPi/pi5/var/www/cam/media/*
 
 truncate --size=0 /home/nfs/telegram/logs/*
 truncate --size=0 /var/log/*
@@ -23,16 +25,23 @@ truncate --size=0 /home/tmp/telegram/logs/*
 truncate --size=0 /home/imgPi/pi1/var/log/*
 truncate --size=0 /home/imgPi/pi3/var/log/*
 truncate --size=0 /home/imgPi/pi4/var/log/*
+truncate --size=0 /home/imgPi/pi5/var/log/*
 
 truncate --size=0 /home/imgPi/pi1/var/log/zigbee2mqtt/*
-truncate --size=0 /home/imgPi/pi3/var/log/zigbee2mqtt/*
-truncate --size=0 /home/imgPi/pi4/var/log/zigbee2mqtt/*
+#truncate --size=0 /home/imgPi/pi3/var/log/zigbee2mqtt/*
+#truncate --size=0 /home/imgPi/pi4/var/log/zigbee2mqtt/*
+
 
 truncate --size=0 /home/imgPi/pi1/var/log/apt/*
 truncate --size=0 /home/imgPi/pi3/var/log/apt/*
 truncate --size=0 /home/imgPi/pi4/var/log/apt/*
+truncate --size=0 /home/imgPi/pi5/var/log/apt/*
 
 rm -rf /home/nfs/tmp/ToDelete/*
+rm -rf /home/tmp/dropbox/camEntrada
+rm -rf /home/tmp/dropbox/camComedor
+rm -rf /home/tmp/dropbox/backup
+rm -rf /home/tmp/dropbox/video
 
 echo "Todo limpio ;-). Recuerda eliminar todos los firmwares de raspis que no se utilicen en /lib/modules" > /home/tmp/telegram/send.txt
 
