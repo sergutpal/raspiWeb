@@ -10,8 +10,9 @@ from _thread import start_new_thread
 def videoRequest(piNumber=0):
     if piNumber == 0:
         for i in range(0, globalVars.numRaspis + 1):
-            globalVars.redisRequestSet(
-                globalVars.redisVideoRequest.replace('X', str(i)))
+            if (i != 1):
+                globalVars.redisRequestSet(
+                    globalVars.redisVideoRequest.replace('X', str(i)))
     else:
         globalVars.redisRequestSet(
             globalVars.redisVideoRequest.replace('X', str(piNumber)))

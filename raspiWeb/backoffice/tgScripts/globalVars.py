@@ -14,7 +14,7 @@ import redis
 
 # En esta variable indicamos cuantas raspis tenemos para los bucles de
 # peticion (solicitar temperatura, foto, tv, etc.)
-numRaspis = 4
+numRaspis = 5
 redisSrv = redis.Redis("192.168.1.20", decode_responses=True)
 pathTmp = '/home/tmp/'
 pathDeleteLogic = '/home/nfs/tmp/ToDelete'
