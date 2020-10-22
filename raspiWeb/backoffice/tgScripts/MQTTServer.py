@@ -46,4 +46,9 @@ payloadClickSingle = b'single'
 payloadClickDouble = b'double'
 payloadClickHold = b'hold'
 
+topicCaldera = "zigbee2mqtt/Enchufe1/set"
+payloadCalderaON = b'ON'
+payloadCalderaOFF = b'OFF'
+
+
 topicPV = "PV"
