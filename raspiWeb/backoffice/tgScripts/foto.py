@@ -29,14 +29,20 @@ def photoFFMPEG(URL, filename):
 def photoEntrada():
     photoFFMPEG(globalVars.rtspEntrada, globalVars.pathTmpTelegram + 'entrada.jpg')
 
-
 def photoSalon():
     photoFFMPEG(globalVars.rtspSalon,  globalVars.pathTmpTelegram + 'salon.jpg')
 
+def photoSotano():
+    photoFFMPEG(globalVars.rtspSotano,  globalVars.pathTmpTelegram + 'sotano.jpg')
+
+def photoTerraza():
+    photoFFMPEG(globalVars.rtspTerraza,  globalVars.pathTmpTelegram + 'terraza.jpg')
 
 def photoWebCams():
     photoEntrada()
     photoSalon()
+    photoSotano()
+    photoTerraza()
 
 
 if __name__ == "__main__":

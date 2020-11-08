@@ -14,7 +14,7 @@ import redis
 
 # En esta variable indicamos cuantas raspis tenemos para los bucles de
 # peticion (solicitar temperatura, foto, tv, etc.)
-numRaspis = 5
+numRaspis = 4
 redisSrv = redis.Redis("192.168.1.20", decode_responses=True)
 pathTmp = '/home/tmp/'
 pathDeleteLogic = '/home/nfs/tmp/ToDelete'
@@ -128,6 +128,8 @@ aqaraSmokeNum = 3
 timeVideoRecord = 60
 rtspEntrada = 'rtsp://admin:VTLOZG@192.168.1.220:554'
 rtspSalon = 'rtsp://admin:KVHPVD@192.168.1.224:554'
+rtspSotano = 'rtsp://admin:GMHANA@192.168.1.223:554'
+rtspTerraza = 'rtsp://admin:WTUJDT@192.168.1.222:554'
 raspiId = '0'
 raspiName = 'raspiX'
 
