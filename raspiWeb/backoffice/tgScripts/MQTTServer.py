@@ -10,6 +10,7 @@ mqttPwd = "SGp24121976"
 topicAlarma = "raspi/alarma"
 topicAlarmaAuto = "raspi/alarmaAuto"
 topicRadioParking = "raspi/radioParking"
+topicAutoTermo = "raspi/autoTermo"
 payloadAlarmaON = b'ON'
 payloadAlarmaOFF = b'OFF'
 

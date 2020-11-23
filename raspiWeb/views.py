@@ -41,12 +41,14 @@ def inicioMin(notifMsg):
     alarma = globalVars.isAlarmActive()
     auto = globalVars.isAlarmAuto()
     radioParking = globalVars.getConfigField('radioParking')
+    iAutoTermo = globalVars.getConfigField('autoTermo')
+    autoTermo = iAutoTermo == '1'
     parking = radioParking == '1'
     djangovers = django.VERSION
     ip = get_ip_public()
 
     values = {'notifMsg': notifMsg, 'alarma': alarma, 'auto': auto,
-              'parking': parking, 'djangovers': djangovers, 'ip': ip}
+              'parking': parking, 'autoTermo': autoTermo, 'djangovers': djangovers, 'ip': ip}
     return values
 
 
@@ -137,6 +139,12 @@ def alarma(request, active):
 @login_required
 def radioParking(request, active):
     values = setValueOnOff(active, MQTTServer.topicRadioParking, 'Radio Parking', False)
+    return inicio(request, values['status'])
+
+
+@login_required
+def autoTermo(request, active):
+    values = setValueOnOff(active, MQTTServer.topicAutoTermo, 'Auto Termo', False)
     return inicio(request, values['status'])
 
 

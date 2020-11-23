@@ -12,6 +12,10 @@ function init() {
         $('#parkingChk').change(function() {
                 ChkOnChange('#parkingChk', '/radioParking/on/','/radioParking/off/');
         });
+        $('#autoTermoChk').change(function() {
+                ChkOnChange('#autoTermoChk', '/autoTermo/on/','/autoTermo/off/');
+        });
+
 	sNotifMsg = $('#notifMsg').attr('value')
 	if (sNotifMsg)
 		$('#alarmaLbl').notify(sNotifMsg, notifOptions);

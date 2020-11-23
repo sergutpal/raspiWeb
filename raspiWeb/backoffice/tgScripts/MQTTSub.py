@@ -69,6 +69,13 @@ def getMQTTRadioParking(msg):
         globalVars.setRadioParkingOff()
 
 
+def getMQTTAutoTermo(msg):
+    if (msg.payload ==MQTTServer.payloadAlarmaON):
+        globalVars.setAutoTermoOn()
+    if (msg.payload ==MQTTServer.payloadAlarmaOFF):
+        globalVars.setAutoTermoOff()
+
+
 def getMQTTTimbre(msg):
     toLogFile('Recibido msg Timbre: ' + msg.topic + "@. Payload: @" + str(msg.payload) + "@")
     for i in range(0, globalVars.numRaspis + 1):
@@ -163,6 +170,8 @@ def on_message(mqttc, obj, msg):
            getMQTTAlarmaAuto(msg)
        if msg.topic == MQTTServer.topicRadioParking:
            getMQTTRadioParking(msg)
+       if msg.topic == MQTTServer.topicAutoTermo:
+           getMQTTAutoTermo(msg)
        if msg.topic[:-1] == MQTTServer.topicHumo.replace('X', ''):
            getMQTTHumo(msg)
        if (msg.topic == MQTTServer.topicTimbre) and (msg.payload ==MQTTServer.payloadTimbre):
@@ -199,6 +208,7 @@ def iniMQTT():
             mqttc.subscribe(MQTTServer.topicAlarma, qos=0)
             mqttc.subscribe(MQTTServer.topicAlarmaAuto, qos=0)
             mqttc.subscribe(MQTTServer.topicRadioParking, qos=0)
+            mqttc.subscribe(MQTTServer.topicAutoTermo, qos=0)
             for i in range(1, globalVars.aqaraSmokeNum + 1):
                 mqttc.subscribe(MQTTServer.topicHumo.replace('X', str(i)), qos=0)
             mqttc.subscribe(MQTTServer.topicTimbre, qos=0)

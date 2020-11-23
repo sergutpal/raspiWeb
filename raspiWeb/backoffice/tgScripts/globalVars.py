@@ -112,6 +112,7 @@ SQL_ALARM_UPDATE = 'INSERT INTO historicoAlarma(activa, data) VALUES ' + \
     '(valor,' + DATETIME_NOW + ' );'
 SQL_AUTO_UPDATE = 'UPDATE config SET alarmAuto = valor;'
 SQL_RADIOPARKING_UPDATE = 'UPDATE config SET radioParking = valor;'
+SQL_AUTOTERMO_UPDATE = 'UPDATE config SET autoTermo = valor;'
 SQL_GET_LAST = 'SELECT column, data FROM table;'
 SQL_SELECT_HISTORY = 'SELECT COUNT(*) AS NumTotal, MAX(column) AS Maximo, ' + \
     'MIN(column) as Minimo, AVG(column) as Media ' + \
@@ -936,6 +937,36 @@ def setRadioParkingOff():
 
 def setRadioParkingOn():
     setRadioParking('1')
+
+
+def setAutoTermo(value):
+    global pathConfigDB
+    global SQL_AUTOTERMO_UPDATE
+    global sendFile
+
+    sql = SQL_AUTOTERMO_UPDATE
+    try:
+        redisSet('configautoTermo', value)
+        sqlExec = sql.replace('valor', value)
+        DB = sqlite3.connect(pathConfigDB)
+        cur = DB.cursor()
+        cur.execute(sqlExec)
+        DB.commit()
+        cur.close()
+        DB.close()
+        toFile(sendFile, "AutoTermo actualizado a " + value)
+        return True
+    except Exception as e:
+        toLogFile('Error setAutoTermo: ' + str(e))
+        return False
+
+
+def setAutoTermoOff():
+    setAutoTermo('0')
+
+
+def setAutoTermoOn():
+    setAutoTermo('1')
 
 
 initGlobalVars()

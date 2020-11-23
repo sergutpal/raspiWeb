@@ -1,7 +1,7 @@
-#!/usr/bin/python
-
-import globalVars
+import MQTTServer
+from MQTTSend import pubMQTTMsg
 
 
 if __name__ == "__main__":
-    globalVars.setRadioParkingOn()
+    pubMQTTMsg(MQTTServer.topicRadioParking, MQTTServer.payloadAlarmaON)
+

@@ -30,9 +30,12 @@
 	<h4 id="parkingLbl" class="text-primary"><strong>Radio Parking:&nbsp;</strong>
 		<input type="checkbox" data-toggle="toggle" data-on="Activado" data-off="Bloqueado" id="parkingChk" data-size="normal" {% if parking %} checked {% endif %}>
 	</h4>
+	<h4 id="autoTermoLbl" class="text-primary"><strong>Auto Termo:&nbsp;</strong>
+			<input type="checkbox" data-toggle="toggle" data-on="Activado" data-off="Desactivado" id="autoTermoChk" data-size="normal" {% if autoTermo %} checked {% endif %}>
+	</h4>
 
-        <p>	
-        <h4 id="ipLbl" class="text-primary"><strong>IP Pública:&nbsp; {{ ip }}</strong></h4>
+	<p>
+	<h4 id="ipLbl" class="text-primary"><strong>IP Pública:&nbsp; {{ ip }}</strong></h4>
 	<!-- <h4 id="djangoLbl" class="text-primary"><strong>Django version:&nbsp; {{ djangovers }}</strong></h4> -->
 
 	{% if seeAll %}

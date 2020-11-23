@@ -19,7 +19,7 @@ from django.contrib.auth.views import LoginView #, logout
 from raspiWeb.views import inicio, inicioFull, auto, alarma, musica, musica1OR4, \
                     kodi, foto, reboot, watchdog, temperatura, parking, \
                     wakeonlan, transmissionON, transmissionOFF, flush, \
-                    firewallON, firewallOFF, radioParking
+                    firewallON, firewallOFF, radioParking, autoTermo
 
 urlpatterns = [
     #url(r'^accounts/login/$', login, {'template_name': 'admin/login.html'}),
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^auto/(on|off)/$', auto),
     url(r'^alarma/(on|off)/$', alarma),
     url(r'^radioParking/(on|off)/$', radioParking),
+    url(r'^autoTermo/(on|off)/$', autoTermo),
     url(r'^musica/(on|off)/$', musica),
     url(r'^m/(1|4)/$', musica1OR4),
     url(r'^kodi/(1|2|3)/$', kodi),
