@@ -924,7 +924,7 @@ def setRadioParking(value):
         DB.commit()
         cur.close()
         DB.close()
-        toFile(sendFile, "Radio Parking actualizado a " + value)
+        # toFile(sendFile, "Radio Parking actualizado a " + value)
         return True
     except Exception as e:
         toLogFile('Error setRadioParking: ' + str(e))

@@ -142,14 +142,14 @@ def getMQTTClick1(msg):
         action = msg.payload
         if action ==MQTTServer.payloadClickSingle:  # Pulsacion estandard: unica y corta
             wakeonlanRequest(True)
-            globalVars.toFile(globalVars.sendFile, "Click1 simple")
+            # globalVars.toFile(globalVars.sendFile, "Click1 simple")
         if action ==MQTTServer.payloadClickDouble:  # Pulsacion doble click
             wakeonlanRequest(True)
             wakeonlanOffRequest()
-            globalVars.toFile(globalVars.sendFile, "Click1 doble click")
+            # globalVars.toFile(globalVars.sendFile, "Click1 doble click")
         if action ==MQTTServer.payloadClickHold:  # Pulsacion larga
             wakeonlanOffRequest()
-            globalVars.toFile(globalVars.sendFile, "Click1 laaaarga")
+            # globalVars.toFile(globalVars.sendFile, "Click1 laaaarga")
         return True
     except Exception as e:
         toLogFile('Error getMQTTClick1: ' + str(e))
