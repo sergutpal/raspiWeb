@@ -40,11 +40,25 @@ def videoSalon():
     videoFFMPEG(globalVars.rtspSalon, 'salon')
 
 
+def videoSotano():
+    videoFFMPEG(globalVars.rtspSotano, 'sotano')
+
+
+def videoTerraza():
+    videoFFMPEG(globalVars.rtspTerraza, 'terraza')
+
+
 def videoWebCams():
-#    start_new_thread(videoEntrada, ())
-#    start_new_thread(videoSalon, ())
-    videoSalon()
-    videoEntrada()
+    try:
+        videoSalon()
+        videoEntrada()
+        videoSotano()
+        ## videoTerraza()
+    except Exception as e:
+        globalVars.toLogFile('Error videoWebCams: ' + str(e))
+        return False
+
+
 
 if __name__ == "__main__":
     try:
