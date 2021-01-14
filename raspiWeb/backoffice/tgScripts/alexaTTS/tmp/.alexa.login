@@ -22,11 +22,11 @@ var ue_csm = window,
 pec:0,ts:0,erl:[],ter:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec<a.ec&&d.uex("at");a.pec=a.ec},1E4)}};l.skipTrace=1;h.skipTrace=1;h.isStub=1;d.ueLogError=h;d.ue_err=a;e.onerror=l})(ue_csm,window);
 
 
-var ue_id = 'PBNX6J19JGPJQXV9Z4V2',
+var ue_id = 'AF0R3C8T1HYGYNK1927J',
     ue_url = '/ap/uedata',
     ue_navtiming = 1,
     ue_mid = 'A1RKKUPIHCS9HS',
-    ue_sid = '257-9891083-4731403',
+    ue_sid = '261-2927413-1249259',
     ue_sn = 'www.amazon.es',
     ue_furl = 'fls-eu.amazon.com',
     ue_surl = 'https://unagi-eu.amazon.com/1/events/com.amazon.csm.nexusclient.prod',
@@ -35,7 +35,7 @@ var ue_id = 'PBNX6J19JGPJQXV9Z4V2',
     ue_urt = 3,
     ue_rpl_ns = 'cel-rpl',
     ue_ddq = 1,
-    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:257-9891083-4731403:PBNX6J19JGPJQXV9Z4V2$uedata=s:',
+    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:261-2927413-1249259:AF0R3C8T1HYGYNK1927J$uedata=s:',
     ue_sbuimp = 1,
 
     ue_swi = 1;
@@ -67,7 +67,7 @@ var ue_hoe = +new Date();
 window.ueinit = window.ue_ihb;
 </script>
 
-<!-- 17k2z8x02pvn1ls9bix --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
+<!-- 4xymx4697riszpxk8mj6ou134rws --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
     <title dir="ltr">Iniciar sesión en Amazon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 
@@ -144,7 +144,7 @@ if(window.ue&&uet) { uet('bb'); }
 }
 </script></head>
 
-  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_157141-c a-aui_158613-c a-aui_72554-c a-aui_dropdown_187959-c a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_145937-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:257-9891083-4731403:PBNX6J19JGPJQXV9Z4V2$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3DPBNX6J19JGPJQXV9Z4V2:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
+  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_157141-c a-aui_158613-c a-aui_72554-c a-aui_dropdown_187959-c a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_145937-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:261-2927413-1249259:AF0R3C8T1HYGYNK1927J$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3DAF0R3C8T1HYGYNK1927J:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
 
 
 <script>
@@ -154,13 +154,13 @@ if (window.csa) {
         'Application': 'Retail',
         'ObfuscatedMarketplaceId': 'A1RKKUPIHCS9HS',
         'Events.SushiEndpoint': 'https://unagi-eu.amazon.com/1/events/com.amazon.csm.nexusclient.prod',
-        'CacheDetection.RequestID': "PBNX6J19JGPJQXV9Z4V2",
+        'CacheDetection.RequestID': "AF0R3C8T1HYGYNK1927J",
         'CacheDetection.Callback': window.ue && ue.reset
     });
 
     csa("Events")("setEntity", {
-        page: {requestId: "PBNX6J19JGPJQXV9Z4V2", meaningful: "interactive"},
-        session: {id: "257-9891083-4731403"}
+        page: {requestId: "AF0R3C8T1HYGYNK1927J", meaningful: "interactive"},
+        session: {id: "261-2927413-1249259"}
     });
 }
 
@@ -322,7 +322,7 @@ amzn.copilot.checkCoPilotSession();
     
 
     
-      <input type="hidden" name="appActionToken" value="H2w5a472atBQuudLHj2BDtlRJgjj2B8j3D" /><input type="hidden" name="appAction" value="SIGNIN" />
+      <input type="hidden" name="appActionToken" value="e2r4AqGT72dj2BdpwGd0j2BsmO2b71wj3D" /><input type="hidden" name="appAction" value="SIGNIN" />
     
   
 
@@ -332,13 +332,13 @@ amzn.copilot.checkCoPilotSession();
 
 
   
-    <input type="hidden" name="ces" value="ape:QUNTX0NaSUFPTkxxM2E5ZXEyWDFmNHVBeW45L2YzOEFBQUFBQUFBQUFZZmdodEpqOUhlRlRoamc2UVRBdlNFaVhOZTZtRk1RVUxSdjhBZEMxck1pR2tOdVdSQ2lJRVRhYmpvUS9KTndiVW53WE9SSDVYOVBZenVkUkdNM3FHU0l5VGZObHpzK2ovdnRPTVIxRGFoSlhpZ09xaW5WRGVjZm8yREJ3ZG1LcUZGcEwxRnVBOFhGdEhrS3BwY093MGRYQkcrYzRVL0ptaSt4RFNPQVh3MjRKNFdlYVdISWVERWZDbktyUnk1RUhXbUhITnVKV2xPYWpyc2JvK05CNEhsUTE1dnhMUldWWGFhT1pHRC9HVzNQTHNZSU9obFZPdE54K0xVM25wVVdQNEcwK2dtb1RIZWhSWXQ5Qi9JREJ5dHE2OGFQcXJFeDdmL0RnTVJiTnRDdGpFM1RLSjdqVlMwNWxrakFrb0FROGJoMnpoOC9FZlgvOWxjeDNRc3NYNjQ9" />
+    <input type="hidden" name="ces" value="ape:QUNTX2RvTW1sanY1Sm0yUjFLUjFPQ3JXcW45L2YzOEFBQUFBQUFBQUFTVWRwalg2eHJqUjZmWVVrTlQ3WGEwUFpBSy9hdUVrOExIdFlvMGY5ZWJkQzZIWFNHclNmcnl5WHY4TVEvSFlPWWlBY2tsR1dSVE5WcE1WRmRGcGQrMEdqakp0QzBUNitMdUdaK2IxWkg1QUZ3dzk2WTYzaFFXUkp1TVhmcndPV0tsaXNGNFdPVzB2cjVWbGJCaFdWd1M2bDNTU1QwanZobDh2a3ZBai9NVy9xVVMxTEZWZVljSG9CdXVnME5KQnlyQk1EamlXZGZwL3hDWkQ3UlVOOXRaaWdLeE5KSGxkREM0RklhcDloVEVyajdOZlBDUzJBVU9ieEo3T2VIV1h3NGwxRWpYYVRza3BLM0RTY2tCTld5QUt5L3UyWGFOTGZtME9nRWhzRk1lUVBHVkVBVEsweGpia2RXUDljNGIrS1p0YjI5SnE5ckEyRTkrNHhFd1F6RzA9" />
   
     <input type="hidden" name="openid.return_to" value="ape:aHR0cHM6Ly9hbGV4YS5hbWF6b24uZXMv" />
   
-    <input type="hidden" name="prevRID" value="ape:UEJOWDZKMTlKR1BKUVhWOVo0VjI=" />
+    <input type="hidden" name="prevRID" value="ape:QUYwUjNDOFQxSFlHWU5LMTkyN0o=" />
   
-    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.WaOn3DLLYxChWeRsbU8rGX3iHpyGkfzli9kQdg9l6wnc4zThoeKmIw.BQHOj9BCYtKRwKVm.acgQTT91Zz_gxGMx8TqcQ8XySrlN8YZoXodhglb7DX_RTXqCRnfKHLNwCUhiR1VdJW56Z8ARfUdlbbUlWmvt0BqzgX59Z4Qnwz9u20vZu9eyo_Sl5HHnrvL2heVH-ZEoF2k3eKoMoIJS0esyDTFYetWvuCrDSIPWFs3i1kHz5kwKtG22xmr9VF_M4BQswDVfXhh1_ZSgrPx9bBVaSIgFh7XdHLN8bTAxSNxqQGl_LvAOX1S1_Ok8EoY69LexVe_pq36XSEWNMaLdJkl2_R_XxxjUVIKup_YYLpQnX26l0JKzte5yGV2y5raq4FlwUjnqkFF8xHilal7lg0ZDEh6m8xRKoRxfiZkKmKCZZ2K07Ko_7G3jF2uB-TzO0fm-W7OTQixIXhdvKPGdxkeGYagHkJPRD4vo9CwAM6yUECHjIrm9rOv4Oj3MjF1rD6wae-eEhFYM2bcY0Bi_6yVkl3uwN86q_45KJg4YmMIUDTxhrWY6JDq-KdO8aC1WrCFIGVo-I5v8Je-61eY.atOOBZngNFfbpsAslChnTg" />
+    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.1yJilrCZgM6wPiJbmFoXwve3py15_JV98i5Ru494gwN623hIJqFFBQ.v7i8DrEEQRoVbssi.LG7ijeo9HrJ0INKEe9A7mmiLEV2vMB_RFebYf1MY457guGuR6mlHNuVbyvHA7esBFot-IjWHYX_yNxdnfoeP6ll0hPrpFMxYduqwt7fMb8RW8fQO8OBB6pPHkTjas5z9H9DmQ65tim6eJizH69u4z4HTskzU5o_Rnu4F3e5XNJN4vKcjIvh_NTEYGMxYXhJVfenJqkMsB1RYASV3SF9-UvFrUuaxhf0v12EfiyGp04JvMEC5-LLqdCbTT5EmeQZq3MWcLxkdGSQTqcnVwGBa3-Drul08YwU-MjUS0gTWxvmTKphFZxZFz6Ci8VDt4W_XMMlCotciuQQn5apr0Qb9KqRO7wKY1uyeh7WSKroX8ZTpBrJ3_vLu3V_M58zF35YpwBZ2Shu8AlNJyy4lSI7aL_egN7_Rd3vpEhSCOSkuvGXsOOYOKvEN7Fx2KkR5ZSyfUGh1yDyryjIEVektfn6vMyKSlvw_fzX2DJdtrEx1SWl3D0M8KQGjbfZIrJubhgRyZ9aoJHbjGgcTOCAPUIE.quB0i_yBR4xLqPya96A73g" />
   
 
 
@@ -361,7 +361,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 
-<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=PBNX6J19JGPJQXV9Z4V2&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJZMnc1Sm8xN21ZZFAyNm9VbkY1WEdyTzExM08vU2g4TDlOY3RkRE9GUnRNPSIsIklWIjoiSk13M3F0T2xncDVqaHBGaDVWOUYvdz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1610350641000">
+<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AF0R3C8T1HYGYNK1927J&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiI5YkRmdlhxS2x3dE9SN0FhbUFGKzVWK1p4aW9ob3B1Q1ZmN3RJSGtVVnhzPSIsIklWIjoiMlhxa21SOG1vdkJ3dWlpNS95VFZoZz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1610634452000">
   ¿Has olvidado la contraseña?
 </a>
   </div>
@@ -475,6 +475,24 @@ amzn.copilot.checkCoPilotSession();
 
 
 
+  <div data-a-input-name="rememberMe" class="a-checkbox a-checkbox-fancy a-control-row a-touch-checkbox"><label><input type="checkbox" name="rememberMe" value="true" tabindex="4"/><i class="a-icon a-icon-checkbox"></i><span class="a-label a-checkbox-label">
+    Recuérdame.
+    <span class="a-declarative" data-action="a-modal" data-a-modal="{&quot;max-width&quot;:&quot;500px&quot;,&quot;width&quot;:&quot;95%&quot;,&quot;name&quot;:&quot;remember-me-detail-link-modal&quot;,&quot;header&quot;:&quot;Casilla \&quot;Recuérdame\&quot;&quot;}">
+      <a id="remember_me_learn_more_link" class="a-link-normal" href="#">
+        Detalles
+      </a>
+    </span>
+
+    <div class="a-popover-preload" id="a-popover-remember-me-detail-link-modal">
+      <div class="a-section a-spacing-large a-spacing-top-mini">
+        <p>
+          <p>Si seleccionas "Recuérdame", se reduce el número de veces que se te pedirá que te identifiques en este dispositivo.</p>
+<p>Para mantener la seguridad de tu cuenta, utiliza esta opción sólo en tus dispositivos personales.</p>
+        </p>
+      </div>
+    </div>
+  </span></label></div>
+
 
   </div>
 
@@ -509,7 +527,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 <div id="auth-captcha-image-container" class="a-section a-text-center">
-  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/688348f3eac248daad1307d7e5077d75.jpg?AWSAccessKeyId=AKIA5WBBRBBBSCNX2IYZ&amp;Expires=1610350941&amp;Signature=JbUxAyCC4kaMDkbPfPLya280gtc%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
+  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/67d315e819b445709dd3647ad3273163.jpg?AWSAccessKeyId=AKIA5WBBRBBBSCNX2IYZ&amp;Expires=1610634753&amp;Signature=JEuwYU6Dc97gSZVsbZznKk41YAQ%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
 </div>
     </div>
 
@@ -571,7 +589,7 @@ amzn.copilot.checkCoPilotSession();
     <div id="image-captcha-options" class="a-section a-spacing-mini">
       <div id="auth-switch-captcha-to-audio-container" class="a-row">
         <div class="a-column a-span12 a-text-center a-spacing-small">
-          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=PBNX6J19JGPJQXV9Z4V2&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiI4WElhM1NGRlV1N1pGc3F0USt4RmpsWXkvL3BQc29lMXBJTVp6akxHYXZFPSIsIklWIjoiYXJ1dENwbVRQOFdDQ21sZldEQldKUT09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1610350641000&amp;use_audio_captcha=0">
+          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AF0R3C8T1HYGYNK1927J&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJXcmhpSEJZWEdKM3lVampMcXJpaDhIQWgxSmhyWTBCTW5EYzg4RXdkcmdvPSIsIklWIjoib2oyWVUrMExGWkE5RllxUGhicldPdz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1610634452000&amp;use_audio_captcha=0">
             Probar con una imagen distinta.
           </a>
           <a id="auth-captcha-noop-link" class="a-link-normal" href="javascript:void(0);">
@@ -660,7 +678,7 @@ amzn.copilot.checkCoPilotSession();
       
         
         <div class="a-divider a-divider-break"><h5>¿Eres nuevo en Amazon?</h5></div>
-        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=PBNX6J19JGPJQXV9Z4V2&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiI4WElhM1NGRlV1N1pGc3F0USt4RmpsWXkvL3BQc29lMXBJTVp6akxHYXZFPSIsIklWIjoiYXJ1dENwbVRQOFdDQ21sZldEQldKUT09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1610350641000" class="a-button-text" role="button">
+        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AF0R3C8T1HYGYNK1927J&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJXcmhpSEJZWEdKM3lVampMcXJpaDhIQWgxSmhyWTBCTW5EYzg4RXdkcmdvPSIsIklWIjoib2oyWVUrMExGWkE5RllxUGhicldPdz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1610634452000" class="a-button-text" role="button">
           Crear una nueva cuenta de Amazon
         </a></span></span>
       
@@ -905,7 +923,7 @@ if (window.csa) {
 </div>
 
 <noscript>
-    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:257-9891083-4731403:PBNX6J19JGPJQXV9Z4V2$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3DPBNX6J19JGPJQXV9Z4V2:0' alt=""/>
+    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:261-2927413-1249259:AF0R3C8T1HYGYNK1927J$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3DAF0R3C8T1HYGYNK1927J:0' alt=""/>
 </noscript>
 </body>
 </html>

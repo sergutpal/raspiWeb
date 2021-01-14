@@ -69,6 +69,13 @@ def getMQTTRadioParking(msg):
         globalVars.setRadioParkingOff()
 
 
+def getMQTTSaveVideoCams(msg):
+    if (msg.payload ==MQTTServer.payloadAlarmaON):
+        globalVars.setSaveVideoCamsOn()
+    if (msg.payload ==MQTTServer.payloadAlarmaOFF):
+        globalVars.setSaveVideoCamsOff()
+
+
 def getMQTTAutoTermo(msg):
     if (msg.payload ==MQTTServer.payloadAlarmaON):
         globalVars.setAutoTermoOn()
@@ -170,6 +177,8 @@ def on_message(mqttc, obj, msg):
            getMQTTAlarmaAuto(msg)
        if msg.topic == MQTTServer.topicRadioParking:
            getMQTTRadioParking(msg)
+       if msg.topic == MQTTServer.topicSaveVideoCams:
+           getMQTTSaveVideoCams(msg)
        if msg.topic == MQTTServer.topicAutoTermo:
            getMQTTAutoTermo(msg)
        if msg.topic[:-1] == MQTTServer.topicHumo.replace('X', ''):
@@ -208,6 +217,7 @@ def iniMQTT():
             mqttc.subscribe(MQTTServer.topicAlarma, qos=0)
             mqttc.subscribe(MQTTServer.topicAlarmaAuto, qos=0)
             mqttc.subscribe(MQTTServer.topicRadioParking, qos=0)
+            mqttc.subscribe(MQTTServer.topicSaveVideoCams, qos=0)
             mqttc.subscribe(MQTTServer.topicAutoTermo, qos=0)
             for i in range(1, globalVars.aqaraSmokeNum + 1):
                 mqttc.subscribe(MQTTServer.topicHumo.replace('X', str(i)), qos=0)

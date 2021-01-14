@@ -21,7 +21,7 @@ def videoRequest(piNumber=0):
 def videoFFMPEG(URL, filename):
     try:
         filename = filename + globalVars.getUniqueIdFromDate() + '.mp4'
-        command = '/usr/bin/ffmpeg -i ' + URL + ' -t ' + str(globalVars.timeVideoRecord) + ' -acodec copy -vcodec copy ' + globalVars.pathTmp + filename
+        command = '/usr/bin/ffmpeg -i ' + URL + ' -t ' + str(globalVars.timeVideoRecord) + ' -acodec copy -vcodec copy ' + globalVars.pathTmp + filename 
         globalVars.toLogFile('Ejecutando: ' + command)
         subprocess.Popen(command, shell=True)
         time.sleep(globalVars.timeVideoRecord + 10)

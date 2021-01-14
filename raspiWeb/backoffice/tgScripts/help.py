@@ -30,6 +30,8 @@ def sendHelp():
     msgHelp("camoff: desactiva las camaras de las raspis")
     msgHelp("camentrada: graba y envia a Dropbox un video de 30 segundos de la puerta de Entrada")
     msgHelp("camcomedor: graba y envía a Dropbox un video de 30 segundos del comedor")
+    msgHelp("savevideocamon: graba las cámaras Ezviz y sube los ficheros a OneDrive")
+    msgHelp("savevideocamoff: para la grabación de las cámaras Ezviz")
     msgHelp("video: graba y envía a Dropbox un video de 60 segundos de todas las cámaras")
     msgHelp("on: activa el modo alarma")
     msgHelp("off: desactiva el modo alarma")

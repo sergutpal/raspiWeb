@@ -112,6 +112,7 @@ SQL_ALARM_UPDATE = 'INSERT INTO historicoAlarma(activa, data) VALUES ' + \
     '(valor,' + DATETIME_NOW + ' );'
 SQL_AUTO_UPDATE = 'UPDATE config SET alarmAuto = valor;'
 SQL_RADIOPARKING_UPDATE = 'UPDATE config SET radioParking = valor;'
+SQL_SAVEVIDEOCAMS_UPDATE = 'UPDATE config SET saveVideoCams = valor;'
 SQL_AUTOTERMO_UPDATE = 'UPDATE config SET autoTermo = valor;'
 SQL_GET_LAST = 'SELECT column, data FROM table;'
 SQL_SELECT_HISTORY = 'SELECT COUNT(*) AS NumTotal, MAX(column) AS Maximo, ' + \
@@ -937,6 +938,36 @@ def setRadioParkingOff():
 
 def setRadioParkingOn():
     setRadioParking('1')
+
+
+def setSaveVideoCams(value):
+    global pathConfigDB
+    global SQL_SAVEVIDEOCAMS_UPDATE
+    global sendFile
+
+    sql = SQL_SAVEVIDEOCAMS_UPDATE
+    try:
+        redisSet('configsaveVideoCams', value)
+        sqlExec = sql.replace('valor', value)
+        DB = sqlite3.connect(pathConfigDB)
+        cur = DB.cursor()
+        cur.execute(sqlExec)
+        DB.commit()
+        cur.close()
+        DB.close()
+        toFile(sendFile, "saveVideoCams actualizado a " + value)
+        return True
+    except Exception as e:
+        toLogFile('Error setSaveVideoCams: ' + str(e))
+        return False
+
+
+def setSaveVideoCamsOff():
+    setSaveVideoCams('0')
+
+
+def setSaveVideoCamsOn():
+    setSaveVideoCams('1')
 
 
 def setAutoTermo(value):
