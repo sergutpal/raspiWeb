@@ -22,11 +22,11 @@ var ue_csm = window,
 pec:0,ts:0,erl:[],ter:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec<a.ec&&d.uex("at");a.pec=a.ec},1E4)}};l.skipTrace=1;h.skipTrace=1;h.isStub=1;d.ueLogError=h;d.ue_err=a;e.onerror=l})(ue_csm,window);
 
 
-var ue_id = '75Q43WQ28KAZFGTXPJKM',
+var ue_id = '7BNCMJRV4A13HCW14KW8',
     ue_url = '/ap/uedata',
     ue_navtiming = 1,
     ue_mid = 'A1RKKUPIHCS9HS',
-    ue_sid = '259-5733983-8284642',
+    ue_sid = '260-0275135-4255147',
     ue_sn = 'www.amazon.es',
     ue_furl = 'fls-eu.amazon.com',
     ue_surl = 'https://unagi-eu.amazon.com/1/events/com.amazon.csm.nexusclient.prod',
@@ -35,7 +35,7 @@ var ue_id = '75Q43WQ28KAZFGTXPJKM',
     ue_urt = 3,
     ue_rpl_ns = 'cel-rpl',
     ue_ddq = 1,
-    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:259-5733983-8284642:75Q43WQ28KAZFGTXPJKM$uedata=s:',
+    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:260-0275135-4255147:7BNCMJRV4A13HCW14KW8$uedata=s:',
     ue_sbuimp = 1,
     ue_bfd = 1000,
     ue_fnt = 0,
@@ -69,7 +69,7 @@ var ue_hoe = +new Date();
 window.ueinit = window.ue_ihb;
 </script>
 
-<!-- 4eg4j3grh3praohhgv6ph --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
+<!-- 3t407h7ti0w6uf8iae --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
     <title dir="ltr">Iniciar sesión en Amazon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 
@@ -77,7 +77,7 @@ window.ueinit = window.ue_ihb;
       
         <link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/71fnkih-amL.css?AUIClients/AuthenticationPortalAlexaSkin#mobile.not-trident" />
 <link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/01SdjaY0ZsL._RC|419sIPk+mYL.css,41RlqABFP+L.css_.css?AUIClients/AuthenticationPortalAssets#mobile.194821-T1" />
-<link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/11sZCT69GEL.css?AUIClients/CVFAssets#mobile" />
+<link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/113aX5vG0SL.css?AUIClients/CVFAssets#mobile" />
 
         <script>
 (function(f,h,Q,A){function G(a){v&&v.tag&&v.tag(q(":","aui",a))}function x(a,b){v&&v.count&&v.count("aui:"+a,0===b?0:b||(v.count("aui:"+a)||0)+1)}function l(a){try{return a.test(navigator.userAgent)}catch(b){return!1}}function y(a,b,c){a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent&&a.attachEvent("on"+b,c)}function q(a,b,c,e){b=b&&c?b+a+c:b||c;return e?q(a,b,e):b}function H(a,b,c){try{Object.defineProperty(a,b,{value:c,writable:!1})}catch(e){a[b]=c}return c}function ta(a,b){var c=a.length,
@@ -102,9 +102,9 @@ Y={w:0,h:0},N=4;L();y(f,"resize",function(){clearTimeout(ka);N=4;L()});var sa={g
 (F.when("A","a-util").execute(function(a,b){na(a,b,c,"unregister")}),y(f,"load",function(){F.when("A","a-util").execute(function(a,c){na(a,c,b,"register");la()})})):(b&&(b.browser&&n(r("register","browser")+"unsupported"),b.prodMshop&&n(r("register","prod_mshop")+"unsupported"),b.betaMshop&&n(r("register","beta_mshop")+"unsupported")),c&&(c.browser&&n(r("unregister","browser")+"unsupported"),c.prodMshop&&n(r("unregister","prod_mshop")+"unsupported"),c.betaMshop&&n(r("unregister","beta_mshop")+"unsupported")),
 la())})({reg:{},unreg:{}});p.declare("a-fix-event-off",!1);x("pagejs:pkgExecTime",D()-za)})(window,document,Date);
   (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/61-6nKPKyWL._RC|11-BZEJ8lnL.js,01qkmZhGmAL.js,71bKxjCVKYL.js_.js?AUIClients/AuthenticationPortalAlexaSkin#mobile');
-  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/21G215oqvfL._RC|21OJDARBhQL.js,218GJg15I8L.js,31lucpmF4CL.js,21juQdw6GzL.js,21zp0xRcpuL.js,01MobMUud8L.js,51OIWtLdR2L.js_.js?AUIClients/AuthenticationPortalAssets#mobile.194821-T1');
-  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/01dTJcsqFWL.js?AUIClients/AuthenticationPortalInlineAssets');
-  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/31crZaOVIqL.js?AUIClients/CVFAssets');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/21G215oqvfL._RC|21OJDARBhQL.js,218GJg15I8L.js,31lucpmF4CL.js,21juQdw6GzL.js,21zp0xRcpuL.js,01axML2MHQL.js,51ZzVICgifL.js_.js?AUIClients/AuthenticationPortalAssets#mobile.194821-T1');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/01D0NLm3WGL.js?AUIClients/AuthenticationPortalInlineAssets');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/315SOEybKvL.js?AUIClients/CVFAssets');
   (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/81JZFvi7+TL.js?AUIClients/SiegeClientSideEncryptionAUI');
   (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/71mA1KjzpaL.js?AUIClients/FWCIMAssets');
 </script>
@@ -146,7 +146,7 @@ if(window.ue&&uet) { uet('bb'); }
 }
 </script></head>
 
-  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_157141-c a-aui_158613-c a-aui_72554-c a-aui_dropdown_187959-c a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_145937-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:259-5733983-8284642:75Q43WQ28KAZFGTXPJKM$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3D75Q43WQ28KAZFGTXPJKM:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
+  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_157141-c a-aui_158613-c a-aui_72554-c a-aui_dropdown_187959-c a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_145937-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:260-0275135-4255147:7BNCMJRV4A13HCW14KW8$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3D7BNCMJRV4A13HCW14KW8:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
 
 
 <script>
@@ -158,14 +158,14 @@ if (window.csa) {
         'Events.Namespace': 'csa',
         'ObfuscatedMarketplaceId': 'A1RKKUPIHCS9HS',
         'Events.SushiEndpoint': 'https://unagi.amazon.es/1/events/com.amazon.csm.csa.prod',
-        'CacheDetection.RequestID': "75Q43WQ28KAZFGTXPJKM",
+        'CacheDetection.RequestID': "7BNCMJRV4A13HCW14KW8",
         'CacheDetection.Callback': window.ue && ue.reset,
         'LCP.elementDedup': 1
     });
 
     csa("Events")("setEntity", {
-        page: {requestId: "75Q43WQ28KAZFGTXPJKM", meaningful: "interactive"},
-        session: {id: "259-5733983-8284642"}
+        page: {requestId: "7BNCMJRV4A13HCW14KW8", meaningful: "interactive"},
+        session: {id: "260-0275135-4255147"}
     });
 }
 !function(n){var i,r,o="splice",e=n.csa,u={},f={},c=n.csa._s,a=0,s={},g={},l={},h=setTimeout,d=Object.keys;function t(n,t){return e(n,t)}function v(n,t){var e=f[n]||{};O(e,t),f[n]=e,h(S,0)}function p(n,t,e){var i=!0;e&&e.buffered&&(i=(l[n]||[]).every(function(n){return!1!==t(n)})),i&&(s[n]||(s[n]=[]),s[n].push(t))}function m(n,t){if(n in g)t(g[n]);else{p(n,function(n){return t(n),!1})}}function b(n,t){if(e("Errors")("logError",n),u.DEBUG)throw t||n}function w(){return Math.abs(4294967295*Math.random()|0).toString(36)}function y(n,t){return function(){try{return n.apply(this,arguments)}catch(n){b(n.message||n,n)}}}function S(){for(var n=0;n<c.length;){var t=c[n],e=t[0]in f;if(!e&&!r)return void(a=t.length);e?(c[o](a=n,1),D(t)):n++}}function D(n){var arguments,t=f[n[0]],e=(arguments=n[1])[0];if(!t||!t[e])return b("Undefined function: "+t+"/"+e);i=n[3],f[n[2]]=t[e].apply(t,arguments.slice(1))||{},i=0}function E(){r=1,S()}function O(t,e){d(e).forEach(function(n){t[n]=e[n]})}m("$beforeunload",E),v("Config",{instance:function(n){O(u,n)}}),e.plugin=y(function(n){n(t)}),t.config=u,t.register=v,t.on=p,t.removeListener=function(n,t){var e=s[n];e&&e[o](e.indexOf(t),1)},t.once=m,t.emit=function(n,t,e){for(var i=s[n]||[],r=0;r<i.length;)!1===i[r](t)?i[o](r,1):r++;g[n]=t||{},e&&e.buffered&&(l[n]||(l[n]=[]),100<=l[n].length&&l[n].shift(),l[n].push(t||{}))},t.UUID=function(){return[w(),w(),w(),w()].join("-")},t.time=function(n){var t=i?new Date(i.time):new Date;return"ISO"===n?t.toISOString():t.getTime()},t.error=b,t.exec=y,(t.global=n).csa._s.push=function(n){n[0]in f&&(!c.length||r)?D(n):c[o](a++,0,n)},S(),h(function(){h(E,u.SkipMissingPluginsTimeout||5e3)},1)}("undefined"!=typeof window?window:global);csa.plugin(function(o){var t,n,r={},e="localStorage",c="sessionStorage",a="local",i="session",u=o.exec;function s(e,t){var n;try{r[t]=!!(n=o.global[e]),n=n||{}}catch(e){r[t]=!(n={})}return n}function f(){t=t||s(e,a),n=n||s(c,i)}function l(e){return e&&e[i]?n:t}o.store=u(function(e,t,n){f();var o=l(n);return e?t?void(o[e]=t):o[e]:Object.keys(o)}),o.storageSupport=u(function(){return f(),r}),o.deleteStored=u(function(e,t){f();var n=l(t);if("function"==typeof e)for(var o in n)n.hasOwnProperty(o)&&e(o,n[o])&&delete n[o];else delete n[e]})});csa.plugin(function(s){s.register("Errors",{logError:function(r){s("Metrics",{producerId:"csa",dimensions:{message:r}})("recordMetric","jsError",1)}})});csa.plugin(function(r){var o,e=r.global,i=r("Events"),d=e.location,f=e.document,a=((e.performance||{}).navigation||{}).type,t=e.addEventListener,s=r.emit,u={};function n(a,e){var t=!!o,n=(e=e||{}).keepPageAttributes;t&&(s("$beforePageTransition"),s("$pageTransition")),t&&!n&&i("removeEntity","page"),o=r.UUID(),n?u.id=o:u={schemaId:"<ns>.PageEntity.1",id:o,url:d.href,server:d.hostname,path:d.pathname,referrer:f.referrer,title:f.title},Object.keys(a||{}).forEach(function(e){u[e]=a[e]}),i("setEntity",{page:u}),s("$pageChange",u,{buffered:1}),t&&s("$afterPageTransition")}function g(){s("$load"),s("$ready"),s("$afterload")}function l(){s("$ready"),s("$beforeunload"),s("$unload"),s("$afterunload")}d&&f&&(t&&(t("beforeunload",l),t("pagehide",l),"complete"===f.readyState?g():t("load",g)),r.register("SPA",{newPage:n}),n({transitionType:{0:"hard",1:"refresh",2:"back-button"}[a]||"unknown"}))});csa.plugin(function(c){var t="Events",e="UNKNOWN",a="id",u="all",n="messageId",i="timestamp",f="producerId",o="application",r="obfuscatedMarketplaceId",s="entities",d="schemaId",l="version",p="attributes",v="<ns>",g=c.config,h=(c.global.location||{}).host,m=g[t+".Namespace"]||"csa_other",I=g.Application||"Other"+(h?":"+h:""),b=c("Transport"),y={},O=function(t,e){Object.keys(t).forEach(e)};function E(n,i,o){O(i,function(t){var e=o===u||(o||{})[t];t in n||(n[t]={version:1,id:i[t][a]||c.UUID()}),U(n[t],i[t],e)})}function U(e,n,i){O(n,function(t){!function(t,e,n){return"string"!=typeof e&&t!==l?c.error("Attribute is not of type string: "+t):!0===n||1===n||(t===a||!!~(n||[]).indexOf(t))}(t,n[t],i)||(e[t]=n[t])})}function N(o,t,r){O(t,function(t){var e=o[t];if(e[d]){var n={},i={};n[a]=e[a],n[f]=e[f]||r,n[d]=e[d],n[l]=e[l]++,n[p]=i,S(n),U(i,e,1),k(i),b("log",n)}})}function S(t){t[i]=function(t){return"number"==typeof t&&(t=new Date(t).toISOString()),t||c.time("ISO")}(t[i]),t[n]=t[n]||c.UUID(),t[o]=I,t[r]=g.ObfuscatedMarketplaceId||e,t[d]=t[d].replace(v,m)}function k(t){delete t[l],delete t[d],delete t[f]}function w(o){var r={};this.log=function(t,e){var n={},i=(e||{}).ent;return t?"string"!=typeof t[d]?c.error("A valid schema id is required for the event"):(S(t),E(n,y,i),E(n,r,i),E(n,t[s]||{},i),O(n,function(t){k(n[t])}),t[f]=o[f],t[s]=n,void b("log",t)):c.error("The event cannot be undefined")},this.setEntity=function(t){E(r,t,u),N(r,t,o[f])}}g["KillSwitch."+t]||c.register(t,{setEntity:function(t){E(y,t,u),N(y,t,"csa")},removeEntity:function(t){delete y[t]},instance:function(t){return new w(t)}})});csa.plugin(function(s){var c,l="Transport",d="post",u="preflight",r="csa.cajun.",i="store",a="deleteStored",n="addEventListener",f="sendBeacon",t=0,e=s.config[l+".BufferSize"]||2e3,g=s.config[l+".RetryDelay"]||1500,o=[],h=0,p=[],v=s.global,y=v.document,m=s.config[l+".FlushInterval"]||5e3,E=0;function T(n){if(864e5<s.time()-+new Date(n.timestamp))return s.error("Event is too old: "+n);h<e&&(o.push(n),h++,!E&&t&&(E=setTimeout(R,m)))}function R(){p.forEach(function(t){var e=[];o.forEach(function(n){t.accepts(n)&&e.push(n)}),e.length&&(t.chunks?t.chunks(e).forEach(function(n){S(t,n)}):S(t,e))}),o=[],E=0}function S(t,e){function o(){s[a](r+n)}var n=s.UUID();s[i](r+n,JSON.stringify(e)),[function(n,t,e){var o=v.navigator||{},r=v.cordova||{};if(!o[f]||!n[d])return 0;n[u]&&r&&"ios"===r.platformId&&!c&&((new Image).src=n[u]().url,c=1);var i=n[d](t);if(!i.type&&o[f](i.url,i.body))return e(),1},function(n,t,e){if(!n[d])return 0;var o=n[d](t),r=o.url,i=o.body,c=o.type,u=new XMLHttpRequest,a=0;function f(n,t,e){u.open("POST",n),e&&u.setRequestHeader("Content-Type",e),u.send(t)}return u.onload=function(){u.status<299?e():s.config[l+".XHRRetries"]&&a<3&&setTimeout(function(){f(r,i,c)},++a*g)},f(r,i,c),1}].some(function(n){try{return n(t,e,o)}catch(n){}})}s.once("$afterload",function(){t=1,function(e){(s[i]()||[]).forEach(function(n){if(!n.indexOf(r))try{var t=s[i](n);s[a](n),JSON.parse(t).forEach(e)}catch(n){s.error(n)}})}(T),y&&y[n]&&y[n]("visibilitychange",R,!1),R()}),s.once("$afterunload",function(){t=1,R()}),s.on("$afterPageTransition",function(){h=0}),s.register(l,{log:T,register:function(n){p.push(n)}})});csa.plugin(function(n){var r=n.config["Events.SushiEndpoint"];n("Transport")("register",{accepts:function(n){return n.schemaId},post:function(n){var t=n.map(function(n){return{data:n}});return{url:r,body:JSON.stringify({events:t})}},preflight:function(){var n,t=/\/\/(.*?)\//.exec(r);return t&&t[1]&&(n="https://"+t[1]+"/ping"),{url:n}},chunks:function(n){for(var t=[];500<n.length;)t.push(n.splice(0,500));return t.push(n),t}})});csa.plugin(function(n){var t,a,o,r,e=n.config,i="PageViews",d=e[i+".ImpressionMinimumTime"]||1e3,s="addEventListener",c="hidden",g="innerHeight",f="innerWidth",l="renderedTo",m=l+"Viewed",u=l+"Meaningful",v=l+"Impressed",h=1,p=2,P=3,T=4,w=5,y="loaded",I=7,E=8,S=n.global,V=n("Events",{producerId:"csa"}),$=S.document,b={},M={},C=w;if(!e["KillSwitch."+i]){if(!$||!$[s]||void 0===$[c])return K("PageStateChange.2",{state:"ignored"});W(),$[s]("visibilitychange",L,!1),$[s]("readystatechange",j,!1),n.on("$afterPageTransition",W),n.once("$load",j),n.on("$timing:loaded",j)}function H(e){if(!b[I]){var i;if(b[e]=n.time(),e!==P&&e!==y||(t=t||b[e]),t&&C===T)a=a||b[e],(i={})[u]=t-o,i[m]=a-o,K("PageView.4",i),r=r||setTimeout(R,d);if(e!==w&&e!==h&&e!==p||(clearTimeout(r),r=0),e!==h&&e!==p||K("PageRender.3",{transitionType:e===h?"hard":"soft"}),e===I)(i={})[u]=t-o,i[m]=a-o,i[v]=b[e]-o,K("PageImpressed.2",i)}}function K(e,i){M[e]||(i.schemaId="<ns>."+e,V("log",i,{ent:"all"}),M[e]=1)}function L(){0===S[g]&&0===S[f]?(C=E,n("Events")("setEntity",{page:{viewport:"hidden-iframe"}})):C=$[c]?w:T,H(C)}function R(){H(I),r=0}function W(){var e=o?p:h;b={},M={},a=t=0,o=n.time(),H(e),L()}function j(){var e=$.readyState;"interactive"===e&&H(P),"complete"===e&&H(y)}});csa.plugin(function(c){var s=5,e="click",t="addEventListener",r="touches",u="timeStamp",o="length",f="pageX",g="pageY",p="pageXOffset",d="pageYOffset",v=250,m=5,l=200,x=.5,n={capture:!0,passive:!0},X=c.global,Y=c.emit,h=X.Math.abs,a=(X.document||{}).documentElement||{},y={x:0,y:0,t:0,sX:0,sY:0},N={x:0,y:0,t:0,sX:0,sY:0};function b(t){if(t.id)return"//*[@id='"+t.id+"']";var e=function(t){var e,n=1;for(e=t.previousSibling;e;e=e.previousSibling)e.nodeName===t.nodeName&&(n+=1);return n}(t),n=t.nodeName;return 1!==e&&(n+="["+e+"]"),t.parentNode&&(n=b(t.parentNode)+"/"+n),n}function E(t,e,n){var a=c("Content",{target:n}),i={schemaId:"<ns>.ContentInteraction.1",interaction:t,interactionData:e,messageId:c.UUID()};if(n){var r=b(n);r&&(i.attribution=r);var o=function(t){for(var e=t,n=e.tagName,a=!1,i=0;i<s;i++){if(!e||!e.parentElement){a=!0;break}n=(e=e.parentElement).tagName+"/"+n}return a||(n=".../"+n),n}(n);o&&(i.interactionData.parentChain=o)}a("log",i),Y("$content.interaction",i)}function i(t){E(e,{interactionX:""+t.pageX,interactionY:""+t.pageY},t.target)}function I(t){if(t&&t[r]&&1===t[r][o]){var e=t[r][0];N=y={e:t.target,x:e[f],y:e[g],t:t[u],sX:X[p],sY:X[d]}}}function C(t){if(t&&t[r]&&1===t[r][o]&&y&&N){var e=t[r][0],n=t[u],a=n-N.t,i={e:t.target,x:e[f],y:e[g],t:n,sX:X[p],sY:X[d]};N=i,l<=a&&(y=i)}}function D(t){if(t){var e=h(y.x-N.x),n=h(y.y-N.y),a=h(y.sX-N.sX),i=h(y.sY-N.sY),r=t[u]-y.t;if(v<1e3*e/r&&m<e||v<1e3*n/r&&m<n){var o=n<e;o&&a&&e*x<=a||!o&&i&&n*x<=i||E((o?"horizontal":"vertical")+"-swipe",{interactionX:""+y.x,interactionY:""+y.y,endX:""+N.x,endY:""+N.y},y.e)}}}a[t](e,c.exec(i),n),a[t]("touchstart",c.exec(I),n),a[t]("touchmove",c.exec(C),n),a[t]("touchend",c.exec(D),n)});
@@ -327,7 +327,7 @@ amzn.copilot.checkCoPilotSession();
     
 
     
-      <input type="hidden" name="appActionToken" value="3Rh5AmAHZFpA62eh9PSN1s9Yt1oj3D" /><input type="hidden" name="appAction" value="SIGNIN" />
+      <input type="hidden" name="appActionToken" value="ZRUp3lrA0PmWZnrvJgUUO3knLvEj3D" /><input type="hidden" name="appAction" value="SIGNIN" />
     
   
 
@@ -337,13 +337,13 @@ amzn.copilot.checkCoPilotSession();
 
 
   
-    <input type="hidden" name="ces" value="ape:QUNTX0NNVEdFQkJJM0s5aUVLME9UU3NKQkg5L2YzOEFBQUFBQUFBQUFXOW95dnhHUXRPK0dWZE81UjUwdEhMOVV0RUJSSkRjM2ZLUnpWQzMyL1pXVGxvbnNWTXJSVXVza09zYlBzcWxIS3BNQlRlSzVpVmtKRm85VXRHV3F0eE1LVnhyanFTSkRZYUkwaDJHZUVGZUo1QlJUK3dBSWViRzlDcmYwT0FGejBEcnB3dWR2TjFGQ3kvZGZhbG5vUWhMaHppTFF4QUgwVklyK3cwWDNZVUplZTJQckFLM0hwdDdmcDFBQ21kVXdiajJEdFZ1S0VFdXQ2cUtIY2VNUmRFSXQ1RnFSaG5zU0xxN0lxQmhSV2pKUVhxNWl6VWZNeXhXZ3MzK0pUR05wNUR2YmE5ZHFUVTFyRVlrOU5ZTUJkQTBNMTNWWk52aTJONlFRSFl0RzBvVld0alM3QzNQRUFJdzYxc1dzSEJteWpZc3g3ZEpLS2F4MExvTG9TWWNhY2s9" />
+    <input type="hidden" name="ces" value="ape:QUNTX0d6VkVPUDNyMERoRjlXTHJUTjVZQ0g5L2YzOEFBQUFBQUFBQUFYVkdGNGNrcE1YdFNmVkdDT25zTTV1Rlcwd1I3M0tFV2I3YWpJaloxUnNOKzZWaWFlOXdsenVVQ1RWSG5UUFp2OEpSUTZSRnNETmtqMUg5RTdVaXRNVFlidWZaVDBVZnJsVXRPNjF0UzkyVTdHNGpPTURZRENzWkNKSUY2LzZCUFdOUVBudHc1MmNHbmxic2hDSVlNSmVGeDhJN291dWJoMDJQUWNPT3Zwd1k3M0JZWHB4K2hTcFQyMFI5MUJTdk9CZHF0SDJ5a3ozSi9oMGdZR0NiUFI5WVc5QnlXQ2JSa0JSQWxtWDNzc0hBY3NQaEt4N0xYd0pTMjYxR2hScHlQc3pKdytlYlIyZExua3lWSms2Rk5XU3h0Y2VSa2pIVHUvN0VBM21CTGdtcjQrUHZheVBBODkrMmdyQlprQ3YvVWt2UjZCR1hkUmFXeFlnY2xmSGEwc1k9" />
   
     <input type="hidden" name="openid.return_to" value="ape:aHR0cHM6Ly9hbGV4YS5hbWF6b24uZXMv" />
   
-    <input type="hidden" name="prevRID" value="ape:NzVRNDNXUTI4S0FaRkdUWFBKS00=" />
+    <input type="hidden" name="prevRID" value="ape:N0JOQ01KUlY0QTEzSENXMTRLVzg=" />
   
-    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.t8rEP2UHYKYBd1kC_hC9_cPDKI5sqxNOBbrVHi4NFnc1PIzCRWIADQ.LFaCC58pAIMln0BE.wWGGnrjusWH_RAJkBgUP3URRQ61w92XSZ50ZXNyuqy8PxIfoiM9P9P7fRMC8KXb-mpfSRgwsrJSmVD3abPPQby7BWw8bkZ5srFgi-7Ct-yOQovbmL1cI_qikDSNwDvJjqwy7W047YfyE9PYs9MVPmxv80w2a2k7uh2VV4ApythBGboYF9rwU_NkZ6g8ikt8kCmzgBFb15zqf_qJaAs4sGLTPVcpAUYOZEpKaP0A21xWOmY7g479szArt_tDV2TavZtawW09EO9HnchD_Yg-804qGuv-91Z_jADCWYilhMUFp-ozmibGlj5LYNoH-WhOaknZPf3OhDQPqq3kI2ZVsmT7MyQRKHPvqPqkzPTqmfsHhpFTPL5-YjqjhUTmn2Lr6lfPcdGUujbkkV2X0a9ukcN6QFmF9ACkbV1Dbv_Ucq7Fgh0FJjD-2wJ0UVQqDLb90PiLceGxg1Swrus_EZojLgKUx45l1mV4l0WG6AC6PmkfutfmRiH2Sfv2PSNfy8h9vxdkrn__oXQ.NeLOfbFIAyk5ybxZWCEiLQ" />
+    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.iqrQrsoWjN_ggxrfMLj7qwHp3jTzaSQI3mfR_NQ5tb0hjNLYhxzbmQ.PJvJZIpyJkaxyOH6.41mYCMR4LiOcv1Lr8ybiZn5MT2yZ8u1yzxsQPE3hg-m95PBghWs9y_GfwQ4CJGyPHkusM5g0MzOlxB3vYZ-5sxmqAp-xiX23OQTNS84s8IUAXNgZtI4YgGf9fkuEGygc_jpUIx_A2N-n8E226PhbFWdmRoweKZm5kBZvZoTX7DfISwspdQUcDDN1twPWaUyDBlm6id3lKeIdnAklbVFMGDbG6J3YzQNJH4PyjDixkoQSdDh3vgo1U5IKyoMIPWFVYogTwpdEqqtuECD8C8giI3jLHnf3eSaa3fNwnIur8cVzGQa4_ISs0DDwV73OEEgu6g9_mQWV-_9n2XEHG3ErWDCxc-8dpGWN5yMjYVpbbiDJtJk4MiMdqGlx3zWStzp714FUEbUhGUgYr5Dh2zpkCqYRC4NoLLm7verdaOyuthPtd1YYuvz6JWNLchHARS0060p_rIqRhSHg9vgMs-qPceO0ceN8YGV2envA-s5QM55DBQ3_gpDHs6PvHAR41N3j6hI3eT0zo84CoRGDz5UF15Y.Xke1tS9YlIL_UYcvt6tIlw" />
   
 
 
@@ -366,7 +366,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 
-<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=75Q43WQ28KAZFGTXPJKM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJZb0k1NE5wNjU0KzhJQ3Bsck1nMkN1N2FpdjQ1YmpkOUZWVjR5M21neFFvPSIsInZlcnNpb24iOjEsIklWIjoiY2NMT0s1SE45ZnlUeVd0ZzFiZklGdz09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1611572514000">
+<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=7BNCMJRV4A13HCW14KW8&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJmQTZzOUlHOVFEcnRYZU54d1hJeXJTdDM3am1jVXdsNEoxdzIwUVB6VlU4PSIsInZlcnNpb24iOjEsIklWIjoiQTBHeHhmMEtzL01sRmN1Y3RlS0ZXQT09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1611747086000">
   ¿Has olvidado la contraseña?
 </a>
   </div>
@@ -480,6 +480,24 @@ amzn.copilot.checkCoPilotSession();
 
 
 
+  <div data-a-input-name="rememberMe" class="a-checkbox a-checkbox-fancy a-control-row a-touch-checkbox"><label><input type="checkbox" name="rememberMe" value="true" tabindex="4"/><i class="a-icon a-icon-checkbox"></i><span class="a-label a-checkbox-label">
+    Recuérdame.
+    <span class="a-declarative" data-action="a-modal" data-a-modal="{&quot;max-width&quot;:&quot;500px&quot;,&quot;width&quot;:&quot;95%&quot;,&quot;name&quot;:&quot;remember-me-detail-link-modal&quot;,&quot;header&quot;:&quot;Casilla \&quot;Recuérdame\&quot;&quot;}">
+      <a id="remember_me_learn_more_link" class="a-link-normal" href="#">
+        Detalles
+      </a>
+    </span>
+
+    <div class="a-popover-preload" id="a-popover-remember-me-detail-link-modal">
+      <div class="a-section a-spacing-large a-spacing-top-mini">
+        <p>
+          <p>Si seleccionas "Recuérdame", se reduce el número de veces que se te pedirá que te identifiques en este dispositivo.</p>
+<p>Para mantener la seguridad de tu cuenta, utiliza esta opción sólo en tus dispositivos personales.</p>
+        </p>
+      </div>
+    </div>
+  </span></label></div>
+
 
   </div>
 
@@ -514,7 +532,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 <div id="auth-captcha-image-container" class="a-section a-text-center">
-  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/0afa5d4fcea84ffba4859027b3841f48.jpg?AWSAccessKeyId=AKIA5WBBRBBBQ4SU3ZMR&amp;Expires=1611572815&amp;Signature=brybTTV01HVYTXfFKY%2Ft%2Fe5xe94%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
+  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/62b5f2db999c4edc92d9e3af45488754.jpg?AWSAccessKeyId=AKIA5WBBRBBBQ4SU3ZMR&amp;Expires=1611747387&amp;Signature=c1SThIU0zJpnaMqFCIR%2BOePom3o%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
 </div>
     </div>
 
@@ -576,7 +594,7 @@ amzn.copilot.checkCoPilotSession();
     <div id="image-captcha-options" class="a-section a-spacing-mini">
       <div id="auth-switch-captcha-to-audio-container" class="a-row">
         <div class="a-column a-span12 a-text-center a-spacing-small">
-          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=75Q43WQ28KAZFGTXPJKM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJoNlRkbEhCa1U5UzBvd2RvRHJ2ZFFSQnBUUE9zUCtodU9tVEdSQ2c1V3VFPSIsInZlcnNpb24iOjEsIklWIjoiblN0bHQzMkJjdGRlSlVJSnlVTXpPUT09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1611572514000&amp;use_audio_captcha=0">
+          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=7BNCMJRV4A13HCW14KW8&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJSMG9HZ0g3bjZTNm9RNGxKeEdGc0pYTzBwQWI1dXBxa1RxQWxnV0JuTmFnPSIsInZlcnNpb24iOjEsIklWIjoiWmtxSDNMTi84WWNJb3c3Zzdtd1Z0Zz09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1611747086000&amp;use_audio_captcha=0">
             Probar con una imagen distinta.
           </a>
           <a id="auth-captcha-noop-link" class="a-link-normal" href="javascript:void(0);">
@@ -665,7 +683,7 @@ amzn.copilot.checkCoPilotSession();
       
         
         <div class="a-divider a-divider-break"><h5>¿Eres nuevo en Amazon?</h5></div>
-        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=75Q43WQ28KAZFGTXPJKM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJoNlRkbEhCa1U5UzBvd2RvRHJ2ZFFSQnBUUE9zUCtodU9tVEdSQ2c1V3VFPSIsInZlcnNpb24iOjEsIklWIjoiblN0bHQzMkJjdGRlSlVJSnlVTXpPUT09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1611572514000" class="a-button-text" role="button">
+        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=7BNCMJRV4A13HCW14KW8&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJSMG9HZ0g3bjZTNm9RNGxKeEdGc0pYTzBwQWI1dXBxa1RxQWxnV0JuTmFnPSIsInZlcnNpb24iOjEsIklWIjoiWmtxSDNMTi84WWNJb3c3Zzdtd1Z0Zz09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1611747086000" class="a-button-text" role="button">
           Crear una nueva cuenta de Amazon
         </a></span></span>
       
@@ -762,7 +780,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 <span>
-  © 1996-2020, Amazon.com, Inc. o afiliados. Todos los derechos reservados.
+  © 1996-2021, Amazon.com, Inc. o afiliados. Todos los derechos reservados.
 </span>
 
 </div>
@@ -904,7 +922,7 @@ csa.plugin(function(e){var i="transitionStart",n="pageVisible",t="PageTiming",a=
 </div>
 
 <noscript>
-    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:259-5733983-8284642:75Q43WQ28KAZFGTXPJKM$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3D75Q43WQ28KAZFGTXPJKM:0' alt=""/>
+    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:260-0275135-4255147:7BNCMJRV4A13HCW14KW8$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3D7BNCMJRV4A13HCW14KW8:0' alt=""/>
 </noscript>
 </body>
 </html>
