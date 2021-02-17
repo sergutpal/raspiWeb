@@ -22,11 +22,11 @@ var ue_csm = window,
 pec:0,ts:0,erl:[],ter:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec<a.ec&&d.uex("at");a.pec=a.ec},1E4)}};l.skipTrace=1;h.skipTrace=1;h.isStub=1;d.ueLogError=h;d.ue_err=a;e.onerror=l})(ue_csm,window);
 
 
-var ue_id = '7G93SF2EB3ZZVABB15RH',
+var ue_id = 'AZXG2YN31QW0XSDCF8SM',
     ue_url = '/ap/uedata',
     ue_navtiming = 1,
     ue_mid = 'A1RKKUPIHCS9HS',
-    ue_sid = '257-5914238-9705117',
+    ue_sid = '262-6845055-5566716',
     ue_sn = 'www.amazon.es',
     ue_furl = 'fls-eu.amazon.com',
     ue_surl = 'https://unagi-eu.amazon.com/1/events/com.amazon.csm.nexusclient.prod',
@@ -35,7 +35,7 @@ var ue_id = '7G93SF2EB3ZZVABB15RH',
     ue_urt = 3,
     ue_rpl_ns = 'cel-rpl',
     ue_ddq = 1,
-    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:257-5914238-9705117:7G93SF2EB3ZZVABB15RH$uedata=s:',
+    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-6845055-5566716:AZXG2YN31QW0XSDCF8SM$uedata=s:',
     ue_sbuimp = 1,
     ue_bfd = 1000,
     ue_fnt = 0,
@@ -63,13 +63,19 @@ ue.stub(ue,"log");ue.stub(ue,"onunload");ue.stub(ue,"onflush");
 "csm","csm.CSMBaselineEvent.4"),a.count("nexusBaselineCounter",1,{bf:1}))})(ue_csm);
 
 
+(function(g,h,m){if("function"===typeof h.addEventListener&&"function"===typeof m.querySelectorAll){var l,n,u,p,f,v,q,r,w,x=["mouseenter","mouseleave"],y="click dblclick mousedown mouseover mouseout touchstart keydown keypress MSPointerDown pointerdown focusin".split(" ").concat(x),s=!1,t=[];p=function(a){for(var c=[];a;)c.push(a),a=a.parentNode;return c};n=function(a,c){var b=-1,d;for(d=0;d<c.length;d++)if(c[d]===a){b=d;break}return b};r=function(a,c){var b=n(a,c);0<=b&&c.splice(b,1)};u=function(a){var c;
+a=p(a);for(var b,d,e=0;e<a.length;e++)if(d=a[e],(b=d.nodeName)&&b!==m.nodeName){b=b.toLowerCase();if(d.id)return b+"#"+d.id+(c?">"+c:"");(d=d.getAttribute("class"))&&(b=b+"."+d.split(" ").join("."));c=b+(c?">"+c:"")}return c};w=function(a){return a.replace(/[^\w.:\-]/g,function(a){return"#"===a?"::":">"===a?":-":"_"})};q=function(a,c){var b,d,e;if(g.ue&&g.ue.count&&g.ueLogError)for(b=u(a),e=w(b),d="degraded"===c?"A UX degrading element has entered the viewport: "+b:"A "+c+" was not handled on element: "+
+b,g.ueLogError({m:d,fromOnError:1},{logLevel:"ERROR",attribution:b,message:d}),b=["TNR","TNR:"+c,"TNR:"+e,"TNR:"+c+":"+e],f=0;f<b.length;f++)g.ue.count(b[f],(g.ue.count(b[f])||0)+1)};v=function(a){a=a.getBoundingClientRect();return a.top<a.bottom&&a.left<a.right&&0<=a.bottom&&a.top<=h.innerHeight&&0<=a.right&&a.left<=h.innerWidth};l=function(){s||(s=!0,setTimeout(function(){[].forEach.call(m.querySelectorAll("[data-ux-degraded]"),function(a){v(a)?0>n(a,t)&&(t.push(a),q(a,"degraded")):r(a,t)});s=!1},
+250))};h.addEventListener("scroll",l);h.addEventListener("resize",l);l=function(a){var c=!1,b=0>n(a,x);m.addEventListener(a,function(d){if(!c){c=!0;var e=[],f=b?p(d.target):[d.target],k,g,h;for(g=0;g<f.length;g++)k=f[g],k.getAttribute&&("mouseover"===a&&k===d.target&&((h=k.getAttribute("data-ux-jq-mouseenter"))||""===h)&&e.push(k),((h=k.getAttribute("data-ux-"+a))||""===h)&&e.push(k));e.length?(d.ack=d.acknowledge=function(a){a=a||d.currentTarget;r(a,e)},setTimeout(function(){var b;for(b=0;b<e.length;b++)q(e[b],
+a);c=!1},250)):c=!1}},!0)};for(f=0;f<y.length;f++)l(y[f])}})(ue_csm,window,document);
+
 
 var ue_hoe = +new Date();
 }
 window.ueinit = window.ue_ihb;
 </script>
 
-<!-- 7llyvapf2mug7t6tvn1xr95o3e3cejjjwhdnaf4uj --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
+<!-- 2hy6wqydlt9882j --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
     <title dir="ltr">Iniciar sesión en Amazon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 
@@ -87,10 +93,10 @@ h){function n(){var a=null;e?a=h:"function"===typeof h&&(p.start=C(),a=h.apply(f
 namespace:k.namespace};c?n():va(l,k.guardFatal(d,n));return{decorate:function(a){U[d]=k.guardFatal(d,a)}}}}function ja(a){return function(){var b=Array.prototype.slice.call(arguments);return{execute:B(b,!1,a,!1,this),register:B(b,!0,a,!1,this)}}}function W(a,b){return function(c,e){e||(e=c,c=E);var g=this.attribution;return function(){y.push(b||{attribution:g,name:c,logLevel:a});var d=e.apply(this,arguments);y.pop();return d}}}function I(a,b){this.load={js:ea(this,!0),css:ea(this)};G(this,"namespace",
 b);G(this,"attribution",a)}function ka(){h.body?t.trigger("a-bodyBegin"):setTimeout(ka,20)}function D(a,b){a.className=X(a,b)+" "+b}function X(a,b){return(" "+a.className+" ").split(" "+b+" ").join(" ").replace(/^ | $/g,"")}function la(a){try{return a()}catch(b){return!1}}function J(){if(K){var a={w:f.innerWidth||n.clientWidth,h:f.innerHeight||n.clientHeight};5<Math.abs(a.w-Y.w)||50<a.h-Y.h?(Y=a,L=4,(a=k.mobile||k.tablet?450<a.w&&a.w>a.h:1250<=a.w)?D(n,"a-ws"):n.className=X(n,"a-ws")):0<L&&(L--,ma=
 setTimeout(J,16))}}function za(a){(K=a===E?!K:!!a)&&J()}function Aa(){return K}function u(a,b){return"sw:"+(b||"")+":"+a+":"}function na(){oa.forEach(function(a){F(a)})}function p(a){oa.push(a)}function pa(a,b,c,e){if(c){b=m(/Chrome/i)&&!m(/Edge/i)&&!m(/OPR/i)&&!a.capabilities.isAmazonApp&&!m(new RegExp(Z+"bwv"+Z+"b"));var g=u(e,"browser"),d=u(e,"prod_mshop"),f=u(e,"beta_mshop");!a.capabilities.isAmazonApp&&c.browser&&b&&(p(g+"supported"),c.browser.action(g,e));!b&&c.browser&&p(g+"unsupported");c.prodMshop&&
-p(d+"unsupported");c.betaMshop&&p(f+"unsupported")}}"use strict";var M=Q.now=Q.now||function(){return+new Q},C=function(a){return a&&a.now?a.now.bind(a):M}(f.performance),N=C(),r=f.AmazonUIPageJS||f.P;if(r&&r.when&&r.register){N=[];for(var l=h.currentScript;l;l=l.parentElement)l.id&&N.push(l.id);return r.log("A copy of P has already been loaded on this page.","FATAL",N.join(" "))}var v=f.ue;F();F("aui_build_date:3.20.8-2021-01-27");var R=[],S=!1;var ca=function(){for(var a=setTimeout(ca,0),b=M();R.length;)if(R.shift()(),
+p(d+"unsupported");c.betaMshop&&p(f+"unsupported")}}"use strict";var M=Q.now=Q.now||function(){return+new Q},C=function(a){return a&&a.now?a.now.bind(a):M}(f.performance),N=C(),r=f.AmazonUIPageJS||f.P;if(r&&r.when&&r.register){N=[];for(var l=h.currentScript;l;l=l.parentElement)l.id&&N.push(l.id);return r.log("A copy of P has already been loaded on this page.","FATAL",N.join(" "))}var v=f.ue;F();F("aui_build_date:3.20.8-2021-02-12");var R=[],S=!1;var ca=function(){for(var a=setTimeout(ca,0),b=M();R.length;)if(R.shift()(),
 50<M()-b)return;clearTimeout(a);S=!1};var da={},A={},fa={},T=!1;x(f,"beforeunload",function(){T=!0;setTimeout(function(){T=!1},1E4)});var ha=/^prv:/,V={},H={},U={},ia={},ya=0,Z=String.fromCharCode(92),y=[],qa=f.onerror;f.onerror=function(a,b,c,e,g){g&&"object"===typeof g||(g=Error(a,b,c),g.columnNumber=e,g.stack=b||c||e?q(Z,g.message,"at "+q(":",b,c,e)):E);var d=y.pop()||{};g.attribution=q(":",g.attribution||d.attribution,d.name);g.logLevel=d.logLevel;g.attribution&&console&&console.log&&console.log([g.logLevel||
 "ERROR",a,"thrown by",g.attribution].join(" "));y=[];qa&&(d=[].slice.call(arguments),d[4]=g,qa.apply(f,d))};I.prototype={logError:function(a,b,c,e){b={message:b,logLevel:c||"ERROR",attribution:q(":",this.attribution,e)};if(f.ueLogError)return f.ueLogError(a||b,a?b:null),!0;console&&console.error&&(console.log(b),console.error(a));return!1},error:function(a,b,c,e){a=Error(q(":",e,a,c));a.attribution=q(":",this.attribution,b);throw a;},guardError:W(),guardFatal:W("FATAL"),guardCurrent:function(a){var b=
-y[y.length-1];return b?W(b.logLevel,b).call(this,a):a},log:function(a,b,c){return this.logError(null,a,b,c)},declare:B([],!0,!0,!0),register:B([],!0),execute:B([]),AUI_BUILD_DATE:"3.20.8-2021-01-27",when:ja(),now:ja(!0),trigger:function(a,b,c){var e=M();this.declare(a,{data:b,pageElapsedTime:e-(f.aPageStart||NaN),triggerTime:e});c&&c.instrument&&O.when("prv:a-logTrigger").execute(function(b){b(a)})},handleTriggers:function(){this.log("handleTriggers deprecated")},attributeErrors:function(a){return new I(a)},
+y[y.length-1];return b?W(b.logLevel,b).call(this,a):a},log:function(a,b,c){return this.logError(null,a,b,c)},declare:B([],!0,!0,!0),register:B([],!0),execute:B([]),AUI_BUILD_DATE:"3.20.8-2021-02-12",when:ja(),now:ja(!0),trigger:function(a,b,c){var e=M();this.declare(a,{data:b,pageElapsedTime:e-(f.aPageStart||NaN),triggerTime:e});c&&c.instrument&&O.when("prv:a-logTrigger").execute(function(b){b(a)})},handleTriggers:function(){this.log("handleTriggers deprecated")},attributeErrors:function(a){return new I(a)},
 _namespace:function(a,b){return new I(a,b)}};var t=G(f,"AmazonUIPageJS",new I);var O=t._namespace("PageJS","AmazonUI");O.declare("prv:p-debug",ia);t.declare("p-recorder-events",[]);t.declare("p-recorder-stop",function(){});G(f,"P",t);ka();if(h.addEventListener){var ra;h.addEventListener("DOMContentLoaded",ra=function(){t.trigger("a-domready");h.removeEventListener("DOMContentLoaded",ra,!1)},!1)}var n=h.documentElement,aa=function(){var a=["O","ms","Moz","Webkit"],b=h.createElement("div");return{testGradients:function(){b.style.cssText=
 "background-image:-webkit-gradient(linear,left top,right bottom,from(#1E4),to(white));background-image:-webkit-linear-gradient(left top,#1E4,white);background-image:linear-gradient(left top,#1E4,white);";return~b.style.backgroundImage.indexOf("gradient")},test:function(c){var e=c.charAt(0).toUpperCase()+c.substr(1);c=(a.join(e+" ")+e+" "+c).split(" ");for(e=c.length;e--;)if(""===b.style[c[e]])return!0;return!1},testTransform3d:function(){var a=!1;f.matchMedia&&(a=f.matchMedia("(-webkit-transform-3d)").matches);
 return a}}}();r=n.className;var sa=/(^| )a-mobile( |$)/.test(r),ta=/(^| )a-tablet( |$)/.test(r),k={audio:function(){return!!h.createElement("audio").canPlayType},video:function(){return!!h.createElement("video").canPlayType},canvas:function(){return!!h.createElement("canvas").getContext},svg:function(){return!!h.createElementNS&&!!h.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect},offline:function(){return navigator.hasOwnProperty&&navigator.hasOwnProperty("onLine")&&navigator.onLine},
@@ -98,15 +104,15 @@ dragDrop:function(){return"draggable"in h.createElement("span")},geolocation:fun
 f.localStorage},orientation:function(){return"orientation"in f},touch:function(){return"ontouchend"in h},gradients:function(){return aa.testGradients()},hires:function(){var a=f.devicePixelRatio&&1.5<=f.devicePixelRatio||f.matchMedia&&f.matchMedia("(min-resolution:144dpi)").matches;w("hiRes"+(sa?"Mobile":ta?"Tablet":"Desktop"),a?1:0);return a},transform3d:function(){return aa.testTransform3d()},touchScrolling:function(){return m(/Windowshop|android|OS ([5-9]|[1-9][0-9]+)(_[0-9]{1,2})+ like Mac OS X|Chrome|Silk|Firefox|Trident.+?; Touch/i)},
 ios:function(){return m(/OS [1-9][0-9]*(_[0-9]*)+ like Mac OS X/i)&&!m(/trident|Edge/i)},android:function(){return m(/android.([1-9]|[L-Z])/i)&&!m(/trident|Edge/i)},mobile:function(){return sa},tablet:function(){return ta},rtl:function(){return"rtl"===n.dir}};for(l in k)k.hasOwnProperty(l)&&(k[l]=la(k[l]));for(var ba="textShadow textStroke boxShadow borderRadius borderImage opacity transform transition".split(" "),P=0;P<ba.length;P++)k[ba[P]]=la(function(){return aa.test(ba[P])});var K=!0,ma=0,Y=
 {w:0,h:0},L=4;J();x(f,"resize",function(){clearTimeout(ma);L=4;J()});var ua={getItem:function(a){try{return f.localStorage.getItem(a)}catch(b){}},setItem:function(a,b){try{return f.localStorage.setItem(a,b)}catch(c){}}};n.className=X(n,"a-no-js");D(n,"a-js");!m(/OS [1-8](_[0-9]*)+ like Mac OS X/i)||f.navigator.standalone||m(/safari/i)||D(n,"a-ember");r=[];for(l in k)k.hasOwnProperty(l)&&k[l]&&r.push("a-"+l.replace(/([A-Z])/g,function(a){return"-"+a.toLowerCase()}));D(n,r.join(" "));n.setAttribute("data-aui-build-date",
-"3.20.8-2021-01-27");t.register("p-detect",function(){return{capabilities:k,localStorage:k.localStorage&&ua,toggleResponsiveGrid:za,responsiveGridEnabled:Aa}});m(/UCBrowser/i)||k.localStorage&&D(n,ua.getItem("a-font-class"));t.declare("a-event-revised-handling",!1);try{var z=navigator.serviceWorker}catch(a){F("sw:nav_err")}z&&(x(z,"message",function(a){a&&a.data&&w(a.data.k,a.data.v)}),z.controller&&z.controller.postMessage("MSG-RDY"));var oa=[];(function(a){var b=a.reg,c=a.unreg;z&&z.getRegistrations?
+"3.20.8-2021-02-12");t.register("p-detect",function(){return{capabilities:k,localStorage:k.localStorage&&ua,toggleResponsiveGrid:za,responsiveGridEnabled:Aa}});m(/UCBrowser/i)||k.localStorage&&D(n,ua.getItem("a-font-class"));t.declare("a-event-revised-handling",!1);try{var z=navigator.serviceWorker}catch(a){F("sw:nav_err")}z&&(x(z,"message",function(a){a&&a.data&&w(a.data.k,a.data.v)}),z.controller&&z.controller.postMessage("MSG-RDY"));var oa=[];(function(a){var b=a.reg,c=a.unreg;z&&z.getRegistrations?
 (O.when("A","a-util").execute(function(a,b){pa(a,b,c,"unregister")}),x(f,"load",function(){O.when("A","a-util").execute(function(a,c){pa(a,c,b,"register");na()})})):(b&&(b.browser&&p(u("register","browser")+"unsupported"),b.prodMshop&&p(u("register","prod_mshop")+"unsupported"),b.betaMshop&&p(u("register","beta_mshop")+"unsupported")),c&&(c.browser&&p(u("unregister","browser")+"unsupported"),c.prodMshop&&p(u("unregister","prod_mshop")+"unsupported"),c.betaMshop&&p(u("unregister","beta_mshop")+"unsupported")),
 na())})({reg:{},unreg:{}});t.declare("a-fix-event-off",!1);w("pagejs:pkgExecTime",C()-N)})(window,document,Date);
   (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/61-6nKPKyWL._RC|11Y+5x+kkTL.js,01qkmZhGmAL.js,71OnmMchosL.js_.js?AUIClients/AuthenticationPortalAlexaSkin&uEMxjH7Q#mobile');
-  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/21G215oqvfL._RC|21OJDARBhQL.js,218GJg15I8L.js,31lucpmF4CL.js,21juQdw6GzL.js,21zp0xRcpuL.js,01axML2MHQL.js,51ZzVICgifL.js_.js?AUIClients/AuthenticationPortalAssets&2Fh/oCNR#mobile.194821-T1');
-  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/01D0NLm3WGL.js?AUIClients/AuthenticationPortalInlineAssets');
-  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/31PiGn5paUL.js?AUIClients/CVFAssets');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/21G215oqvfL._RC|21OJDARBhQL.js,218GJg15I8L.js,31lucpmF4CL.js,2119M3Ks9rL.js,21zp0xRcpuL.js,01g124yz8oL.js,515FJnYcTlL.js_.js?AUIClients/AuthenticationPortalAssets&2Fh/oCNR#mobile.194821-T1');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/01wGDSlxwdL.js?AUIClients/AuthenticationPortalInlineAssets');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/31i1gEEF4lL.js?AUIClients/CVFAssets');
   (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/81JZFvi7+TL.js?AUIClients/SiegeClientSideEncryptionAUI');
-  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/71YfRQ8BAZL.js?AUIClients/FWCIMAssets');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-eu.ssl-images-amazon.com/images/I/71xhucKJ+QL.js?AUIClients/FWCIMAssets');
 </script>
 
       
@@ -146,7 +152,7 @@ if(window.ue&&uet) { uet('bb'); }
 }
 </script></head>
 
-  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_72554-c a-aui_mm_desktop_exp_291916-c a-aui_mm_desktop_launch_291918-c a-aui_mm_desktop_targeted_exp_291928-t1 a-aui_mm_desktop_targeted_launch_291922-t1 a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_preload_261698-c a-aui_rel_noreferrer_noopener_309527-c a-aui_tnr_v2_180836-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:257-5914238-9705117:7G93SF2EB3ZZVABB15RH$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3D7G93SF2EB3ZZVABB15RH:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
+  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_72554-c a-aui_mm_desktop_exp_291916-c a-aui_mm_desktop_launch_291918-c a-aui_mm_desktop_targeted_exp_291928-t1 a-aui_mm_desktop_targeted_launch_291922-t1 a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_preload_261698-c a-aui_rel_noreferrer_noopener_309527-c a-aui_tnr_v2_180836-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-6845055-5566716:AZXG2YN31QW0XSDCF8SM$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3DAZXG2YN31QW0XSDCF8SM:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
 
 
 <script>
@@ -158,14 +164,14 @@ if (window.csa) {
         'Events.Namespace': 'csa',
         'ObfuscatedMarketplaceId': 'A1RKKUPIHCS9HS',
         'Events.SushiEndpoint': 'https://unagi.amazon.es/1/events/com.amazon.csm.csa.prod',
-        'CacheDetection.RequestID': "7G93SF2EB3ZZVABB15RH",
+        'CacheDetection.RequestID': "AZXG2YN31QW0XSDCF8SM",
         'CacheDetection.Callback': window.ue && ue.reset,
         'LCP.elementDedup': 1
     });
 
     csa("Events")("setEntity", {
-        page: {requestId: "7G93SF2EB3ZZVABB15RH", meaningful: "interactive"},
-        session: {id: "257-5914238-9705117"}
+        page: {requestId: "AZXG2YN31QW0XSDCF8SM", meaningful: "interactive"},
+        session: {id: "262-6845055-5566716"}
     });
 }
 !function(n){var i,r,o="splice",e=n.csa,u={},f={},c=n.csa._s,a=0,s={},g={},l={},h=setTimeout,d=Object.keys;function t(n,t){return e(n,t)}function v(n,t){var e=f[n]||{};O(e,t),f[n]=e,h(S,0)}function p(n,t,e){var i=!0;e&&e.buffered&&(i=(l[n]||[]).every(function(n){return!1!==t(n)})),i&&(s[n]||(s[n]=[]),s[n].push(t))}function m(n,t){if(n in g)t(g[n]);else{p(n,function(n){return t(n),!1})}}function b(n,t){if(e("Errors")("logError",n),u.DEBUG)throw t||n}function w(){return Math.abs(4294967295*Math.random()|0).toString(36)}function y(n,t){return function(){try{return n.apply(this,arguments)}catch(n){b(n.message||n,n)}}}function S(){for(var n=0;n<c.length;){var t=c[n],e=t[0]in f;if(!e&&!r)return void(a=t.length);e?(c[o](a=n,1),D(t)):n++}}function D(n){var arguments,t=f[n[0]],e=(arguments=n[1])[0];if(!t||!t[e])return b("Undefined function: "+t+"/"+e);i=n[3],f[n[2]]=t[e].apply(t,arguments.slice(1))||{},i=0}function E(){r=1,S()}function O(t,e){d(e).forEach(function(n){t[n]=e[n]})}m("$beforeunload",E),v("Config",{instance:function(n){O(u,n)}}),e.plugin=y(function(n){n(t)}),t.config=u,t.register=v,t.on=p,t.removeListener=function(n,t){var e=s[n];e&&e[o](e.indexOf(t),1)},t.once=m,t.emit=function(n,t,e){for(var i=s[n]||[],r=0;r<i.length;)!1===i[r](t)?i[o](r,1):r++;g[n]=t||{},e&&e.buffered&&(l[n]||(l[n]=[]),100<=l[n].length&&l[n].shift(),l[n].push(t||{}))},t.UUID=function(){return[w(),w(),w(),w()].join("-")},t.time=function(n){var t=i?new Date(i.time):new Date;return"ISO"===n?t.toISOString():t.getTime()},t.error=b,t.exec=y,(t.global=n).csa._s.push=function(n){n[0]in f&&(!c.length||r)?D(n):c[o](a++,0,n)},S(),h(function(){h(E,u.SkipMissingPluginsTimeout||5e3)},1)}("undefined"!=typeof window?window:global);csa.plugin(function(o){var t,n,r={},e="localStorage",c="sessionStorage",a="local",i="session",u=o.exec;function s(e,t){var n;try{r[t]=!!(n=o.global[e]),n=n||{}}catch(e){r[t]=!(n={})}return n}function f(){t=t||s(e,a),n=n||s(c,i)}function l(e){return e&&e[i]?n:t}o.store=u(function(e,t,n){f();var o=l(n);return e?t?void(o[e]=t):o[e]:Object.keys(o)}),o.storageSupport=u(function(){return f(),r}),o.deleteStored=u(function(e,t){f();var n=l(t);if("function"==typeof e)for(var o in n)n.hasOwnProperty(o)&&e(o,n[o])&&delete n[o];else delete n[e]})});csa.plugin(function(s){s.register("Errors",{logError:function(r){s("Metrics",{producerId:"csa",dimensions:{message:r}})("recordMetric","jsError",1)}})});csa.plugin(function(r){var o,e=r.global,i=r("Events"),d=e.location,f=e.document,a=((e.performance||{}).navigation||{}).type,t=e.addEventListener,s=r.emit,u={};function n(a,e){var t=!!o,n=(e=e||{}).keepPageAttributes;t&&(s("$beforePageTransition"),s("$pageTransition")),t&&!n&&i("removeEntity","page"),o=r.UUID(),n?u.id=o:u={schemaId:"<ns>.PageEntity.1",id:o,url:d.href,server:d.hostname,path:d.pathname,referrer:f.referrer,title:f.title},Object.keys(a||{}).forEach(function(e){u[e]=a[e]}),i("setEntity",{page:u}),s("$pageChange",u,{buffered:1}),t&&s("$afterPageTransition")}function g(){s("$load"),s("$ready"),s("$afterload")}function l(){s("$ready"),s("$beforeunload"),s("$unload"),s("$afterunload")}d&&f&&(t&&(t("beforeunload",l),t("pagehide",l),"complete"===f.readyState?g():t("load",g)),r.register("SPA",{newPage:n}),n({transitionType:{0:"hard",1:"refresh",2:"back-button"}[a]||"unknown"}))});csa.plugin(function(c){var t="Events",e="UNKNOWN",a="id",u="all",n="messageId",i="timestamp",f="producerId",o="application",r="obfuscatedMarketplaceId",s="entities",d="schemaId",l="version",p="attributes",v="<ns>",g=c.config,h=(c.global.location||{}).host,m=g[t+".Namespace"]||"csa_other",I=g.Application||"Other"+(h?":"+h:""),b=c("Transport"),y={},O=function(t,e){Object.keys(t).forEach(e)};function E(n,i,o){O(i,function(t){var e=o===u||(o||{})[t];t in n||(n[t]={version:1,id:i[t][a]||c.UUID()}),U(n[t],i[t],e)})}function U(e,n,i){O(n,function(t){!function(t,e,n){return"string"!=typeof e&&t!==l?c.error("Attribute is not of type string: "+t):!0===n||1===n||(t===a||!!~(n||[]).indexOf(t))}(t,n[t],i)||(e[t]=n[t])})}function N(o,t,r){O(t,function(t){var e=o[t];if(e[d]){var n={},i={};n[a]=e[a],n[f]=e[f]||r,n[d]=e[d],n[l]=e[l]++,n[p]=i,S(n),U(i,e,1),k(i),b("log",n)}})}function S(t){t[i]=function(t){return"number"==typeof t&&(t=new Date(t).toISOString()),t||c.time("ISO")}(t[i]),t[n]=t[n]||c.UUID(),t[o]=I,t[r]=g.ObfuscatedMarketplaceId||e,t[d]=t[d].replace(v,m)}function k(t){delete t[l],delete t[d],delete t[f]}function w(o){var r={};this.log=function(t,e){var n={},i=(e||{}).ent;return t?"string"!=typeof t[d]?c.error("A valid schema id is required for the event"):(S(t),E(n,y,i),E(n,r,i),E(n,t[s]||{},i),O(n,function(t){k(n[t])}),t[f]=o[f],t[s]=n,void b("log",t)):c.error("The event cannot be undefined")},this.setEntity=function(t){E(r,t,u),N(r,t,o[f])}}g["KillSwitch."+t]||c.register(t,{setEntity:function(t){E(y,t,u),N(y,t,"csa")},removeEntity:function(t){delete y[t]},instance:function(t){return new w(t)}})});csa.plugin(function(s){var c,l="Transport",d="post",u="preflight",r="csa.cajun.",i="store",a="deleteStored",n="addEventListener",f="sendBeacon",t=0,e=s.config[l+".BufferSize"]||2e3,g=s.config[l+".RetryDelay"]||1500,o=[],h=0,p=[],v=s.global,y=v.document,m=s.config[l+".FlushInterval"]||5e3,E=0;function T(n){if(864e5<s.time()-+new Date(n.timestamp))return s.error("Event is too old: "+n);h<e&&(o.push(n),h++,!E&&t&&(E=setTimeout(R,m)))}function R(){p.forEach(function(t){var e=[];o.forEach(function(n){t.accepts(n)&&e.push(n)}),e.length&&(t.chunks?t.chunks(e).forEach(function(n){S(t,n)}):S(t,e))}),o=[],E=0}function S(t,e){function o(){s[a](r+n)}var n=s.UUID();s[i](r+n,JSON.stringify(e)),[function(n,t,e){var o=v.navigator||{},r=v.cordova||{};if(!o[f]||!n[d])return 0;n[u]&&r&&"ios"===r.platformId&&!c&&((new Image).src=n[u]().url,c=1);var i=n[d](t);if(!i.type&&o[f](i.url,i.body))return e(),1},function(n,t,e){if(!n[d])return 0;var o=n[d](t),r=o.url,i=o.body,c=o.type,u=new XMLHttpRequest,a=0;function f(n,t,e){u.open("POST",n),e&&u.setRequestHeader("Content-Type",e),u.send(t)}return u.onload=function(){u.status<299?e():s.config[l+".XHRRetries"]&&a<3&&setTimeout(function(){f(r,i,c)},++a*g)},f(r,i,c),1}].some(function(n){try{return n(t,e,o)}catch(n){}})}s.once("$afterload",function(){t=1,function(e){(s[i]()||[]).forEach(function(n){if(!n.indexOf(r))try{var t=s[i](n);s[a](n),JSON.parse(t).forEach(e)}catch(n){s.error(n)}})}(T),y&&y[n]&&y[n]("visibilitychange",R,!1),R()}),s.once("$afterunload",function(){t=1,R()}),s.on("$afterPageTransition",function(){h=0}),s.register(l,{log:T,register:function(n){p.push(n)}})});csa.plugin(function(n){var r=n.config["Events.SushiEndpoint"];n("Transport")("register",{accepts:function(n){return n.schemaId},post:function(n){var t=n.map(function(n){return{data:n}});return{url:r,body:JSON.stringify({events:t})}},preflight:function(){var n,t=/\/\/(.*?)\//.exec(r);return t&&t[1]&&(n="https://"+t[1]+"/ping"),{url:n}},chunks:function(n){for(var t=[];500<n.length;)t.push(n.splice(0,500));return t.push(n),t}})});csa.plugin(function(n){var t,a,o,r,e=n.config,i="PageViews",d=e[i+".ImpressionMinimumTime"]||1e3,s="addEventListener",c="hidden",g="innerHeight",f="innerWidth",l="renderedTo",m=l+"Viewed",u=l+"Meaningful",v=l+"Impressed",h=1,p=2,P=3,T=4,w=5,y="loaded",I=7,E=8,S=n.global,V=n("Events",{producerId:"csa"}),$=S.document,b={},M={},C=w;if(!e["KillSwitch."+i]){if(!$||!$[s]||void 0===$[c])return K("PageStateChange.2",{state:"ignored"});W(),$[s]("visibilitychange",L,!1),$[s]("readystatechange",j,!1),n.on("$afterPageTransition",W),n.once("$load",j),n.on("$timing:loaded",j)}function H(e){if(!b[I]){var i;if(b[e]=n.time(),e!==P&&e!==y||(t=t||b[e]),t&&C===T)a=a||b[e],(i={})[u]=t-o,i[m]=a-o,K("PageView.4",i),r=r||setTimeout(R,d);if(e!==w&&e!==h&&e!==p||(clearTimeout(r),r=0),e!==h&&e!==p||K("PageRender.3",{transitionType:e===h?"hard":"soft"}),e===I)(i={})[u]=t-o,i[m]=a-o,i[v]=b[e]-o,K("PageImpressed.2",i)}}function K(e,i){M[e]||(i.schemaId="<ns>."+e,V("log",i,{ent:"all"}),M[e]=1)}function L(){0===S[g]&&0===S[f]?(C=E,n("Events")("setEntity",{page:{viewport:"hidden-iframe"}})):C=$[c]?w:T,H(C)}function R(){H(I),r=0}function W(){var e=o?p:h;b={},M={},a=t=0,o=n.time(),H(e),L()}function j(){var e=$.readyState;"interactive"===e&&H(P),"complete"===e&&H(y)}});csa.plugin(function(c){var s=5,e="click",t="addEventListener",r="touches",u="timeStamp",o="length",f="pageX",g="pageY",p="pageXOffset",d="pageYOffset",v=250,m=5,l=200,x=.5,n={capture:!0,passive:!0},X=c.global,Y=c.emit,h=X.Math.abs,a=(X.document||{}).documentElement||{},y={x:0,y:0,t:0,sX:0,sY:0},N={x:0,y:0,t:0,sX:0,sY:0};function b(t){if(t.id)return"//*[@id='"+t.id+"']";var e=function(t){var e,n=1;for(e=t.previousSibling;e;e=e.previousSibling)e.nodeName===t.nodeName&&(n+=1);return n}(t),n=t.nodeName;return 1!==e&&(n+="["+e+"]"),t.parentNode&&(n=b(t.parentNode)+"/"+n),n}function E(t,e,n){var a=c("Content",{target:n}),i={schemaId:"<ns>.ContentInteraction.1",interaction:t,interactionData:e,messageId:c.UUID()};if(n){var r=b(n);r&&(i.attribution=r);var o=function(t){for(var e=t,n=e.tagName,a=!1,i=0;i<s;i++){if(!e||!e.parentElement){a=!0;break}n=(e=e.parentElement).tagName+"/"+n}return a||(n=".../"+n),n}(n);o&&(i.interactionData.parentChain=o)}a("log",i),Y("$content.interaction",i)}function i(t){E(e,{interactionX:""+t.pageX,interactionY:""+t.pageY},t.target)}function I(t){if(t&&t[r]&&1===t[r][o]){var e=t[r][0];N=y={e:t.target,x:e[f],y:e[g],t:t[u],sX:X[p],sY:X[d]}}}function C(t){if(t&&t[r]&&1===t[r][o]&&y&&N){var e=t[r][0],n=t[u],a=n-N.t,i={e:t.target,x:e[f],y:e[g],t:n,sX:X[p],sY:X[d]};N=i,l<=a&&(y=i)}}function D(t){if(t){var e=h(y.x-N.x),n=h(y.y-N.y),a=h(y.sX-N.sX),i=h(y.sY-N.sY),r=t[u]-y.t;if(v<1e3*e/r&&m<e||v<1e3*n/r&&m<n){var o=n<e;o&&a&&e*x<=a||!o&&i&&n*x<=i||E((o?"horizontal":"vertical")+"-swipe",{interactionX:""+y.x,interactionY:""+y.y,endX:""+N.x,endY:""+N.y},y.e)}}}a[t](e,c.exec(i),n),a[t]("touchstart",c.exec(I),n),a[t]("touchmove",c.exec(C),n),a[t]("touchend",c.exec(D),n)});
@@ -327,7 +333,7 @@ amzn.copilot.checkCoPilotSession();
     
 
     
-      <input type="hidden" name="appActionToken" value="Msp5sef1hS7xi3AELRKEygrqdZ8j3D" /><input type="hidden" name="appAction" value="SIGNIN" />
+      <input type="hidden" name="appActionToken" value="f4TQxXL4dpS8OE0mmmXNPj2FofPvoj3D" /><input type="hidden" name="appAction" value="SIGNIN" />
     
   
 
@@ -337,13 +343,13 @@ amzn.copilot.checkCoPilotSession();
 
 
   
-    <input type="hidden" name="ces" value="ape:QUNTX05HTVJKRkl6ZkhtaTNXTzVnT0EyOUg5L2YzOEFBQUFBQUFBQUFSZ29YU0swZHJ6QVE0bXdhc2pIRklSZ1NuUXBZUS9RaVhQcnM1d2VkSi9BSEV5RDRlMDNZbGN4ZTQzUTVrNmlPOXJYckxJQlR1b3VJKzR2a2hURUtmeEZpZWgvb1p5Rm5WT2l3NUo5dkZJWVNzYW5EYVNnU21PNnM1SjFMaFoxUG5PelE2bTQ0RThSdko0QTBHWTFoZjhvUW13OWNlRk5peDZQdlpoVXZoZXhoUGppVjhCbTBjcDJQVENhVFFsVWNLZUhkUWhTNVlBTDN5cGdpdXI5MHY4MlA3OWZGQkpORXVWYUhnZ3RmdlljQ2ZabXA1UGJkdGlKTG9aQWx6TnRqbzdjdmdxa3JKYjlIM2ZyczkvcS9TUzZRS2xxYU5vNXpVOUZyNnROclo3a1ZYQllhRUQ1V3Z5SVR3SkNYZk03akZDRlpMcU5MR1A2ZXZSRnlGd0s4Tm89" />
+    <input type="hidden" name="ces" value="ape:QUNTXzUwUHA1OEFyclVOenVMRjZ1VGpvMm45L2YzOEFBQUFBQUFBQUFiYzJYMjZuUlM2QTVsOHFzSFA5OVNscUdDR2RZUFFUQ05OeTBtS2xSSHR5aUZDT0czUElUbjdzTlpBUTRicHB0ZCtORXBrTUhhSDNEWFg0RjFUTTB4Q1EvV3BFWGVtMDRUWkpsM243dXhJbTZtWUZHbWxoL1BldnBpMmFMQS95d0szei9kcVZBaVVoSWRJTjZFKzRCdCsrUlgxeTd1ZHlRMVlLbjdpOVdiVHZXUmxEVWtXMHhzZDQ2RFBVcmlrZXF4VTdKbVdGbUx0SEhTTzZVTEtLa2tTbzlSdS9tU2Q1SE56UGp4ckV6bDZTQkVtdmdYT0RScmxQSmRXTmFBYjc0SFFNZnZSWjJDTFh3aGFOeVh5c1lSSGJWUDV5bmdRSHBleDRtRjhZTE83amhKRndkZlRZVm83K25HRDV1MWkvd01NblB0bllhOTlPbDBUeVY1UG1aTW89" />
   
     <input type="hidden" name="openid.return_to" value="ape:aHR0cHM6Ly9hbGV4YS5hbWF6b24uZXMv" />
   
-    <input type="hidden" name="prevRID" value="ape:N0c5M1NGMkVCM1paVkFCQjE1Ukg=" />
+    <input type="hidden" name="prevRID" value="ape:QVpYRzJZTjMxUVcwWFNEQ0Y4U00=" />
   
-    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.P8MfHbdXXwsyQ1jULPq8-ZzjDHhQbZLnHIHfRpSVJ8H5B7EAzSBH0g.9nB31PFOZaS_VI5L.zhQfaD1wmqlNJ35ZbwXY_9_nWgIRQiZ_FnSAB9YwOuz4Jv4Kr0-zIimP6-wZP0YX7BqIXoympe-MX84VYVq8i1FhDu0bzpQXCJUTmtz1h1U-p6BtbtdTxhI0vEjPia7eFoVImd6jOdjU7B0ZBRO184nL-8PuhKlFJHj12jt3vgfLY_LCN4n7xB5J3KejCrsqmm-lUTd-TGzaUQT6tvscIPBaB81_eCS_X-oqWHyc9v8hP0IXpt8McmbSSQsoAK15pEd4_VJg48bJLlzb7R1IlE5_E2kFD0pkGWvJwTIjz_DOvdAxCzFxXsC-JsZ94oocsC62SyWcj77cJl4FLi14V0XzQQUY7saiciZ74v-IbitKS_FR4sECheZLrgTDUSO1BHmE5ugxIO6-yni6rtNhiJNvVFMpLE6I_JqvaxlemxLQDje2fxlzP6juCds-uq8dOTS6784KMx25xSjrZlLlxiqwqFL6GJMq4WnztsZVsDG2hp-VttVPaL6pfPgbw2lSPXCjBMn0WD3f6plmkJ8NMnA._klMMmrFoaHNS-TYzjNBfQ" />
+    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.CiplbzCAHtBvSzdFWdhiNVk_D2-n12zVPMoBT7EB6ix2oAOWxH94aw.6jHZOj05SLs4cIPg.xKCSnofejniP5_eE4df5yk1FP0LwrxZT-4xOXinBLGZcKdXYdfbbXxm5el0wTpqMPpguFANoDBpDJY5buJHGgx6ZohBSwf6yq4wVLiz9Z9Rpyr8FPu7PuZ_1XmGOT_qaN9xEW8hnqTlC-g5S1frWEdXEBzUg1GOZhGihZJsbnzffHSZBR8C4nEtbI1Efeuh0doTBhtxrjyohQrqrkDSDvwkxJt5PIalLU9OaVZHz8crJ6MjLZ5cGmKMNQV6j-OwGZsrThZxsRz3W-5cqduLGCYVcVd3ZFKU-q5XC9Aqz2FStmhaVTVHf1LvGg2tGnQeq0oHLTICW8a68J9bJOLqUdETuq1xfL_frXi72Q8nZL-l_bSRUFdujIH_gzRAYO_nQNgXw0QBkS5_Tzk78xOhoUus68GD3ZpQLCHnCnfeQbaeGFN7ENPkxTJTxLl-TA1r9YbLN8-6W2QT_TMMzZ3P0wcdLt7Wjzq6_LJcitpvhgpnzGoxzBZqirv5XIVx6WdNdMWrKARG8UVTrDlhTX1KeCw.kbWyFj1Vb4pF7Pqk49EnPQ" />
   
 
 
@@ -366,7 +372,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 
-<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=7G93SF2EB3ZZVABB15RH&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJiVk13YmxSYldzTDcvMUFBSWpqRWQ3U05aMHlIc2xJd1Q1UUZnb0hna2ZJPSIsIklWIjoiaDZadEJvRHo1M0tXWXp2UUpSWW1Hdz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613392633000">
+<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AZXG2YN31QW0XSDCF8SM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiIvRit1RjVEZDhTLzdOVVQ5Y3JsMWxuYUN6aGRSTFBSSEdGK1BmR1p4RGFJPSIsIklWIjoiZFlkU01HM2NGYTgyUTRpQXduNzhzZz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613460899000">
   ¿Has olvidado la contraseña?
 </a>
   </div>
@@ -386,8 +392,13 @@ amzn.copilot.checkCoPilotSession();
     <div class="a-input-text-wrapper auth-required-field auth-fill-claim"><input type="email" maxlength="128" value="amazon_account@email.address" id="ap_email" placeholder="Email (tel&eacute;fono en cuentas m&oacute;vil)" name="email" tabindex="1" autocorrect="off" autocapitalize="off"/></div>
     
 
+
+
 <div id="ap_email_icon" class="auth-clear-icons">
+  
+
   <i class="a-icon a-icon-close" role="presentation"></i>
+
 </div>
     
 
@@ -428,8 +439,13 @@ amzn.copilot.checkCoPilotSession();
 
 
 
+
+
 <div id="ap_password_icon" class="auth-clear-icons">
+  
+
   <i class="a-icon a-icon-close" role="presentation"></i>
+
 </div>
 
 
@@ -532,7 +548,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 <div id="auth-captcha-image-container" class="a-section a-text-center">
-  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/dd45f5f9a4bb4fc997cdeefaa5b946ba.jpg?AWSAccessKeyId=AKIA5WBBRBBBQ4SU3ZMR&amp;Expires=1613392934&amp;Signature=5AeszTO%2F6Fa5uMO7KTZnjDV62y8%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
+  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/be89406012b44384b51d18bb1be9084a.jpg?AWSAccessKeyId=AKIA5WBBRBBBQ4SU3ZMR&amp;Expires=1613461200&amp;Signature=0tnJZZFngRybio1uB0E%2Fuu7CJRE%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
 </div>
     </div>
 
@@ -552,8 +568,13 @@ amzn.copilot.checkCoPilotSession();
 	  <div class="a-input-text-wrapper a-spacing-base auth-required-field"><input type="text" id="auth-captcha-guess" autocomplete="off" placeholder="Introduce los caracteres anteriores:" name="guess" tabindex="5" autocorrect="off" autocapitalize="off"/></div>
       
 
+
+
 <div id="auth_captcha_guess_icon" class="auth-clear-icons">
+  
+
   <i class="a-icon a-icon-close" role="presentation"></i>
+
 </div>
       
 
@@ -594,7 +615,7 @@ amzn.copilot.checkCoPilotSession();
     <div id="image-captcha-options" class="a-section a-spacing-mini">
       <div id="auth-switch-captcha-to-audio-container" class="a-row">
         <div class="a-column a-span12 a-text-center a-spacing-small">
-          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=7G93SF2EB3ZZVABB15RH&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiIrdGx2eExYaXZZYUNsdW5Iem42UXNVOUxXeC9GUHFnRVNtTWJSZE1XTkpjPSIsIklWIjoiL1pHK1N6enpEWGlJdUo3d29DUm1kZz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613392633000&amp;use_audio_captcha=0">
+          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AZXG2YN31QW0XSDCF8SM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJyd1hadTBUaXZGVnFPVUc0U0tiQVpDVTZseWdKV3o2aFBlUzhCWi82L1RrPSIsIklWIjoiUXVWQ29tTHpwTUZSNms5YWVwZ0NiQT09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613460899000&amp;use_audio_captcha=0">
             Probar con una imagen distinta.
           </a>
           <a id="auth-captcha-noop-link" class="a-link-normal" href="javascript:void(0);">
@@ -683,7 +704,7 @@ amzn.copilot.checkCoPilotSession();
       
         
         <div class="a-divider a-divider-break"><h5>¿Eres nuevo en Amazon?</h5></div>
-        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=7G93SF2EB3ZZVABB15RH&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiIrdGx2eExYaXZZYUNsdW5Iem42UXNVOUxXeC9GUHFnRVNtTWJSZE1XTkpjPSIsIklWIjoiL1pHK1N6enpEWGlJdUo3d29DUm1kZz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613392633000" class="a-button-text" role="button">
+        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AZXG2YN31QW0XSDCF8SM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJyd1hadTBUaXZGVnFPVUc0U0tiQVpDVTZseWdKV3o2aFBlUzhCWi82L1RrPSIsIklWIjoiUXVWQ29tTHpwTUZSNms5YWVwZ0NiQT09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613460899000" class="a-button-text" role="button">
           Crear una nueva cuenta de Amazon
         </a></span></span>
       
@@ -923,7 +944,7 @@ csa.plugin(function(e){var i="transitionStart",n="pageVisible",t="PageTiming",a=
 </div>
 
 <noscript>
-    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:257-5914238-9705117:7G93SF2EB3ZZVABB15RH$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3D7G93SF2EB3ZZVABB15RH:0' alt=""/>
+    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-6845055-5566716:AZXG2YN31QW0XSDCF8SM$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3DAZXG2YN31QW0XSDCF8SM:0' alt=""/>
 </noscript>
 </body>
 </html>
