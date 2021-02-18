@@ -53,7 +53,7 @@ def writeInfo():
         txt = txt + '. Boottime: ' + \
             datetime.datetime.fromtimestamp(
                 bootime).strftime('%d/%m/%y %H:%M:%S')
-        print(txt)
+        #print(txt)
     except Exception as e:
         txt = 'Error writeInfo: ' + str(e)
     finally:

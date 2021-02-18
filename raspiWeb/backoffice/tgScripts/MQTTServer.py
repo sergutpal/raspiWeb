@@ -56,4 +56,8 @@ topicTermo = "zigbee2mqtt/Enchufe2/set"
 payloadTermoON = b'ON'
 payloadTermoOFF = b'OFF'
 
+topicBombaAgua = "zigbee2mqtt/Enchufe3/set"
+payloadBombaAguaON = b'ON'
+payloadBombaAguaOFF = b'OFF'
+
 topicPV = "PV"
