@@ -22,11 +22,11 @@ var ue_csm = window,
 pec:0,ts:0,erl:[],ter:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec<a.ec&&d.uex("at");a.pec=a.ec},1E4)}};l.skipTrace=1;h.skipTrace=1;h.isStub=1;d.ueLogError=h;d.ue_err=a;e.onerror=l})(ue_csm,window);
 
 
-var ue_id = 'AZXG2YN31QW0XSDCF8SM',
+var ue_id = 'JYWH86SDM507W8Q9Z5HV',
     ue_url = '/ap/uedata',
     ue_navtiming = 1,
     ue_mid = 'A1RKKUPIHCS9HS',
-    ue_sid = '262-6845055-5566716',
+    ue_sid = '262-0705924-7723300',
     ue_sn = 'www.amazon.es',
     ue_furl = 'fls-eu.amazon.com',
     ue_surl = 'https://unagi-eu.amazon.com/1/events/com.amazon.csm.nexusclient.prod',
@@ -35,7 +35,7 @@ var ue_id = 'AZXG2YN31QW0XSDCF8SM',
     ue_urt = 3,
     ue_rpl_ns = 'cel-rpl',
     ue_ddq = 1,
-    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-6845055-5566716:AZXG2YN31QW0XSDCF8SM$uedata=s:',
+    ue_fpf = '//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-0705924-7723300:JYWH86SDM507W8Q9Z5HV$uedata=s:',
     ue_sbuimp = 1,
     ue_bfd = 1000,
     ue_fnt = 0,
@@ -63,19 +63,13 @@ ue.stub(ue,"log");ue.stub(ue,"onunload");ue.stub(ue,"onflush");
 "csm","csm.CSMBaselineEvent.4"),a.count("nexusBaselineCounter",1,{bf:1}))})(ue_csm);
 
 
-(function(g,h,m){if("function"===typeof h.addEventListener&&"function"===typeof m.querySelectorAll){var l,n,u,p,f,v,q,r,w,x=["mouseenter","mouseleave"],y="click dblclick mousedown mouseover mouseout touchstart keydown keypress MSPointerDown pointerdown focusin".split(" ").concat(x),s=!1,t=[];p=function(a){for(var c=[];a;)c.push(a),a=a.parentNode;return c};n=function(a,c){var b=-1,d;for(d=0;d<c.length;d++)if(c[d]===a){b=d;break}return b};r=function(a,c){var b=n(a,c);0<=b&&c.splice(b,1)};u=function(a){var c;
-a=p(a);for(var b,d,e=0;e<a.length;e++)if(d=a[e],(b=d.nodeName)&&b!==m.nodeName){b=b.toLowerCase();if(d.id)return b+"#"+d.id+(c?">"+c:"");(d=d.getAttribute("class"))&&(b=b+"."+d.split(" ").join("."));c=b+(c?">"+c:"")}return c};w=function(a){return a.replace(/[^\w.:\-]/g,function(a){return"#"===a?"::":">"===a?":-":"_"})};q=function(a,c){var b,d,e;if(g.ue&&g.ue.count&&g.ueLogError)for(b=u(a),e=w(b),d="degraded"===c?"A UX degrading element has entered the viewport: "+b:"A "+c+" was not handled on element: "+
-b,g.ueLogError({m:d,fromOnError:1},{logLevel:"ERROR",attribution:b,message:d}),b=["TNR","TNR:"+c,"TNR:"+e,"TNR:"+c+":"+e],f=0;f<b.length;f++)g.ue.count(b[f],(g.ue.count(b[f])||0)+1)};v=function(a){a=a.getBoundingClientRect();return a.top<a.bottom&&a.left<a.right&&0<=a.bottom&&a.top<=h.innerHeight&&0<=a.right&&a.left<=h.innerWidth};l=function(){s||(s=!0,setTimeout(function(){[].forEach.call(m.querySelectorAll("[data-ux-degraded]"),function(a){v(a)?0>n(a,t)&&(t.push(a),q(a,"degraded")):r(a,t)});s=!1},
-250))};h.addEventListener("scroll",l);h.addEventListener("resize",l);l=function(a){var c=!1,b=0>n(a,x);m.addEventListener(a,function(d){if(!c){c=!0;var e=[],f=b?p(d.target):[d.target],k,g,h;for(g=0;g<f.length;g++)k=f[g],k.getAttribute&&("mouseover"===a&&k===d.target&&((h=k.getAttribute("data-ux-jq-mouseenter"))||""===h)&&e.push(k),((h=k.getAttribute("data-ux-"+a))||""===h)&&e.push(k));e.length?(d.ack=d.acknowledge=function(a){a=a||d.currentTarget;r(a,e)},setTimeout(function(){var b;for(b=0;b<e.length;b++)q(e[b],
-a);c=!1},250)):c=!1}},!0)};for(f=0;f<y.length;f++)l(y[f])}})(ue_csm,window,document);
-
 
 var ue_hoe = +new Date();
 }
 window.ueinit = window.ue_ihb;
 </script>
 
-<!-- 2hy6wqydlt9882j --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
+<!-- u3c2tf1brlojh9fgfm256n7ij5a00t --><script>var aPageStart = (new Date()).getTime();</script><meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no"/><meta charset="utf-8"/>
     <title dir="ltr">Iniciar sesión en Amazon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 
@@ -152,7 +146,7 @@ if(window.ue&&uet) { uet('bb'); }
 }
 </script></head>
 
-  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_72554-c a-aui_mm_desktop_exp_291916-c a-aui_mm_desktop_launch_291918-c a-aui_mm_desktop_targeted_exp_291928-t1 a-aui_mm_desktop_targeted_launch_291922-t1 a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_preload_261698-c a-aui_rel_noreferrer_noopener_309527-c a-aui_tnr_v2_180836-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-6845055-5566716:AZXG2YN31QW0XSDCF8SM$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3DAZXG2YN31QW0XSDCF8SM:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
+  <body class="a-color-offset-background auth-alexa ap-locale-es_ES a-m-es a-aui_72554-c a-aui_mm_desktop_exp_291916-c a-aui_mm_desktop_launch_291918-c a-aui_mm_desktop_targeted_exp_291928-c a-aui_mm_desktop_targeted_launch_291922-c a-aui_pci_risk_banner_210084-c a-aui_perf_130093-c a-aui_preload_261698-t1 a-aui_rel_noreferrer_noopener_309527-c a-aui_tnr_v2_180836-c">    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-0705924-7723300:JYWH86SDM507W8Q9Z5HV$uedata=s:%2Fap%2Fuedata%3Fstaticb%26id%3DJYWH86SDM507W8Q9Z5HV:0' alt="" onload="window.ue_sbl && window.ue_sbl();"/>
 
 
 <script>
@@ -164,14 +158,14 @@ if (window.csa) {
         'Events.Namespace': 'csa',
         'ObfuscatedMarketplaceId': 'A1RKKUPIHCS9HS',
         'Events.SushiEndpoint': 'https://unagi.amazon.es/1/events/com.amazon.csm.csa.prod',
-        'CacheDetection.RequestID': "AZXG2YN31QW0XSDCF8SM",
+        'CacheDetection.RequestID': "JYWH86SDM507W8Q9Z5HV",
         'CacheDetection.Callback': window.ue && ue.reset,
         'LCP.elementDedup': 1
     });
 
     csa("Events")("setEntity", {
-        page: {requestId: "AZXG2YN31QW0XSDCF8SM", meaningful: "interactive"},
-        session: {id: "262-6845055-5566716"}
+        page: {requestId: "JYWH86SDM507W8Q9Z5HV", meaningful: "interactive"},
+        session: {id: "262-0705924-7723300"}
     });
 }
 !function(n){var i,r,o="splice",e=n.csa,u={},f={},c=n.csa._s,a=0,s={},g={},l={},h=setTimeout,d=Object.keys;function t(n,t){return e(n,t)}function v(n,t){var e=f[n]||{};O(e,t),f[n]=e,h(S,0)}function p(n,t,e){var i=!0;e&&e.buffered&&(i=(l[n]||[]).every(function(n){return!1!==t(n)})),i&&(s[n]||(s[n]=[]),s[n].push(t))}function m(n,t){if(n in g)t(g[n]);else{p(n,function(n){return t(n),!1})}}function b(n,t){if(e("Errors")("logError",n),u.DEBUG)throw t||n}function w(){return Math.abs(4294967295*Math.random()|0).toString(36)}function y(n,t){return function(){try{return n.apply(this,arguments)}catch(n){b(n.message||n,n)}}}function S(){for(var n=0;n<c.length;){var t=c[n],e=t[0]in f;if(!e&&!r)return void(a=t.length);e?(c[o](a=n,1),D(t)):n++}}function D(n){var arguments,t=f[n[0]],e=(arguments=n[1])[0];if(!t||!t[e])return b("Undefined function: "+t+"/"+e);i=n[3],f[n[2]]=t[e].apply(t,arguments.slice(1))||{},i=0}function E(){r=1,S()}function O(t,e){d(e).forEach(function(n){t[n]=e[n]})}m("$beforeunload",E),v("Config",{instance:function(n){O(u,n)}}),e.plugin=y(function(n){n(t)}),t.config=u,t.register=v,t.on=p,t.removeListener=function(n,t){var e=s[n];e&&e[o](e.indexOf(t),1)},t.once=m,t.emit=function(n,t,e){for(var i=s[n]||[],r=0;r<i.length;)!1===i[r](t)?i[o](r,1):r++;g[n]=t||{},e&&e.buffered&&(l[n]||(l[n]=[]),100<=l[n].length&&l[n].shift(),l[n].push(t||{}))},t.UUID=function(){return[w(),w(),w(),w()].join("-")},t.time=function(n){var t=i?new Date(i.time):new Date;return"ISO"===n?t.toISOString():t.getTime()},t.error=b,t.exec=y,(t.global=n).csa._s.push=function(n){n[0]in f&&(!c.length||r)?D(n):c[o](a++,0,n)},S(),h(function(){h(E,u.SkipMissingPluginsTimeout||5e3)},1)}("undefined"!=typeof window?window:global);csa.plugin(function(o){var t,n,r={},e="localStorage",c="sessionStorage",a="local",i="session",u=o.exec;function s(e,t){var n;try{r[t]=!!(n=o.global[e]),n=n||{}}catch(e){r[t]=!(n={})}return n}function f(){t=t||s(e,a),n=n||s(c,i)}function l(e){return e&&e[i]?n:t}o.store=u(function(e,t,n){f();var o=l(n);return e?t?void(o[e]=t):o[e]:Object.keys(o)}),o.storageSupport=u(function(){return f(),r}),o.deleteStored=u(function(e,t){f();var n=l(t);if("function"==typeof e)for(var o in n)n.hasOwnProperty(o)&&e(o,n[o])&&delete n[o];else delete n[e]})});csa.plugin(function(s){s.register("Errors",{logError:function(r){s("Metrics",{producerId:"csa",dimensions:{message:r}})("recordMetric","jsError",1)}})});csa.plugin(function(r){var o,e=r.global,i=r("Events"),d=e.location,f=e.document,a=((e.performance||{}).navigation||{}).type,t=e.addEventListener,s=r.emit,u={};function n(a,e){var t=!!o,n=(e=e||{}).keepPageAttributes;t&&(s("$beforePageTransition"),s("$pageTransition")),t&&!n&&i("removeEntity","page"),o=r.UUID(),n?u.id=o:u={schemaId:"<ns>.PageEntity.1",id:o,url:d.href,server:d.hostname,path:d.pathname,referrer:f.referrer,title:f.title},Object.keys(a||{}).forEach(function(e){u[e]=a[e]}),i("setEntity",{page:u}),s("$pageChange",u,{buffered:1}),t&&s("$afterPageTransition")}function g(){s("$load"),s("$ready"),s("$afterload")}function l(){s("$ready"),s("$beforeunload"),s("$unload"),s("$afterunload")}d&&f&&(t&&(t("beforeunload",l),t("pagehide",l),"complete"===f.readyState?g():t("load",g)),r.register("SPA",{newPage:n}),n({transitionType:{0:"hard",1:"refresh",2:"back-button"}[a]||"unknown"}))});csa.plugin(function(c){var t="Events",e="UNKNOWN",a="id",u="all",n="messageId",i="timestamp",f="producerId",o="application",r="obfuscatedMarketplaceId",s="entities",d="schemaId",l="version",p="attributes",v="<ns>",g=c.config,h=(c.global.location||{}).host,m=g[t+".Namespace"]||"csa_other",I=g.Application||"Other"+(h?":"+h:""),b=c("Transport"),y={},O=function(t,e){Object.keys(t).forEach(e)};function E(n,i,o){O(i,function(t){var e=o===u||(o||{})[t];t in n||(n[t]={version:1,id:i[t][a]||c.UUID()}),U(n[t],i[t],e)})}function U(e,n,i){O(n,function(t){!function(t,e,n){return"string"!=typeof e&&t!==l?c.error("Attribute is not of type string: "+t):!0===n||1===n||(t===a||!!~(n||[]).indexOf(t))}(t,n[t],i)||(e[t]=n[t])})}function N(o,t,r){O(t,function(t){var e=o[t];if(e[d]){var n={},i={};n[a]=e[a],n[f]=e[f]||r,n[d]=e[d],n[l]=e[l]++,n[p]=i,S(n),U(i,e,1),k(i),b("log",n)}})}function S(t){t[i]=function(t){return"number"==typeof t&&(t=new Date(t).toISOString()),t||c.time("ISO")}(t[i]),t[n]=t[n]||c.UUID(),t[o]=I,t[r]=g.ObfuscatedMarketplaceId||e,t[d]=t[d].replace(v,m)}function k(t){delete t[l],delete t[d],delete t[f]}function w(o){var r={};this.log=function(t,e){var n={},i=(e||{}).ent;return t?"string"!=typeof t[d]?c.error("A valid schema id is required for the event"):(S(t),E(n,y,i),E(n,r,i),E(n,t[s]||{},i),O(n,function(t){k(n[t])}),t[f]=o[f],t[s]=n,void b("log",t)):c.error("The event cannot be undefined")},this.setEntity=function(t){E(r,t,u),N(r,t,o[f])}}g["KillSwitch."+t]||c.register(t,{setEntity:function(t){E(y,t,u),N(y,t,"csa")},removeEntity:function(t){delete y[t]},instance:function(t){return new w(t)}})});csa.plugin(function(s){var c,l="Transport",d="post",u="preflight",r="csa.cajun.",i="store",a="deleteStored",n="addEventListener",f="sendBeacon",t=0,e=s.config[l+".BufferSize"]||2e3,g=s.config[l+".RetryDelay"]||1500,o=[],h=0,p=[],v=s.global,y=v.document,m=s.config[l+".FlushInterval"]||5e3,E=0;function T(n){if(864e5<s.time()-+new Date(n.timestamp))return s.error("Event is too old: "+n);h<e&&(o.push(n),h++,!E&&t&&(E=setTimeout(R,m)))}function R(){p.forEach(function(t){var e=[];o.forEach(function(n){t.accepts(n)&&e.push(n)}),e.length&&(t.chunks?t.chunks(e).forEach(function(n){S(t,n)}):S(t,e))}),o=[],E=0}function S(t,e){function o(){s[a](r+n)}var n=s.UUID();s[i](r+n,JSON.stringify(e)),[function(n,t,e){var o=v.navigator||{},r=v.cordova||{};if(!o[f]||!n[d])return 0;n[u]&&r&&"ios"===r.platformId&&!c&&((new Image).src=n[u]().url,c=1);var i=n[d](t);if(!i.type&&o[f](i.url,i.body))return e(),1},function(n,t,e){if(!n[d])return 0;var o=n[d](t),r=o.url,i=o.body,c=o.type,u=new XMLHttpRequest,a=0;function f(n,t,e){u.open("POST",n),e&&u.setRequestHeader("Content-Type",e),u.send(t)}return u.onload=function(){u.status<299?e():s.config[l+".XHRRetries"]&&a<3&&setTimeout(function(){f(r,i,c)},++a*g)},f(r,i,c),1}].some(function(n){try{return n(t,e,o)}catch(n){}})}s.once("$afterload",function(){t=1,function(e){(s[i]()||[]).forEach(function(n){if(!n.indexOf(r))try{var t=s[i](n);s[a](n),JSON.parse(t).forEach(e)}catch(n){s.error(n)}})}(T),y&&y[n]&&y[n]("visibilitychange",R,!1),R()}),s.once("$afterunload",function(){t=1,R()}),s.on("$afterPageTransition",function(){h=0}),s.register(l,{log:T,register:function(n){p.push(n)}})});csa.plugin(function(n){var r=n.config["Events.SushiEndpoint"];n("Transport")("register",{accepts:function(n){return n.schemaId},post:function(n){var t=n.map(function(n){return{data:n}});return{url:r,body:JSON.stringify({events:t})}},preflight:function(){var n,t=/\/\/(.*?)\//.exec(r);return t&&t[1]&&(n="https://"+t[1]+"/ping"),{url:n}},chunks:function(n){for(var t=[];500<n.length;)t.push(n.splice(0,500));return t.push(n),t}})});csa.plugin(function(n){var t,a,o,r,e=n.config,i="PageViews",d=e[i+".ImpressionMinimumTime"]||1e3,s="addEventListener",c="hidden",g="innerHeight",f="innerWidth",l="renderedTo",m=l+"Viewed",u=l+"Meaningful",v=l+"Impressed",h=1,p=2,P=3,T=4,w=5,y="loaded",I=7,E=8,S=n.global,V=n("Events",{producerId:"csa"}),$=S.document,b={},M={},C=w;if(!e["KillSwitch."+i]){if(!$||!$[s]||void 0===$[c])return K("PageStateChange.2",{state:"ignored"});W(),$[s]("visibilitychange",L,!1),$[s]("readystatechange",j,!1),n.on("$afterPageTransition",W),n.once("$load",j),n.on("$timing:loaded",j)}function H(e){if(!b[I]){var i;if(b[e]=n.time(),e!==P&&e!==y||(t=t||b[e]),t&&C===T)a=a||b[e],(i={})[u]=t-o,i[m]=a-o,K("PageView.4",i),r=r||setTimeout(R,d);if(e!==w&&e!==h&&e!==p||(clearTimeout(r),r=0),e!==h&&e!==p||K("PageRender.3",{transitionType:e===h?"hard":"soft"}),e===I)(i={})[u]=t-o,i[m]=a-o,i[v]=b[e]-o,K("PageImpressed.2",i)}}function K(e,i){M[e]||(i.schemaId="<ns>."+e,V("log",i,{ent:"all"}),M[e]=1)}function L(){0===S[g]&&0===S[f]?(C=E,n("Events")("setEntity",{page:{viewport:"hidden-iframe"}})):C=$[c]?w:T,H(C)}function R(){H(I),r=0}function W(){var e=o?p:h;b={},M={},a=t=0,o=n.time(),H(e),L()}function j(){var e=$.readyState;"interactive"===e&&H(P),"complete"===e&&H(y)}});csa.plugin(function(c){var s=5,e="click",t="addEventListener",r="touches",u="timeStamp",o="length",f="pageX",g="pageY",p="pageXOffset",d="pageYOffset",v=250,m=5,l=200,x=.5,n={capture:!0,passive:!0},X=c.global,Y=c.emit,h=X.Math.abs,a=(X.document||{}).documentElement||{},y={x:0,y:0,t:0,sX:0,sY:0},N={x:0,y:0,t:0,sX:0,sY:0};function b(t){if(t.id)return"//*[@id='"+t.id+"']";var e=function(t){var e,n=1;for(e=t.previousSibling;e;e=e.previousSibling)e.nodeName===t.nodeName&&(n+=1);return n}(t),n=t.nodeName;return 1!==e&&(n+="["+e+"]"),t.parentNode&&(n=b(t.parentNode)+"/"+n),n}function E(t,e,n){var a=c("Content",{target:n}),i={schemaId:"<ns>.ContentInteraction.1",interaction:t,interactionData:e,messageId:c.UUID()};if(n){var r=b(n);r&&(i.attribution=r);var o=function(t){for(var e=t,n=e.tagName,a=!1,i=0;i<s;i++){if(!e||!e.parentElement){a=!0;break}n=(e=e.parentElement).tagName+"/"+n}return a||(n=".../"+n),n}(n);o&&(i.interactionData.parentChain=o)}a("log",i),Y("$content.interaction",i)}function i(t){E(e,{interactionX:""+t.pageX,interactionY:""+t.pageY},t.target)}function I(t){if(t&&t[r]&&1===t[r][o]){var e=t[r][0];N=y={e:t.target,x:e[f],y:e[g],t:t[u],sX:X[p],sY:X[d]}}}function C(t){if(t&&t[r]&&1===t[r][o]&&y&&N){var e=t[r][0],n=t[u],a=n-N.t,i={e:t.target,x:e[f],y:e[g],t:n,sX:X[p],sY:X[d]};N=i,l<=a&&(y=i)}}function D(t){if(t){var e=h(y.x-N.x),n=h(y.y-N.y),a=h(y.sX-N.sX),i=h(y.sY-N.sY),r=t[u]-y.t;if(v<1e3*e/r&&m<e||v<1e3*n/r&&m<n){var o=n<e;o&&a&&e*x<=a||!o&&i&&n*x<=i||E((o?"horizontal":"vertical")+"-swipe",{interactionX:""+y.x,interactionY:""+y.y,endX:""+N.x,endY:""+N.y},y.e)}}}a[t](e,c.exec(i),n),a[t]("touchstart",c.exec(I),n),a[t]("touchmove",c.exec(C),n),a[t]("touchend",c.exec(D),n)});
@@ -188,7 +182,7 @@ d.innerHTML=c.children[a].innerHTML;h.appendChild(d)}},s=function(a){var b=f.cre
 amzn.copilot.checkCoPilotSession();
 
 </script>
-<div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"AUI_MM_DESKTOP_TARGETED_LAUNCH_291922":"T1","AUI_PRELOAD_261698":"C","AUI_MM_DESKTOP_TARGETED_EXP_291928":"T1"}</script>
+<div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"AUI_PRELOAD_261698":"T1"}</script>
     
       
 
@@ -333,7 +327,7 @@ amzn.copilot.checkCoPilotSession();
     
 
     
-      <input type="hidden" name="appActionToken" value="f4TQxXL4dpS8OE0mmmXNPj2FofPvoj3D" /><input type="hidden" name="appAction" value="SIGNIN" />
+      <input type="hidden" name="appActionToken" value="8Dj2Btxlz3bn4yONQHZSyY0eEYaEsj3D" /><input type="hidden" name="appAction" value="SIGNIN" />
     
   
 
@@ -343,13 +337,13 @@ amzn.copilot.checkCoPilotSession();
 
 
   
-    <input type="hidden" name="ces" value="ape:QUNTXzUwUHA1OEFyclVOenVMRjZ1VGpvMm45L2YzOEFBQUFBQUFBQUFiYzJYMjZuUlM2QTVsOHFzSFA5OVNscUdDR2RZUFFUQ05OeTBtS2xSSHR5aUZDT0czUElUbjdzTlpBUTRicHB0ZCtORXBrTUhhSDNEWFg0RjFUTTB4Q1EvV3BFWGVtMDRUWkpsM243dXhJbTZtWUZHbWxoL1BldnBpMmFMQS95d0szei9kcVZBaVVoSWRJTjZFKzRCdCsrUlgxeTd1ZHlRMVlLbjdpOVdiVHZXUmxEVWtXMHhzZDQ2RFBVcmlrZXF4VTdKbVdGbUx0SEhTTzZVTEtLa2tTbzlSdS9tU2Q1SE56UGp4ckV6bDZTQkVtdmdYT0RScmxQSmRXTmFBYjc0SFFNZnZSWjJDTFh3aGFOeVh5c1lSSGJWUDV5bmdRSHBleDRtRjhZTE83amhKRndkZlRZVm83K25HRDV1MWkvd01NblB0bllhOTlPbDBUeVY1UG1aTW89" />
+    <input type="hidden" name="ces" value="ape:QUNTX3l1R0E0Z2h4WW00T2pTZEVsMlNLNW45L2YzOEFBQUFBQUFBQUFTZ1ZGNzM4eDdkSi9ONjFVdjJnNlhwUHU2UXlqTExGNjBWbnZxVDh6THRFSHRxbVlpemdKRk9TeVFUZUVoT2ZPT0ZwTEZNVDl2MXdtdHdpSXE3Z05Zd092SVJwNkNpYW1zbVJwVnprRVZwS0J4R3M3d1ZTdUFGeStHL25yNm14WG05K2ZNOXJ2N2h1QmhpODlDUE5jaVlmUGZ6SUVoSitRVWQ3WE5VV0w1bHlTVjlyTlFaekgxVmNhSGtHUHk1bEs1bC9rK3NOa0hOQjZyOTQyc1B0U21mbzdwMUNjaHVzYTBCR2U3UHB4OXFZTysyLyt0N3Z4Vkp4NFFTQUtiVTZjSkhzbEUrSUgvSHRXNHhXRnNlTEdOLy8vTUZUTEpsQzU5Nnp0YVJCRDZkMXVIdDJDZUk3My9YMDNkYkthaWY5UEVMK0oramllN1R6cy91Sy9IdmxuMGM9" />
   
     <input type="hidden" name="openid.return_to" value="ape:aHR0cHM6Ly9hbGV4YS5hbWF6b24uZXMv" />
   
-    <input type="hidden" name="prevRID" value="ape:QVpYRzJZTjMxUVcwWFNEQ0Y4U00=" />
+    <input type="hidden" name="prevRID" value="ape:SllXSDg2U0RNNTA3VzhROVo1SFY=" />
   
-    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.CiplbzCAHtBvSzdFWdhiNVk_D2-n12zVPMoBT7EB6ix2oAOWxH94aw.6jHZOj05SLs4cIPg.xKCSnofejniP5_eE4df5yk1FP0LwrxZT-4xOXinBLGZcKdXYdfbbXxm5el0wTpqMPpguFANoDBpDJY5buJHGgx6ZohBSwf6yq4wVLiz9Z9Rpyr8FPu7PuZ_1XmGOT_qaN9xEW8hnqTlC-g5S1frWEdXEBzUg1GOZhGihZJsbnzffHSZBR8C4nEtbI1Efeuh0doTBhtxrjyohQrqrkDSDvwkxJt5PIalLU9OaVZHz8crJ6MjLZ5cGmKMNQV6j-OwGZsrThZxsRz3W-5cqduLGCYVcVd3ZFKU-q5XC9Aqz2FStmhaVTVHf1LvGg2tGnQeq0oHLTICW8a68J9bJOLqUdETuq1xfL_frXi72Q8nZL-l_bSRUFdujIH_gzRAYO_nQNgXw0QBkS5_Tzk78xOhoUus68GD3ZpQLCHnCnfeQbaeGFN7ENPkxTJTxLl-TA1r9YbLN8-6W2QT_TMMzZ3P0wcdLt7Wjzq6_LJcitpvhgpnzGoxzBZqirv5XIVx6WdNdMWrKARG8UVTrDlhTX1KeCw.kbWyFj1Vb4pF7Pqk49EnPQ" />
+    <input type="hidden" name="workflowState" value="eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.K_EBSq0xbXlswCVvZ6hCA-ElLkn0b_pOiiq1MD8EOm3yKG1_zpxghA.uwErrDKPzXkbRSnN.PsXTyCe9cUXLICez9384C6qQ29s84laHQl_Dhf_Gnk77rYMXtNB_efeMCEQfkqFqj_QBPRP3Eb1jN-bA1zaw_y9VIHYTjPQ3QN1rGiH3KpapyTefH_3FLwADe67wjimWt43kWLzjI5nzTJ_abGRImMVCPwgZJ68dNwriahXgkRpueaqaKj5NnfECCiMmcuWceSy3WrjPsv1ktEoQW3i6vKhW_9CZ66opWrAVAIEaITp1JR_NAfnyXbHb1pOCKCMYFKMCszGGZm0NIoaIFkGR9tn0eBY9c6vfCN1ttvO0GIo0mjPgUOajYToen9iBav46lPkoNi2DV_JP_mbO9fpsGXcphjvAqFTRYYid3j7Cb5T4bBUS0fFyfI_bdt6MWbG5OauLN7a2D3It-2u3W9AVwfKr_oGhmjGERzoSjR5ja1TeH5TwXyA_gYjSztGb4xkoMjSX5fSpVP3AUkQeRxUoXwLdorujkEA_7ZMP22_QH7oH0WvKgI3hg5e-7WVSPLX9op1j1AArQ1DZZrvspEDpacjkBQ.O28KCAihml7IUOj_F1sRgw" />
   
 
 
@@ -372,7 +366,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 
-<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AZXG2YN31QW0XSDCF8SM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiIvRit1RjVEZDhTLzdOVVQ5Y3JsMWxuYUN6aGRSTFBSSEdGK1BmR1p4RGFJPSIsIklWIjoiZFlkU01HM2NGYTgyUTRpQXduNzhzZz09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613460899000">
+<a id="auth-fpp-link-bottom" class="a-link-normal" target="_top" rel="noopener" tabindex="9" href="https://www.amazon.es/ap/forgotpassword?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=JYWH86SDM507W8Q9Z5HV&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJCamdvZWNKM2tzelRJb3hNS0o5eHQ2SDZBalFLYWxsVFVsNjJhN09GdDZNPSIsInZlcnNpb24iOjEsIklWIjoiWDNLQlRnVlVzQWlTRXYrVkF5UkRKUT09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613669942000">
   ¿Has olvidado la contraseña?
 </a>
   </div>
@@ -397,7 +391,7 @@ amzn.copilot.checkCoPilotSession();
 <div id="ap_email_icon" class="auth-clear-icons">
   
 
-  <i class="a-icon a-icon-close" role="presentation"></i>
+  <i class="a-icon a-icon-close" role="img" aria-label="Borrar campo de texto de correo electrónico, botón"></i>
 
 </div>
     
@@ -444,7 +438,7 @@ amzn.copilot.checkCoPilotSession();
 <div id="ap_password_icon" class="auth-clear-icons">
   
 
-  <i class="a-icon a-icon-close" role="presentation"></i>
+  <i class="a-icon a-icon-close" role="img" aria-label="Borrar campo de texto de contraseña, botón"></i>
 
 </div>
 
@@ -548,7 +542,7 @@ amzn.copilot.checkCoPilotSession();
 
 
 <div id="auth-captcha-image-container" class="a-section a-text-center">
-  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/be89406012b44384b51d18bb1be9084a.jpg?AWSAccessKeyId=AKIA5WBBRBBBQ4SU3ZMR&amp;Expires=1613461200&amp;Signature=0tnJZZFngRybio1uB0E%2Fuu7CJRE%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
+  <img alt="CAPTCHA" src="https://opfcaptcha-prod.s3.amazonaws.com/52b0bd47217e4794bf8ec3bcda1d4ba6.jpg?AWSAccessKeyId=AKIA5WBBRBBBQ4SU3ZMR&amp;Expires=1613670243&amp;Signature=4NxjgVib7ET8EfUxwAzhFqwIV30%3D" data-refresh-url="/ap/captcha?appAction=SIGNIN&amp;captchaObfuscationLevel=ape%3AaGFyZA%3D%3D&amp;captchaType=image&amp;marketPlaceId=A1RKKUPIHCS9HS" id="auth-captcha-image"/>
 </div>
     </div>
 
@@ -573,7 +567,7 @@ amzn.copilot.checkCoPilotSession();
 <div id="auth_captcha_guess_icon" class="auth-clear-icons">
   
 
-  <i class="a-icon a-icon-close" role="presentation"></i>
+  <i class="a-icon a-icon-close" role="img" aria-label="Borrar campo de texto de captcha, botón"></i>
 
 </div>
       
@@ -615,7 +609,7 @@ amzn.copilot.checkCoPilotSession();
     <div id="image-captcha-options" class="a-section a-spacing-mini">
       <div id="auth-switch-captcha-to-audio-container" class="a-row">
         <div class="a-column a-span12 a-text-center a-spacing-small">
-          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AZXG2YN31QW0XSDCF8SM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJyd1hadTBUaXZGVnFPVUc0U0tiQVpDVTZseWdKV3o2aFBlUzhCWi82L1RrPSIsIklWIjoiUXVWQ29tTHpwTUZSNms5YWVwZ0NiQT09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613460899000&amp;use_audio_captcha=0">
+          <a id="auth-captcha-refresh-link" class="a-link-normal" tabindex="5" href="/ap/signin?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=JYWH86SDM507W8Q9Z5HV&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiI3S0cvbjk1WG9ORXRZR0dqbnJudkZKWjFuN2MxL083WDhXUzQ1dE9QUThrPSIsInZlcnNpb24iOjEsIklWIjoib21PMTQxcU9xOTVpYURpMUpneis5Zz09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613669942000&amp;use_audio_captcha=0">
             Probar con una imagen distinta.
           </a>
           <a id="auth-captcha-noop-link" class="a-link-normal" href="javascript:void(0);">
@@ -704,7 +698,7 @@ amzn.copilot.checkCoPilotSession();
       
         
         <div class="a-divider a-divider-break"><h5>¿Eres nuevo en Amazon?</h5></div>
-        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=AZXG2YN31QW0XSDCF8SM&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiJyd1hadTBUaXZGVnFPVUc0U0tiQVpDVTZseWdKV3o2aFBlUzhCWi82L1RrPSIsIklWIjoiUXVWQ29tTHpwTUZSNms5YWVwZ0NiQT09IiwidmVyc2lvbiI6MX0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613460899000" class="a-button-text" role="button">
+        <span id="auth-create-account-link" class="a-button a-button-span12 a-button-base"><span class="a-button-inner"><a id="createAccountSubmit" tabindex="7" href="https://www.amazon.es/ap/register?showRememberMe=true&amp;showRmrMe=1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;forceValidateCaptcha=true&amp;pageId=amzn_dp_project_dee_es&amp;openid.return_to=https%3A%2F%2Falexa.amazon.es%2F&amp;prevRID=JYWH86SDM507W8Q9Z5HV&amp;openid.assoc_handle=amzn_dp_project_dee_es&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=eyJjaXBoZXIiOiI3S0cvbjk1WG9ORXRZR0dqbnJudkZKWjFuN2MxL083WDhXUzQ1dE9QUThrPSIsInZlcnNpb24iOjEsIklWIjoib21PMTQxcU9xOTVpYURpMUpneis5Zz09In0%3D&amp;failedSignInCount=1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;timestamp=1613669942000" class="a-button-text" role="button">
           Crear una nueva cuenta de Amazon
         </a></span></span>
       
@@ -944,7 +938,7 @@ csa.plugin(function(e){var i="transitionStart",n="pageVisible",t="PageTiming",a=
 </div>
 
 <noscript>
-    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-6845055-5566716:AZXG2YN31QW0XSDCF8SM$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3DAZXG2YN31QW0XSDCF8SM:0' alt=""/>
+    <img height="1" width="1" style='display:none;visibility:hidden;' src='//fls-eu.amazon.com/1/batch/1/OP/A1RKKUPIHCS9HS:262-0705924-7723300:JYWH86SDM507W8Q9Z5HV$uedata=s:%2Fap%2Fuedata%3Fnoscript%26id%3DJYWH86SDM507W8Q9Z5HV:0' alt=""/>
 </noscript>
 </body>
 </html>

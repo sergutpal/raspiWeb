@@ -5,6 +5,6 @@ import globalVars
 
 
 if __name__ == "__main__":
-    pubMQTTMsg(MQTTServer.topicTermo, MQTTServer.payloadTermoON)
+    pubMQTTMsg(MQTTServer.topicTermo, MQTTServer.payloadAlarmaON)
     globalVars.toFile(globalVars.sendFile, "Termo encendido por telegram")
 

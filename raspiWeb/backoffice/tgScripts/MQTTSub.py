@@ -13,6 +13,8 @@ import foto
 import globalVars
 import MQTTServer
 import time
+import agua
+
 
 mqttc = None
 disconnect_flag = False
@@ -85,9 +87,9 @@ def getMQTTAutoTermo(msg):
 
 def getMQTTBombaAgua(msg):
     if (msg.payload ==MQTTServer.payloadAlarmaON):
-        globalVars.toFile(globalVars.sendFile, "Encendemos la bomba de agua")
+        agua.bombaAguaEncendida()
     if (msg.payload ==MQTTServer.payloadAlarmaOFF):
-        globalVars.toFile(globalVars.sendFile, "Apagamos la bomba de agua")
+        agua.bombaAguaApagada()
 
 
 def getMQTTTimbre(msg):

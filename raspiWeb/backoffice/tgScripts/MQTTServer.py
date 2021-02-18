@@ -49,15 +49,9 @@ payloadClickDouble = b'double'
 payloadClickHold = b'hold'
 
 topicCaldera = "zigbee2mqtt/Enchufe1/set"
-payloadCalderaON = b'ON'
-payloadCalderaOFF = b'OFF'
 
 topicTermo = "zigbee2mqtt/Enchufe2/set"
-payloadTermoON = b'ON'
-payloadTermoOFF = b'OFF'
 
 topicBombaAgua = "zigbee2mqtt/Enchufe3/set"
-payloadBombaAguaON = b'ON'
-payloadBombaAguaOFF = b'OFF'
 
 topicPV = "PV"

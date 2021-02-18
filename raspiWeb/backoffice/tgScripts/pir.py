@@ -10,6 +10,7 @@ from _thread import start_new_thread
 import subprocess
 import sqlite3
 import ping
+import agua 
 
 CHECK_SECONDS = 0.5     # Los sensores se comprueban cada CHECK_SECONDS
 PARKING_PULSE = 0.6     # Cuanto tiempo el rele que manda el pulsador del
@@ -120,6 +121,18 @@ def checkOpenParkingRequest():
         waitSeconds = int(waitSeconds)
         start_new_thread(openParking, (waitSeconds,))
     return True
+
+
+def checkApagaBombaAutoRequest():
+    if (globalVars.raspiId != '0'):
+        return None
+    # Borramos la clave despues de leerla
+    waitSeconds = globalVars.redisGet(globalVars.redisBombaAguaAutoOffRequest, False)
+    if waitSeconds:
+        waitSeconds = int(waitSeconds)
+        start_new_thread(agua.apagaBombaAuto, (waitSeconds,))
+    return True
+
 
 
 def checkKodiRequest():
@@ -450,6 +463,7 @@ if __name__ == "__main__":
                     waitingAlarm = waitingAlarm - 1
                 globalVars.checkAlarmOffRequest()
                 checkOpenParkingRequest()
+                checkApagaBombaAutoRequest()
                 checkPhotoRequest()
                 checkCameraOffRequest()
                 checkVideoRequest()

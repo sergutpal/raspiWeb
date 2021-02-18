@@ -48,6 +48,7 @@ def sendHelp():
     msgHelp("t: envia las temperaturas al canal raspiBot")
     msgHelp("flush: elimina todas las entradas de Redis")
     msgHelp("info: envia un resumen de los principales parametros")
+    msgHelp("agua: enciende la bomba del agua y corta el agua de la general con la electroválvula")
 #    msgHelp("**********************")
 #    msgHelp("CMD MQTT en RaspiBot:")
 #    msgHelp("mqtt wake iconia/hpslate")

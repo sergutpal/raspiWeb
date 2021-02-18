@@ -5,6 +5,6 @@ import globalVars
 
 
 if __name__ == "__main__":
-    pubMQTTMsg(MQTTServer.topicCaldera, MQTTServer.payloadCalderaON)
+    pubMQTTMsg(MQTTServer.topicCaldera, MQTTServer.payloadAlarmaON)
     globalVars.toFile(globalVars.sendFile, "Caldera encendida por telegram")
 
