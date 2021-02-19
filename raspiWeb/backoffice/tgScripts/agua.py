@@ -4,32 +4,54 @@ from MQTTSend import pubMQTTMsg
 import MQTTServer
 import globalVars
 
-SEGUNDOS_APAGADO_BOMBA_AUTO = '900'  # 15 min = 900 secs
+SEGUNDOS_APAGADO_BOMBA_AUTO = '10'  # 15 min = 900 secs
 EMERGENCIA_AGUA = '-9999'
+NOAUTO = '-1111'
 
 def isEmergencia():
-    emergencia = globalVars.redisGet(globalVars.redisBombaAguaAutoOffRequest, False)
+    emergencia = globalVars.redisGet(globalVars.redisBombaAguaAutoOff, False)
     if (emergencia ==EMERGENCIA_AGUA):
         return True
     else:
         return False
 
 
+def isBombaAuto():
+    noAuto = globalVars.redisGet(globalVars.redisBombaAguaNoAuto, False)
+    if (noAuto ==NOAUTO):
+        return False
+    else:
+        return True
+
+
 def enciendeBombaAgua():
+    # No hace falta llamar a bombaAguaEncendida pq lo hará la captura del mensaje MQTT en MQTTSub.getMQTTBombaAgua
+    globalVars.redisDelete(globalVars.redisBombaAguaNoAuto)
+    pubMQTTMsg(MQTTServer.topicBombaAgua, MQTTServer.payloadAlarmaON)
+
+
+def enciendeBombaAguaNoAuto():
+    # No hace falta llamar a bombaAguaEncendida pq lo hará la captura del mensaje MQTT en MQTTSub.getMQTTBombaAgua
+    globalVars.redisSet(globalVars.redisBombaAguaNoAuto, NOAUTO)
     pubMQTTMsg(MQTTServer.topicBombaAgua, MQTTServer.payloadAlarmaON)
 
 
 def apagaBombaAgua():
     if (not isEmergencia()):
         pubMQTTMsg(MQTTServer.topicBombaAgua, MQTTServer.payloadAlarmaOFF)
+        globalVars.redisDelete(globalVars.redisBombaAguaNoAuto)
 
 
-def bombaAguaEncendida(apagaAuto=True):
+def bombaAguaEncendida():
     # Este método se llama después de que se haya activado el switch de Enchufe3 por MQTT/Homeassistant/etc, para arrancar la bomba de agua (cerrando también la electroválvula)
-    globalVars.toFile(globalVars.sendFile, "Bomba agua encendida")
-    if (apagaAuto and not isEmergencia()):
-        globalVars.toFile(globalVars.sendFile, "Alucino2...")
-        globalVars.redisRequestSet(globalVars.redisBombaAguaAutoOffRequest, SEGUNDOS_APAGADO_BOMBA_AUTO)
+    if (isBombaAuto() and not isEmergencia()):
+        globalVars.redisSet(globalVars.redisBombaAguaAutoOff, SEGUNDOS_APAGADO_BOMBA_AUTO)
+        globalVars.toFile(globalVars.sendFile, "Bomba agua encendida modo auto. En unos minutos se apagará")
+    else:
+        if (not isBombaAuto() and not isEmergencia()):
+            globalVars.toFile(globalVars.sendFile, "Bomba agua encendida. El apagado NO está en modo auto!")
+        else:
+            globalVars.toFile(globalVars.sendFile, "Bomba agua encendida por modo emergencia!!")
 
 
 def bombaAguaApagada():
@@ -40,8 +62,9 @@ def bombaAguaApagada():
         time.sleep(2)
         pubMQTTMsg(MQTTServer.topicBombaAgua, MQTTServer.payloadAlarmaON)
     else:
-        globalVars.redisDelete(globalVars.redisBombaAguaAutoOffRequest)
         globalVars.toFile(globalVars.sendFile, "Bomba agua apagada")
+        globalVars.redisDelete(globalVars.redisBombaAguaAutoOff)
+    globalVars.redisDelete(globalVars.redisBombaAguaNoAuto)
 
 
 def apagaBombaAuto(secsApagado=SEGUNDOS_APAGADO_BOMBA_AUTO):
@@ -49,10 +72,10 @@ def apagaBombaAuto(secsApagado=SEGUNDOS_APAGADO_BOMBA_AUTO):
     # se encargue del apagado automático
 
     # Por si acaso, antes de apagar la bomba, revisamos que no estemos en el modo Emergencia
-    emergencia = globalVars.redisGet(globalVars.redisBombaAguaAutoOffRequest, False)
+    emergencia = globalVars.redisGet(globalVars.redisBombaAguaAutoOff, False)
     if (emergencia !=EMERGENCIA_AGUA):
-        globalVars.toFile(globalVars.sendFile, "Alucino...")
-        globalVars.redisDelete(globalVars.redisBombaAguaAutoOffRequest)
+        globalVars.redisDelete(globalVars.redisBombaAguaAutoOff)
+        globalVars.redisDelete(globalVars.redisBombaAguaNoAuto)
         if secsApagado > 0:
             time.sleep(secsApagado)
         pubMQTTMsg(MQTTServer.topicBombaAgua, MQTTServer.payloadAlarmaOFF)
@@ -62,9 +85,9 @@ def apagaBombaAuto(secsApagado=SEGUNDOS_APAGADO_BOMBA_AUTO):
 def emergenciaAgua():
     # Si Aqara inmersion detecta agua (una emergencia), queremos que corte el suministro de agua (activando el enchufe3 de la bomba de agua que cerrará
     # la electroválvula de la entrada de la acometida) y que nos avise rápidamente por todos los medios para evitar cualquier tipo de colapso.
-    globalVars.redisRequestSet(globalVars.redisBombaAguaAutoOffRequest, EMERGENCIA_AGUA)
+    globalVars.redisSet(globalVars.redisBombaAguaAutoOff, EMERGENCIA_AGUA)
     enciendeBombaAgua()
-    strAlert = "EMERGENCIA DE AGUA!!!!!!!! REVISA QUE LA ELECTROVALVULA ESTÉ ENCENDIDA. POR SI ACASO, ENVIA EL COMANDO agua!!!"
+    strAlert = "EMERGENCIA DE AGUA!!!!!!!! HE ACTIVADO AUTOMÁTICAMENTE LA ELECTROVALVULA, PERO MEJOR QUE LO REVISES!!!"
     globalVars.toFile(globalVars.sendFile, strAlert)
     globalVars.redisSet(globalVars.redisPhoneAlarmRequest, strAlert)
     for i in range(0, globalVars.numRaspis + 1):

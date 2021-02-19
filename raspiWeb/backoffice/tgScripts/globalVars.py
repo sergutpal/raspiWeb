@@ -65,7 +65,8 @@ pathPhoto = pathTmpTelegram + 'RpiCam/RaspiX.jpg'
 pathVideo = pathTmpTelegram + 'RpiCam/RaspiX.mp4'
 pathAlexaTTS=pathBaseTgScripts +'alexaTTS/'
 redisParkingRequest = 'openParking'
-redisBombaAguaAutoOffRequest = 'bombaAguaAutoOff'
+redisBombaAguaAutoOff = 'bombaAguaAutoOff'
+redisBombaAguaNoAuto = 'bombaAguaNoAuto'
 redisPhotoRequest = 'insertFotoX'
 redisVideoRequest = 'insertVideoX'
 redisCameraStartRequest = 'insertCameraStartX'
@@ -668,6 +669,7 @@ def redisGet(key, clearKey=False):
         value = redisSrv.get(key)
         if (clearKey and value):
             redisSrv.delete(key)
+            toFile(sendFile, "Entrada Redis: " + key + " eliminada!")
         return value
     except Exception as e:
         toLogFile('redisGet Key: ' + key + '. ' + str(e))

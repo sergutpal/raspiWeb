@@ -267,9 +267,7 @@ if __name__ == "__main__":
     while True:
         try:
             if not loopMQTT():
-                toLogFile('Antes del raise')
                 raise Exception("Error en loopMQTT")
-                toLogFile('Despues del raise')
         except Exception as e:
             toLogFile('Error main MQTTSub!! ' + str(e))
             #mqttc = None

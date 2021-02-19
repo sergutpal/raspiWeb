@@ -127,7 +127,7 @@ def checkApagaBombaAutoRequest():
     if (globalVars.raspiId != '0'):
         return None
     # Borramos la clave despues de leerla
-    waitSeconds = globalVars.redisGet(globalVars.redisBombaAguaAutoOffRequest, False)
+    waitSeconds = globalVars.redisGet(globalVars.redisBombaAguaAutoOff, False)
     if waitSeconds:
         waitSeconds = int(waitSeconds)
         start_new_thread(agua.apagaBombaAuto, (waitSeconds,))
