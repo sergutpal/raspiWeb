@@ -91,6 +91,15 @@ def getMQTTBombaAgua(msg):
     if (msg.payload ==MQTTServer.payloadAlarmaOFF):
         agua.bombaAguaApagada()
 
+def getMQTTSOSAgua(msg):
+    try:
+        js = json.loads(msg.payload)
+        if (js['water_leak']):  # ATENCIÓN está saltando una alerta de Agua!!!!!
+            agua.alarmaAgua('ALARMA DE AGUA: ' + msg.topic + '!!!!! ELECTROVALVULA ACTIVADA AUTOMÁTICAMENTE, PERO MEJOR REVISARLO!!!')
+        return True
+    except Exception as e:
+        toLogFile('Error getMQTTSOSAgua: ' + str(e))
+        return False
 
 def getMQTTTimbre(msg):
     toLogFile('Recibido msg Timbre: ' + msg.topic + "@. Payload: @" + str(msg.payload) + "@")
@@ -194,6 +203,8 @@ def on_message(mqttc, obj, msg):
            getMQTTBombaAgua(msg)
        if msg.topic[:-1] == MQTTServer.topicHumo.replace('X', ''):
            getMQTTHumo(msg)
+       if msg.topic[:-1] == MQTTServer.topicSOSAgua.replace('X', ''):
+           getMQTTSOSAgua(msg)
        if (msg.topic == MQTTServer.topicTimbre) and (msg.payload ==MQTTServer.payloadTimbre):
             getMQTTTimbre(msg)
        if msg.topic[:-1] == MQTTServer.topicAqaraMotion.replace('X', ''):
@@ -231,6 +242,8 @@ def iniMQTT():
             mqttc.subscribe(MQTTServer.topicSaveVideoCams, qos=0)
             mqttc.subscribe(MQTTServer.topicAutoTermo, qos=0)
             mqttc.subscribe(MQTTServer.topicBombaAgua, qos=0)
+            for i in range(1, globalVars.aqaraSOSAguaNum + 1):
+                mqttc.subscribe(MQTTServer.topicSOSAgua.replace('X', str(i)), qos=0)
             for i in range(1, globalVars.aqaraSmokeNum + 1):
                 mqttc.subscribe(MQTTServer.topicHumo.replace('X', str(i)), qos=0)
             mqttc.subscribe(MQTTServer.topicTimbre, qos=0)

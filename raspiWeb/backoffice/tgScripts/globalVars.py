@@ -129,6 +129,7 @@ djangoIPAuth = ''
 aqaraMotionNum = 4
 aqaraDoorNum = 3
 aqaraSmokeNum = 3
+aqaraSOSAguaNum = 1
 timeVideoRecord = 60
 rtspEntrada = 'rtsp://admin:VTLOZG@192.168.1.220:554'
 rtspSalon = 'rtsp://admin:KVHPVD@192.168.1.224:554'
@@ -669,7 +670,6 @@ def redisGet(key, clearKey=False):
         value = redisSrv.get(key)
         if (clearKey and value):
             redisSrv.delete(key)
-            toFile(sendFile, "Entrada Redis: " + key + " eliminada!")
         return value
     except Exception as e:
         toLogFile('redisGet Key: ' + key + '. ' + str(e))

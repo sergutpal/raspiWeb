@@ -4,7 +4,7 @@ from MQTTSend import pubMQTTMsg
 import MQTTServer
 import globalVars
 
-SEGUNDOS_APAGADO_BOMBA_AUTO = '10'  # 15 min = 900 secs
+SEGUNDOS_APAGADO_BOMBA_AUTO = '900'  # 15 min = 900 secs
 EMERGENCIA_AGUA = '-9999'
 NOAUTO = '-1111'
 
@@ -82,16 +82,12 @@ def apagaBombaAuto(secsApagado=SEGUNDOS_APAGADO_BOMBA_AUTO):
 
 
 # Este es el método que debe llamar el sensor Aqara inmersion agua que tenemos dentro del depósito de agua si se activa
-def emergenciaAgua():
+def alarmaAgua(strAlert):
     # Si Aqara inmersion detecta agua (una emergencia), queremos que corte el suministro de agua (activando el enchufe3 de la bomba de agua que cerrará
     # la electroválvula de la entrada de la acometida) y que nos avise rápidamente por todos los medios para evitar cualquier tipo de colapso.
     globalVars.redisSet(globalVars.redisBombaAguaAutoOff, EMERGENCIA_AGUA)
     enciendeBombaAgua()
-    strAlert = "EMERGENCIA DE AGUA!!!!!!!! HE ACTIVADO AUTOMÁTICAMENTE LA ELECTROVALVULA, PERO MEJOR QUE LO REVISES!!!"
-    globalVars.toFile(globalVars.sendFile, strAlert)
-    globalVars.redisSet(globalVars.redisPhoneAlarmRequest, strAlert)
-    for i in range(0, globalVars.numRaspis + 1):
-        globalVars.redisRequestSet(globalVars.redisAlarmRequest.replace('X',str(i)))
+    globalVars.fireAlarm(strAlert)
 
 
 if __name__ == "__main__":
