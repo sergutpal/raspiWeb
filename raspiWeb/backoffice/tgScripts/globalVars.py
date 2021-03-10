@@ -131,10 +131,10 @@ aqaraDoorNum = 3
 aqaraSmokeNum = 3
 aqaraSOSAguaNum = 1
 timeVideoRecord = 60
-rtspEntrada = 'rtsp://admin:VTLOZG@192.168.1.220:554'
-rtspSalon = 'rtsp://admin:KVHPVD@192.168.1.224:554'
-rtspSotano = 'rtsp://admin:GMHANA@192.168.1.223:554'
-rtspTerraza = 'rtsp://admin:WTUJDT@192.168.1.222:554'
+rtspEntrada = 'rtsp://admin:VTLOZG@192.168.1.74:554'
+rtspSalon = 'rtsp://admin:KVHPVD@192.168.1.73:554'
+rtspSotano = 'rtsp://admin:GMHANA@192.168.1.72:554'
+rtspTerraza = 'rtsp://admin:WTUJDT@192.168.1.71:554'
 raspiId = '0'
 raspiName = 'raspiX'
 
