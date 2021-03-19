@@ -50,7 +50,7 @@ payloadClickHold = b'hold'
 
 topicCaldera = "zigbee2mqtt/Enchufe1/set"
 
-topicTermo = "zigbee2mqtt/Enchufe2/set"
+topicTermo = "zigbee2mqtt/Enchufe4/set"
 
 topicBombaAgua = "zigbee2mqtt/Enchufe3/set"
 topicSOSAgua = "zigbee2mqtt/SOSAguaX"
